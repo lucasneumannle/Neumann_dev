@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ventura Móveis Sob Medida | Marcenaria de alto padrão em Corupá, SC</title>
+<meta name="description" content="Móveis sob medida e ambientes de alto padrão em Corupá (SC) e região: cozinhas, salas, painéis ripados, halls e marcenaria completa. Do projeto à instalação. Peça seu orçamento pelo WhatsApp.">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="canonical" href="https://www.venturamoveis.com.br/"><!-- TROCAR: domínio final -->
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Ventura Móveis Sob Medida">
+<meta property="og:title" content="Ventura Móveis Sob Medida | Marcenaria de alto padrão em Corupá, SC">
+<meta property="og:description" content="Ambientes sob medida em Corupá (SC): cozinhas, salas, painéis e marcenaria completa. Do projeto à instalação, com acabamento de alto padrão.">
+<meta property="og:image" content="imagens/hero-cozinha.jpg"><!-- TROCAR p/ URL absoluta no deploy -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230b0b0b'/><path d='M6 8 L16 24 L26 8 L22 8 L16 18 L10 8 Z' fill='%23fff'/></svg>">
+
+<script>document.documentElement.classList.add('has-js');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Dados estruturados -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FurnitureStore",
+  "name": "Ventura Móveis Sob Medida",
+  "description": "Marcenaria em Corupá (SC) especializada em móveis sob medida e ambientes de alto padrão — cozinhas, salas, painéis ripados, halls e marcenaria completa, do projeto à instalação.",
+  "image": "imagens/hero-cozinha.jpg",
+  "telephone": "+554799127-7539",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Leopoldo Millnitz",
+    "addressLocality": "Corupá",
+    "addressRegion": "SC",
+    "postalCode": "89392-522",
+    "addressCountry": "BR"
+  },
+  "areaServed": "Corupá e região, Santa Catarina",
+  "makesOffer": {
+    "@type": "Offer",
+    "itemOffered": { "@type": "Service", "name": "Móveis planejados e marcenaria sob medida" }
+  }
+}
+</script>
+
+<style>
+:root{
+  --ink:#0b0b0b;          /* preto da marca / seções escuras */
+  --ink-2:#151515;        /* escuro levemente elevado */
+  --paper:#f4f2ee;        /* porcelana / seções claras */
+  --paper-2:#eae7e0;      /* claro alternativo */
+  --line:#d7d2c9;         /* fio de grade no claro */
+  --line-d:rgba(255,255,255,.16); /* fio no escuro */
+  --muted:#6c685f;        /* texto suave no claro */
+  --muted-d:#a29d94;      /* texto suave no escuro */
+  --white:#fbfaf8;
+  --wa:#25d366;
+  --maxw:1240px;
+  --pad: clamp(1.15rem, 5vw, 4rem);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Jost",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  font-weight:400;font-size:clamp(15.5px,1.05vw,17px);line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif;font-weight:500;margin:0;line-height:1.04;letter-spacing:-.01em}
+::selection{background:var(--ink);color:var(--paper)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.sec{padding:clamp(3.6rem,8vw,7.5rem) 0}
+
+/* eyebrow / rótulos */
+.eyebrow{display:inline-flex;align-items:center;gap:.7rem;
+  font-family:"Jost";font-weight:500;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor;display:inline-block}
+.on-dark .eyebrow,.eyebrow.light{color:var(--muted-d)}
+
+/* botões — cantos retos, arquitetônicos */
+.btn{display:inline-flex;align-items:center;gap:.6rem;cursor:pointer;border:1px solid transparent;
+  font-family:"Jost";font-weight:500;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:1.02rem 1.7rem;border-radius:1px;transition:background .25s,color .25s,border-color .25s,transform .25s}
+.btn svg{width:17px;height:17px;flex:none}
+.btn-dark{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.btn-dark:hover{background:#000;transform:translateY(-2px)}
+.btn-light{background:var(--white);color:var(--ink);border-color:var(--white)}
+.btn-light:hover{background:#fff;transform:translateY(-2px)}
+.btn-ghost-d{background:transparent;color:var(--white);border-color:rgba(255,255,255,.5)}
+.btn-ghost-d:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-ghost-l{background:transparent;color:var(--ink);border-color:rgba(11,11,11,.35)}
+.btn-ghost-l:hover{border-color:var(--ink);background:rgba(11,11,11,.04)}
+
+/* ===== HEADER ===== */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .35s,border-color .35s,padding .35s;
+  border-bottom:1px solid transparent;padding:.55rem 0}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.brand img{height:26px;width:auto}
+.nav{display:flex;align-items:center;gap:2.1rem}
+.nav a{font-family:"Jost";font-weight:400;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.82)}
+.nav a:hover{color:#fff}
+.header-cta{font-size:.76rem;padding:.72rem 1.25rem}
+.site-header.scrolled{background:rgba(9,9,9,.9);backdrop-filter:blur(10px);border-bottom-color:var(--line-d);padding:.35rem 0}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.4rem;flex-direction:column;gap:5px}
+.nav-toggle span{width:26px;height:2px;background:#fff;display:block;transition:.3s}
+
+/* menu mobile */
+.mobile-menu{position:fixed;inset:0;z-index:70;background:var(--ink);color:var(--white);
+  display:flex;flex-direction:column;padding:1.4rem var(--pad) 2.4rem;transform:translateY(-100%);
+  transition:transform .4s cubic-bezier(.5,0,.2,1);visibility:hidden}
+.mobile-menu.open{transform:translateY(0);visibility:visible}
+.mm-top{display:flex;justify-content:space-between;align-items:center}
+.mm-top img{height:24px}
+.mm-close{background:none;border:0;color:#fff;cursor:pointer;font-size:2rem;line-height:1;padding:.2rem .5rem}
+.mm-links{margin-top:auto;margin-bottom:auto;display:flex;flex-direction:column;gap:.2rem}
+.mm-links a{font-family:"Bodoni Moda",serif;font-size:2.1rem;font-weight:500;padding:.5rem 0;border-bottom:1px solid var(--line-d)}
+.mm-cta{margin-top:1.6rem}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:var(--white);overflow:hidden;isolation:isolate}
+.hero-media{position:absolute;inset:0;z-index:-2}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:52% 62%}
+.hero-scrim{position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,rgba(9,9,9,.72) 0%,rgba(9,9,9,.12) 22%,rgba(9,9,9,.05) 46%,rgba(9,9,9,.55) 80%,rgba(9,9,9,.86) 100%),
+  linear-gradient(90deg,rgba(9,9,9,.6) 0%,rgba(9,9,9,.12) 55%,rgba(9,9,9,0) 100%)}
+.hero-inner{padding-top:8rem;padding-bottom:clamp(2.4rem,5vw,4rem);max-width:960px}
+.hero .eyebrow{color:rgba(255,255,255,.92)}
+.hero h1{font-size:clamp(2.5rem,6.4vw,5.1rem);font-weight:500;max-width:16ch;margin:1.1rem 0 0}
+.hero h1 em{font-style:italic;font-weight:400}
+.hero .sub{margin:1.5rem 0 0;max-width:52ch;color:rgba(255,255,255,.9);font-size:clamp(1rem,1.4vw,1.16rem);line-height:1.6}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.1rem}
+.hero-meta{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;
+  font-family:"Jost";font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.hero-meta span{display:inline-flex;align-items:center;gap:1.4rem}
+.hero-meta span::after{content:"";width:5px;height:5px;background:rgba(255,255,255,.5);border-radius:50%}
+.hero-meta span:last-child::after{display:none}
+
+/* ===== AMBIENTES / MANIFESTO ===== */
+.manifesto{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.manifesto h2{font-size:clamp(1.9rem,3.6vw,3.1rem);max-width:15ch}
+.manifesto .lead{margin-top:1.3rem;color:var(--muted);max-width:44ch}
+.amb-list{border-top:1px solid var(--line)}
+.amb-list li{list-style:none;display:flex;align-items:baseline;gap:1.1rem;padding:1.05rem 0;border-bottom:1px solid var(--line)}
+.amb-list li .idx{font-family:"Bodoni Moda",serif;font-style:italic;font-size:.95rem;color:var(--muted);width:2ch;flex:none}
+.amb-list li .nm{font-family:"Jost";font-weight:500;letter-spacing:.04em;font-size:1.05rem}
+.amb-list{margin:0;padding:0}
+
+/* ===== PORTFÓLIO ===== */
+.pf-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(1.8rem,4vw,3rem)}
+.pf-head h2{font-size:clamp(2rem,4.4vw,3.5rem)}
+.pf-head p{color:var(--muted);max-width:40ch;margin:.6rem 0 0}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.7rem,1.6vw,1.25rem)}
+figure.shot{position:relative;margin:0;overflow:hidden;background:var(--ink-2);cursor:zoom-in}
+figure.shot img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .5s}
+figure.shot:hover img{transform:scale(1.045)}
+figure.wide{grid-column:1 / -1;aspect-ratio:16/8.4}
+figure.tall{aspect-ratio:4/5}
+figure.shot .cap{position:absolute;left:0;right:0;bottom:0;padding:1.5rem 1.3rem 1.15rem;color:#fff;
+  background:linear-gradient(0deg,rgba(6,6,6,.82) 0%,rgba(6,6,6,.28) 60%,transparent 100%);
+  transform:translateY(8px);opacity:.92;transition:.4s}
+figure.shot:hover .cap{transform:translateY(0);opacity:1}
+.cap .ktag{font-family:"Jost";font-weight:500;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.cap .kdesc{font-family:"Bodoni Moda",serif;font-style:italic;font-size:clamp(1.05rem,1.7vw,1.32rem);margin-top:.28rem;line-height:1.25}
+.pf-note{margin-top:1.6rem;color:var(--muted);font-size:.92rem}
+
+/* ===== PROCESSO (escuro) ===== */
+.on-dark{background:var(--ink);color:var(--white)}
+.proc-intro{max-width:20ch}
+.proc-intro h2{font-size:clamp(2rem,4.6vw,3.6rem);color:#fff}
+.proc-intro h2 em{font-style:italic;font-weight:400}
+.proc-intro p{color:var(--muted-d);max-width:46ch;margin-top:1.2rem}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.4rem,3vw,2.4rem);margin-top:clamp(2.4rem,5vw,3.6rem);
+  border-top:1px solid var(--line-d);padding-top:2.4rem}
+.step .n{font-family:"Bodoni Moda",serif;font-size:1rem;color:var(--muted-d);letter-spacing:.05em}
+.step h3{color:#fff;font-size:1.28rem;margin:.7rem 0 .5rem;font-weight:500}
+.step p{color:var(--muted-d);font-size:.95rem;line-height:1.55}
+
+/* ===== SOBRE ===== */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.about h2{font-size:clamp(1.9rem,4vw,3.2rem);max-width:14ch}
+.about .p{color:var(--muted);max-width:50ch}
+.diffs{display:grid;grid-template-columns:1fr 1fr;gap:2rem 2.4rem}
+.diff{border-top:1px solid var(--line);padding-top:1rem}
+.diff .ri{font-family:"Bodoni Moda",serif;font-style:italic;color:var(--muted);font-size:.95rem}
+.diff h3{font-size:1.18rem;font-weight:500;margin:.35rem 0 .5rem}
+.diff p{color:var(--muted);font-size:.94rem;line-height:1.55;margin:0}
+
+/* ===== CTA band ===== */
+.cta{position:relative;text-align:center;overflow:hidden}
+.cta h2{font-size:clamp(2.1rem,5.2vw,4rem);color:#fff;max-width:16ch;margin:.6rem auto 0}
+.cta h2 em{font-style:italic;font-weight:400}
+.cta p{color:var(--muted-d);max-width:50ch;margin:1.2rem auto 0}
+.cta .btn{margin-top:2rem}
+.cta .phone{margin-top:1.15rem;font-family:"Jost";font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-d)}
+
+/* ===== FAQ ===== */
+.faq-head h2{font-size:clamp(1.9rem,4vw,3.1rem)}
+.faq-wrap{margin-top:clamp(2rem,4vw,3rem);max-width:860px}
+.faq-item{border-top:1px solid var(--line)}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:0;cursor:pointer;text-align:left;display:flex;justify-content:space-between;
+  align-items:center;gap:1.5rem;padding:1.35rem .1rem;font-family:"Jost";font-weight:500;font-size:1.06rem;color:var(--ink)}
+.faq-q .plus{flex:none;width:20px;height:20px;position:relative}
+.faq-q .plus::before,.faq-q .plus::after{content:"";position:absolute;background:var(--ink);transition:transform .3s ease}
+.faq-q .plus::before{top:50%;left:0;right:0;height:1.6px;transform:translateY(-50%)}
+.faq-q .plus::after{left:50%;top:0;bottom:0;width:1.6px;transform:translateX(-50%)}
+.faq-item.open .plus::after{transform:translateX(-50%) scaleY(0)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s ease}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a>div{overflow:hidden}
+.faq-a p{padding:0 .1rem 1.5rem;color:var(--muted);font-size:1rem;max-width:66ch;margin:0}
+
+/* ===== CONTATO ===== */
+.contact{background:var(--paper-2)}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4rem);align-items:stretch}
+.contact h2{font-size:clamp(1.9rem,4vw,3rem);max-width:13ch}
+.contact-list{margin-top:1.8rem;display:flex;flex-direction:column;gap:1.35rem}
+.contact-list .row{display:flex;gap:.9rem;align-items:flex-start}
+.contact-list .row .ic{flex:none;width:20px;height:20px;margin-top:3px;color:var(--ink)}
+.contact-list b{display:block;font-family:"Jost";font-weight:500;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.contact-list a,.contact-list span{font-size:1.1rem;color:var(--ink)}
+.contact-list a:hover{color:#000;text-decoration:underline;text-underline-offset:3px}
+.contact .btn{margin-top:1.9rem}
+.socials{margin-top:1.7rem;display:flex;gap:.7rem}
+.socials a{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:.25s}
+.socials a:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.map{border:1px solid var(--line);min-height:340px;background:var(--paper);overflow:hidden}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(1) contrast(1.05)}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--ink);color:var(--muted-d);padding:clamp(3rem,6vw,4.5rem) 0 2rem}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.4rem}
+.footer .fbrand img{height:52px;margin-bottom:1.1rem}
+.footer .fbrand p{max-width:34ch;font-size:.92rem;line-height:1.6}
+.footer h4{font-family:"Jost";font-weight:500;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#fff;margin:0 0 1rem}
+.footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.footer a:hover{color:#fff}
+.footer .foot-bottom{margin-top:2.8rem;padding-top:1.4rem;border-top:1px solid var(--line-d);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.8rem;letter-spacing:.02em}
+
+/* ===== WhatsApp flutuante ===== */
+.wa-float{position:fixed;right:clamp(1rem,3vw,1.8rem);bottom:clamp(1rem,3vw,1.8rem);z-index:55;
+  width:58px;height:58px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.28);transition:transform .25s}
+.wa-float:hover{transform:scale(1.06)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+
+/* ===== LIGHTBOX ===== */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(6,6,6,.94);display:none;align-items:center;justify-content:center;padding:clamp(1rem,4vw,3rem)}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:82vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb .lb-cap{position:absolute;bottom:clamp(1rem,4vw,2.4rem);left:0;right:0;text-align:center;color:#fff;
+  font-family:"Bodoni Moda",serif;font-style:italic;font-size:1.05rem}
+.lb .lb-close{position:absolute;top:1.1rem;right:1.4rem;background:none;border:0;color:#fff;font-size:2.2rem;cursor:pointer;line-height:1}
+
+/* reveal */
+.reveal{opacity:1;transform:none}
+.has-js .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.has-js .reveal.in{opacity:1;transform:none}
+
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.on-dark :focus-visible,.hero :focus-visible{outline-color:#fff}
+
+@media (max-width:960px){
+  .nav{display:none}
+  .header-cta{display:none}
+  .nav-toggle{display:flex}
+  .manifesto,.about,.contact-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .diffs{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  figure.wide{aspect-ratio:16/10}
+}
+@media (max-width:620px){
+  .gallery{grid-template-columns:1fr}
+  figure.wide,figure.tall{grid-column:auto;aspect-ratio:4/4.4}
+  .steps{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-inner{padding-top:6.5rem}
+  .hero-meta{font-size:.68rem}
+  .footer .foot-bottom{flex-direction:column}
+  .btn{width:100%;justify-content:center}
+  .hero-actions .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important}
+  .has-js .reveal{opacity:1;transform:none;transition:none}
+  figure.shot img{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Ventura Móveis Sob Medida"><img src="imagens/logo-wordmark.png" alt="Ventura Móveis Sob Medida"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#projetos">Projetos</a>
+      <a href="#ambientes">Ambientes</a>
+      <a href="#processo">Processo</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-light header-cta" href="https://wa.me/5547991277539?text=Ol%C3%A1!%20Vi%20os%20projetos%20da%20Ventura%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">Orçamento</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MENU MOBILE -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mm-top">
+    <img src="imagens/logo-wordmark.png" alt="Ventura">
+    <button class="mm-close" id="mmClose" aria-label="Fechar menu">&times;</button>
+  </div>
+  <nav class="mm-links" aria-label="Menu">
+    <a href="#projetos" data-close>Projetos</a>
+    <a href="#ambientes" data-close>Ambientes</a>
+    <a href="#processo" data-close>Processo</a>
+    <a href="#contato" data-close>Contato</a>
+  </nav>
+  <a class="btn btn-light mm-cta" href="https://wa.me/5547991277539?text=Ol%C3%A1!%20Vi%20os%20projetos%20da%20Ventura%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" data-close>Solicitar orçamento</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <img src="imagens/hero-cozinha.jpg" alt="Cozinha planejada de alto padrão com ilha em porcelanato marmorizado e marcenaria em madeira, projeto da Ventura" fetchpriority="high">
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow light">Marcenaria de alto padrão · Corupá, SC</span>
+    <h1>Ambientes sob medida, pensados nos <em>mínimos detalhes.</em></h1>
+    <p class="sub">Cozinhas, salas, painéis e marcenaria completa em Corupá e região — do projeto à instalação, com acabamento de alto padrão.</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="https://wa.me/5547991277539?text=Ol%C3%A1!%20Vi%20os%20projetos%20da%20Ventura%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.05L2 22l5.1-1.33A10 10 0 1 0 12 2Zm5.5 14.2c-.23.65-1.35 1.24-1.86 1.28-.5.05-.96.23-3.23-.67-2.72-1.08-4.45-3.86-4.58-4.04-.13-.18-1.1-1.46-1.1-2.79 0-1.32.7-1.97.94-2.24.24-.27.52-.34.7-.34l.5.01c.16.01.38-.06.59.45.23.55.77 1.9.84 2.04.07.14.11.3.02.48-.09.18-.14.29-.27.45-.14.16-.29.35-.41.47-.14.14-.28.29-.12.56.16.27.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.22 1.38.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.16 1.28Z"/></svg>
+        Solicitar orçamento
+      </a>
+      <a class="btn btn-ghost-d" href="#projetos">Ver projetos</a>
+    </div>
+    <div class="hero-meta">
+      <span>Móveis planejados</span>
+      <span>Marcenaria própria</span>
+      <span>Projeto à instalação</span>
+    </div>
+  </div>
+</section>
+
+<!-- AMBIENTES / MANIFESTO -->
+<section class="sec" id="ambientes">
+  <div class="wrap manifesto">
+    <div class="reveal">
+      <span class="eyebrow">O que fazemos</span>
+      <h2>Ambientes completos, não apenas móveis.</h2>
+      <p class="lead">Cada projeto é desenhado para o seu espaço e executado do começo ao fim — da cozinha ao hall de entrada, com marcenaria, painéis e acabamentos pensados para conversar entre si.</p>
+    </div>
+    <ul class="amb-list reveal">
+      <li><span class="idx">01</span><span class="nm">Cozinhas sob medida</span></li>
+      <li><span class="idx">02</span><span class="nm">Salas de estar &amp; home</span></li>
+      <li><span class="idx">03</span><span class="nm">Painéis ripados</span></li>
+      <li><span class="idx">04</span><span class="nm">Halls &amp; entradas</span></li>
+      <li><span class="idx">05</span><span class="nm">Jardins verticais integrados</span></li>
+      <li><span class="idx">06</span><span class="nm">Marcenaria completa</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- PORTFÓLIO -->
+<section class="sec" id="projetos" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="pf-head reveal">
+      <div>
+        <span class="eyebrow">Projetos</span>
+        <h2>Trabalhos que falam por si.</h2>
+      </div>
+      <p>Uma seleção de ambientes executados pela Ventura. Cada projeto começa sob medida e termina instalado.</p>
+    </div>
+
+    <div class="gallery">
+      <figure class="shot wide reveal" data-full="imagens/projeto-hall-jardim.jpg" data-cap="Hall com jardim vertical, marcenaria ripada e espelho">
+        <img src="imagens/projeto-hall-jardim.jpg" alt="Hall com jardim vertical, painéis ripados em madeira e parede espelhada" loading="lazy">
+        <figcaption class="cap"><div class="ktag">Hall · Jardim vertical</div><div class="kdesc">Ripado em madeira, espelho e jardim vertical integrado</div></figcaption>
+      </figure>
+
+      <figure class="shot tall reveal" data-full="imagens/projeto-sala.jpg" data-cap="Sala de estar com painel de TV marmorizado e iluminação embutida">
+        <img src="imagens/projeto-sala.jpg" alt="Sala de estar com painel de TV em porcelanato marmorizado, ripado em madeira e iluminação embutida" loading="lazy">
+        <figcaption class="cap"><div class="ktag">Sala de estar</div><div class="kdesc">Painel marmorizado com iluminação embutida</div></figcaption>
+      </figure>
+
+      <figure class="shot tall reveal" data-full="imagens/projeto-ripado.jpg" data-cap="Painel ripado em madeira com jardim vertical e prateleiras suspensas">
+        <img src="imagens/projeto-ripado.jpg" alt="Painel ripado em madeira com jardim vertical, nicho iluminado e prateleiras brancas suspensas" loading="lazy">
+        <figcaption class="cap"><div class="ktag">Painel ripado</div><div class="kdesc">Madeira, jardim vertical e prateleiras suspensas</div></figcaption>
+      </figure>
+
+      <figure class="shot wide reveal" data-full="imagens/projeto-hall-3d.jpg" data-cap="Hall de entrada com parede 3D texturizada e marcenaria sob medida">
+        <img src="imagens/projeto-hall-3d.jpg" alt="Hall de entrada com parede 3D texturizada, marcenaria escura sob medida e piso em madeira" loading="lazy">
+        <figcaption class="cap"><div class="ktag">Hall de entrada</div><div class="kdesc">Parede 3D texturizada e marcenaria sob medida</div></figcaption>
+      </figure>
+    </div>
+
+    <p class="pf-note reveal">Tem uma referência em mente? Envie a foto do ambiente pelo WhatsApp e a gente projeta.</p>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="sec on-dark" id="processo">
+  <div class="wrap">
+    <div class="proc-intro reveal">
+      <span class="eyebrow light">Como funciona</span>
+      <h2>Do primeiro traço à <em>instalação.</em></h2>
+      <p>Você não escolhe um móvel de prateleira. Acompanha um projeto feito para o seu espaço, do desenho ao acabamento final.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3>Conversa</h3><p>Entendemos o ambiente, o estilo e como você quer usar o espaço.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3>Projeto sob medida</h3><p>Medição precisa e desenho de cada peça, ajustado até ficar do seu jeito.</p></div>
+      <div class="step reveal"><div class="n">03</div><h3>Produção</h3><p>Marcenaria executada com atenção ao acabamento de cada detalhe.</p></div>
+      <div class="step reveal"><div class="n">04</div><h3>Instalação</h3><p>Montagem no local, com o ambiente entregue pronto para viver.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sec" id="sobre">
+  <div class="wrap about">
+    <div class="reveal">
+      <span class="eyebrow">A Ventura</span>
+      <h2>Marcenaria de alto padrão em Corupá.</h2>
+    </div>
+    <div class="reveal">
+      <p class="p" style="font-size:1.12rem;color:var(--ink);margin-top:0">A Ventura é uma marcenaria de <b>Corupá (SC)</b> especializada em móveis sob medida e ambientes de alto padrão — cozinhas, salas, painéis e projetos completos, executados com acabamento cuidado e materiais nobres.</p>
+      <div class="diffs" style="margin-top:2.2rem">
+        <div class="diff"><div class="ri">i</div><h3>Projeto sob medida</h3><p>Cada ambiente é desenhado para o seu espaço — nada de solução genérica.</p></div>
+        <div class="diff"><div class="ri">ii</div><h3>Acabamento de alto padrão</h3><p>Atenção ao detalhe do desenho à instalação, do móvel ao painel.</p></div>
+        <div class="diff"><div class="ri">iii</div><h3>Ambientes completos</h3><p>Cozinhas, salas, painéis, halls e marcenaria integrada num só projeto.</p></div>
+        <div class="diff"><div class="ri">iv</div><h3>Atendimento próximo</h3><p>Contato direto pelo WhatsApp, de Corupá para toda a região.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec on-dark cta">
+  <div class="wrap reveal">
+    <span class="eyebrow light" style="justify-content:center">Orçamento</span>
+    <h2>Vamos projetar o <em>seu</em> ambiente.</h2>
+    <p>Conte o que você imagina e envie fotos e medidas do espaço. A gente responde pelo WhatsApp com as próximas etapas.</p>
+    <a class="btn btn-light" href="https://wa.me/5547991277539?text=Ol%C3%A1!%20Vi%20os%20projetos%20da%20Ventura%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.05L2 22l5.1-1.33A10 10 0 1 0 12 2Zm5.5 14.2c-.23.65-1.35 1.24-1.86 1.28-.5.05-.96.23-3.23-.67-2.72-1.08-4.45-3.86-4.58-4.04-.13-.18-1.1-1.46-1.1-2.79 0-1.32.7-1.97.94-2.24.24-.27.52-.34.7-.34l.5.01c.16.01.38-.06.59.45.23.55.77 1.9.84 2.04.07.14.11.3.02.48-.09.18-.14.29-.27.45-.14.16-.29.35-.41.47-.14.14-.28.29-.12.56.16.27.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.22 1.38.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.16 1.28Z"/></svg>
+      Solicitar orçamento no WhatsApp
+    </a>
+    <div class="phone">Atendimento por WhatsApp · (47) 99127-7539</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="faq-head reveal">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq-wrap reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Vocês fazem projetos completos (cozinha, sala, painéis)?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Sim. Trabalhamos com ambientes sob medida — cozinhas, salas, home, painéis ripados, halls e marcenaria completa, tudo pensado para o seu espaço.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Trabalham com projetos de arquitetura?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Sim, executamos projetos prontos de arquitetos e também desenvolvemos o projeto do zero com você. Envie o que tiver pelo WhatsApp.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Como funciona o orçamento?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Você chama no WhatsApp, conta o que precisa e envia fotos e medidas do ambiente. A partir daí desenvolvemos o projeto e apresentamos o orçamento.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Quais materiais e acabamentos vocês usam?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Trabalhamos com diferentes materiais e acabamentos, definidos junto com você no projeto conforme o estilo e o uso de cada ambiente.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Vocês fazem a instalação?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Sim. Além de produzir, fazemos a montagem e instalação no local, entregando o ambiente pronto para uso.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Quais regiões vocês atendem?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>Ficamos em Corupá (SC) e atendemos a região. Confirme o atendimento para a sua cidade pelo WhatsApp.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Qual é o prazo?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><div><p>O prazo é definido conforme o projeto e combinado com você junto do orçamento, antes de fechar.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="sec contact" id="contato">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Contato</span>
+      <h2>Onde estamos e como falar com a gente.</h2>
+      <div class="contact-list">
+        <div class="row">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <div><b>Endereço</b><a href="https://www.google.com/maps/search/?api=1&amp;query=Leopoldo%20Millnitz%2C%20Semin%C3%A1rio%2C%20Corup%C3%A1%20-%20SC%2C%2089392-522" target="_blank" rel="noopener">Leopoldo Millnitz — Seminário<br>Corupá · SC · 89392-522</a></div>
+        </div>
+        <div class="row">
+          <svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.05L2 22l5.1-1.33A10 10 0 1 0 12 2Zm5.5 14.2c-.23.65-1.35 1.24-1.86 1.28-.5.05-.96.23-3.23-.67-2.72-1.08-4.45-3.86-4.58-4.04-.13-.18-1.1-1.46-1.1-2.79 0-1.32.7-1.97.94-2.24.24-.27.52-.34.7-.34l.5.01c.16.01.38-.06.59.45.23.55.77 1.9.84 2.04.07.14.11.3.02.48-.09.18-.14.29-.27.45-.14.16-.29.35-.41.47-.14.14-.28.29-.12.56.16.27.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.22 1.38.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.16 1.28Z"/></svg>
+          <div><b>WhatsApp</b><a href="https://wa.me/5547991277539?text=Ol%C3%A1!%20Vi%20os%20projetos%20da%20Ventura%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">(47) 99127-7539</a></div>
+        </div>
+      </div>
+      <a class="btn btn-dark" href="https://wa.me/5547991277539?text=Ol%C3%A1!%20Vi%20os%20projetos%20da%20Ventura%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <!-- TROCAR: adicionar redes sociais reais quando tiver os perfis
+      <div class="socials">
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+      </div>
+      -->
+    </div>
+    <div class="map reveal">
+      <iframe title="Localização da Ventura Móveis em Corupá, SC" src="https://www.google.com/maps?q=Leopoldo%20Millnitz%2C%20Semin%C3%A1rio%2C%20Corup%C3%A1%20-%20SC%2C%2089392-522&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="fbrand">
+        <img src="imagens/logo-ventura.png" alt="Ventura Móveis Sob Medida">
+        <p>Móveis sob medida e ambientes de alto padrão em Corupá (SC) e região. Do projeto à instalação.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#ambientes">Ambientes</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5547991277539" target="_blank" rel="noopener">(47) 99127-7539</a></li>
+          <li>Leopoldo Millnitz — Seminário</li>
+          <li>Corupá · SC · 89392-522</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Ventura Móveis Sob Medida<!-- TROCAR: incluir CNPJ real se desejar --></span>
+      <span>Site por Neumann Dev</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp flutuante -->
+<a class="wa-float" href="https://wa.me/5547991277539?text=Ol%C3%A1!%20Vi%20os%20projetos%20da%20Ventura%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.05L2 22l5.1-1.33A10 10 0 1 0 12 2Zm5.5 14.2c-.23.65-1.35 1.24-1.86 1.28-.5.05-.96.23-3.23-.67-2.72-1.08-4.45-3.86-4.58-4.04-.13-.18-1.1-1.46-1.1-2.79 0-1.32.7-1.97.94-2.24.24-.27.52-.34.7-.34l.5.01c.16.01.38-.06.59.45.23.55.77 1.9.84 2.04.07.14.11.3.02.48-.09.18-.14.29-.27.45-.14.16-.29.35-.41.47-.14.14-.28.29-.12.56.16.27.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.22 1.38.27.14.43.12.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.16 1.28Z"/></svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Fechar">&times;</button>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<noscript>
+  <div style="background:#0b0b0b;color:#fff;text-align:center;padding:1rem">Fale com a Ventura pelo WhatsApp: <a style="color:#fff" href="https://wa.me/5547991277539">(47) 99127-7539</a></div>
+</noscript>
+
+<script>
+(function(){
+  var header=document.getElementById('siteHeader');
+  var onScroll=function(){ header.classList.toggle('scrolled', window.scrollY>40); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // menu mobile
+  var menu=document.getElementById('mobileMenu');
+  var toggle=document.getElementById('navToggle');
+  var close=document.getElementById('mmClose');
+  function openMenu(){menu.classList.add('open');menu.setAttribute('aria-hidden','false');toggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function closeMenu(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true');toggle.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  toggle.addEventListener('click',openMenu);
+  close.addEventListener('click',closeMenu);
+  menu.querySelectorAll('[data-close]').forEach(function(a){a.addEventListener('click',closeMenu);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMenu();closeLb();}});
+
+  // faq
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.closest('.faq-item');
+      var open=item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+  });
+
+  // lightbox
+  var lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap');
+  function openLb(src,cap){lbImg.src=src;lbImg.alt=cap||'';lbCap.textContent=cap||'';lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function closeLb(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';lbImg.src='';}
+  document.querySelectorAll('figure.shot').forEach(function(f){
+    f.addEventListener('click',function(){openLb(f.getAttribute('data-full'),f.getAttribute('data-cap'));});
+  });
+  document.getElementById('lbClose').addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+
+  // reveal
+  var reveals=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);} });
+    },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){io.observe(el);});
+  } else { reveals.forEach(function(el){el.classList.add('in');}); }
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
