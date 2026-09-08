@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfiblu — Metais para Usinagem | Metais Fracionados</title>
+<meta name="description" content="Metais para usinagem e metais fracionados: aço, inox, alumínio, cobre e plásticos de engenharia. Encontre o material, consulte o formato e solicite seu orçamento com a Perfiblu.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Perfiblu — Metais para Usinagem">
+<meta property="og:description" content="Metais fracionados para usinagem, fabricação e aplicações industriais. Encontre o material e solicite seu orçamento.">
+<meta property="og:image" content="imagens/logo-perfiblu.png">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="icon" type="image/png" href="imagens/logo-perfiblu.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   PERFIBLU — Design tokens
+   Base: grafite / off-white / cinza metálico
+   Destaque: azul #02579A (extraído da identidade visual original da marca)
+   Tipografia: Barlow Condensed (display) + IBM Plex Sans (texto) + IBM Plex Mono (dados técnicos)
+   ========================================================================== */
+:root{
+  /* neutros escuros */
+  --graphite-950:#111214;
+  --graphite-900:#18191c;
+  --graphite-800:#212328;
+  --graphite-700:#2c2f35;
+  --steel-500:#6b7078;
+  --steel-300:#9ea4ac;
+
+  /* neutros claros */
+  --paper:#f2f1ec;
+  --paper-dim:#e8e6df;
+  --ink:#16181b;
+  --ink-soft:#4a4e54;
+  --line:#d6d4cc;
+
+  /* destaque — azul da marca Perfiblu */
+  --blue-700:#024379;
+  --blue-600:#02579a;
+  --blue-400:#3b93d4;
+  --blue-300:#7fc0f2;
+
+  /* brasão discreto (retirado do amarelo da marca, uso mínimo) */
+  --brass:#a9812e;
+
+  /* blueprint (seção de especificação técnica) */
+  --bp-bg:#0c2843;
+  --bp-line:#7fb8e8;
+  --bp-line-dim:rgba(127,184,232,.35);
+
+  --font-display:'Barlow Condensed',sans-serif;
+  --font-body:'IBM Plex Sans',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+
+  --container:1240px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+}
+img{max-width:100%;display:block;}
+h1,h2,h3,h4{margin:0;font-family:var(--font-display);font-weight:700;line-height:1.05;}
+p{margin:0;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+ul{margin:0;padding:0;list-style:none;}
+input,select,textarea{font-family:inherit;font-size:1rem;}
+
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px;}
+@media(min-width:768px){.wrap{padding:0 40px;}}
+
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--blue-600);
+}
+.dark .eyebrow{color:var(--blue-300);}
+
+.section-head{max-width:640px;margin-bottom:44px;}
+.section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);text-transform:none;color:var(--ink);}
+.dark .section-head h2{color:var(--paper);}
+.section-head .lede{margin-top:14px;font-size:1.05rem;color:var(--ink-soft);max-width:52ch;}
+.dark .section-head .lede{color:var(--steel-300);}
+
+section{padding:72px 0;}
+@media(min-width:768px){section{padding:104px 0;}}
+
+.dark{background:var(--graphite-950);color:var(--paper);}
+.dark .ink-soft-txt{color:var(--steel-300);}
+
+/* textura sutil de grade em seções escuras — remete a desenho técnico */
+.grid-texture{position:relative;}
+.grid-texture::before{
+  content:'';position:absolute;inset:0;pointer-events:none;opacity:.05;
+  background-image:
+    repeating-linear-gradient(0deg, var(--paper) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(90deg, var(--paper) 0 1px, transparent 1px 64px);
+}
+
+/* ---------- botões ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--font-display);font-weight:600;
+  font-size:1rem;letter-spacing:.03em;text-transform:uppercase;
+  padding:15px 30px;border:1px solid transparent;
+  transition:background-color .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
+  white-space:nowrap;
+}
+.btn:active{transform:translateY(1px);}
+.btn-primary{background:var(--blue-600);color:#fff;}
+.btn-primary:hover{background:var(--blue-700);}
+.btn-outline{background:transparent;border-color:currentColor;color:var(--ink);}
+.dark .btn-outline{color:var(--paper);}
+.btn-outline:hover{background:var(--ink);color:var(--paper);}
+.dark .btn-outline:hover{background:var(--paper);color:var(--ink);}
+.btn-link{
+  font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.03em;
+  color:var(--blue-600);border-bottom:1px solid transparent;padding-bottom:2px;
+  display:inline-flex;align-items:center;gap:6px;transition:border-color .15s ease, gap .15s ease;
+}
+.dark .btn-link{color:var(--blue-300);}
+.btn-link:hover{border-color:currentColor;gap:9px;}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+header{
+  position:sticky;top:0;z-index:50;background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+.header-row{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px;}
+.brand img{height:42px;width:auto;}
+nav.primary-nav{display:none;}
+@media(min-width:960px){
+  nav.primary-nav{display:flex;align-items:center;gap:36px;}
+  nav.primary-nav a{font-size:.95rem;font-weight:500;color:var(--ink-soft);transition:color .15s ease;position:relative;}
+  nav.primary-nav a:hover{color:var(--ink);}
+}
+.header-actions{display:flex;align-items:center;gap:14px;}
+.header-actions .btn-primary{display:none;}
+@media(min-width:640px){.header-actions .btn-primary{display:inline-flex;padding:11px 22px;font-size:.9rem;}}
+
+.nav-toggle{
+  display:flex;align-items:center;justify-content:center;
+  width:42px;height:42px;border:1px solid var(--line);background:none;color:var(--ink);
+}
+@media(min-width:960px){.nav-toggle{display:none;}}
+
+#mobile-menu{
+  display:none;position:fixed;inset:76px 0 0 0;background:var(--paper);z-index:49;
+  overflow-y:auto;
+}
+#mobile-menu.open{display:block;}
+#mobile-menu .wrap{padding-top:20px;padding-bottom:40px;}
+#mobile-menu a{
+  display:block;padding:16px 0;font-family:var(--font-display);font-size:1.6rem;font-weight:600;
+  border-bottom:1px solid var(--line);
+}
+#mobile-menu .btn-primary{margin-top:24px;width:100%;justify-content:center;}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero{background:var(--graphite-950);color:var(--paper);position:relative;overflow:hidden;padding:0;}
+.hero-grid{display:grid;grid-template-columns:1fr;}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.05fr .95fr;align-items:stretch;}}
+
+.hero-copy{padding:64px 24px 56px;display:flex;flex-direction:column;justify-content:center;gap:26px;}
+@media(min-width:768px){.hero-copy{padding:72px 40px 64px;}}
+@media(min-width:960px){.hero-copy{padding:64px 56px 64px 40px;}}
+
+.hero-copy h1{
+  font-size:clamp(2.5rem,6.6vw,4.4rem);
+  text-transform:uppercase;
+  letter-spacing:-.01em;
+  line-height:.98;
+}
+.hero-copy h1 em{
+  font-style:normal;
+}
+.hero-sub{font-size:1.1rem;color:var(--steel-300);max-width:46ch;}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:6px;}
+
+.hero-anim{animation:fadeUp .7s ease both;}
+.hero-anim:nth-child(2){animation-delay:.08s;}
+.hero-anim:nth-child(3){animation-delay:.16s;}
+.hero-anim:nth-child(4){animation-delay:.24s;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+
+.hero-media{position:relative;min-height:280px;}
+@media(min-width:960px){.hero-media{min-height:auto;}}
+.hero-media img{width:100%;height:100%;object-fit:cover;min-height:280px;}
+.frame-corners{position:absolute;inset:20px;pointer-events:none;}
+.frame-corners span{position:absolute;width:26px;height:26px;border:1px solid var(--blue-300);opacity:.85;}
+.frame-corners span:nth-child(1){top:0;left:0;border-right:none;border-bottom:none;}
+.frame-corners span:nth-child(2){top:0;right:0;border-left:none;border-bottom:none;}
+.frame-corners span:nth-child(3){bottom:0;left:0;border-right:none;border-top:none;}
+.frame-corners span:nth-child(4){bottom:0;right:0;border-left:none;border-top:none;}
+
+/* ---------- faixa de confiança ---------- */
+.trust-strip{background:var(--paper);border-bottom:1px solid var(--line);padding:22px 0;}
+.trust-strip ul{
+  display:flex;flex-direction:column;gap:10px;
+  font-family:var(--font-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);
+}
+@media(min-width:640px){
+  .trust-strip ul{flex-direction:row;align-items:center;justify-content:center;gap:0;}
+  .trust-strip li{padding:0 26px;border-left:1px solid var(--line);}
+  .trust-strip li:first-child{border-left:none;}
+}
+
+/* ==========================================================================
+   PRODUTOS / CATÁLOGO
+   ========================================================================== */
+.cat-tabs{display:flex;gap:28px;overflow-x:auto;border-bottom:1px solid var(--line);padding-bottom:0;margin-bottom:28px;-ms-overflow-style:none;scrollbar-width:none;}
+.cat-tabs::-webkit-scrollbar{display:none;}
+.cat-tab{
+  font-family:var(--font-display);font-weight:600;font-size:1rem;text-transform:uppercase;letter-spacing:.02em;
+  color:var(--ink-soft);white-space:nowrap;padding:0 0 14px;border-bottom:2px solid transparent;
+  background:none;border-top:none;border-left:none;border-right:none;flex:0 0 auto;
+  transition:color .15s ease,border-color .15s ease;
+}
+.cat-tab:hover{color:var(--ink);}
+.cat-tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--blue-600);}
+
+.filters-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px;}
+.filter-select{
+  appearance:none;-webkit-appearance:none;
+  border:1px solid var(--line);background:var(--paper) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8"><path d="M1 1l5 5 5-5" stroke="%234a4e54" stroke-width="1.4" fill="none"/></svg>') no-repeat right 14px center;
+  padding:11px 38px 11px 14px;font-size:.9rem;color:var(--ink);min-width:190px;
+}
+.filter-select:focus-visible, .cat-tab:focus-visible, .btn:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--blue-600);outline-offset:2px;
+}
+
+.materiais-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+@media(min-width:640px){.materiais-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:960px){.materiais-grid{grid-template-columns:repeat(3,1fr);}}
+
+.material-card{
+  background:var(--paper);padding:26px 24px;display:flex;flex-direction:column;gap:14px;
+  transition:box-shadow .15s ease;position:relative;
+}
+.material-card:hover{box-shadow:inset 0 0 0 1px var(--blue-600);}
+.material-card .code-row{display:flex;align-items:baseline;justify-content:space-between;}
+.material-card .code{font-family:var(--font-mono);font-size:1.5rem;font-weight:600;color:var(--ink);}
+.material-card .fam{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--steel-500);}
+.material-card .swatch{height:6px;width:100%;}
+.material-card h3{font-size:1.3rem;font-weight:600;text-transform:none;color:var(--ink);}
+.material-card .formatos{font-family:var(--font-mono);font-size:.78rem;color:var(--ink-soft);}
+.material-card .aplicacao{font-size:.92rem;color:var(--ink-soft);flex-grow:1;}
+.material-card .card-foot{border-top:1px solid var(--line);padding-top:14px;margin-top:4px;}
+
+.swatch-acos{background:linear-gradient(120deg,#7d8186,#d6d9dc 45%,#63666b);}
+.swatch-inox{background:linear-gradient(120deg,#aeb4ba,#f1f3f5 45%,#90969d);}
+.swatch-aluminio{background:linear-gradient(120deg,#c2c8cd,#f5f6f8 45%,#a3aab0);}
+.swatch-cobre{background:linear-gradient(120deg,#a85a22,#e4996a 45%,#7d431a);}
+.swatch-plasticos{background:linear-gradient(120deg,#e6e2d2,#faf9f2 45%,#d5d0bd);}
+
+.empty-state{
+  grid-column:1/-1;background:var(--paper);padding:52px 32px;text-align:left;
+}
+.empty-state p{max-width:44ch;color:var(--ink-soft);margin-bottom:18px;}
+.empty-state h3{font-size:1.4rem;margin-bottom:12px;text-transform:none;}
+
+/* ==========================================================================
+   FRACIONADO
+   ========================================================================== */
+.split{display:grid;grid-template-columns:1fr;}
+@media(min-width:960px){.split{grid-template-columns:1fr 1fr;align-items:stretch;}}
+.split-copy{padding:64px 24px;display:flex;flex-direction:column;justify-content:center;gap:22px;}
+@media(min-width:768px){.split-copy{padding:80px 40px;}}
+.split-copy h2{font-size:clamp(1.9rem,4vw,2.9rem);text-transform:none;}
+.split-copy p{color:var(--steel-300);font-size:1.05rem;max-width:46ch;}
+.split-media{position:relative;min-height:320px;}
+.split-media img{width:100%;height:100%;object-fit:cover;min-height:320px;}
+
+/* ==========================================================================
+   APLICAÇÕES — lista tipo folha de especificação
+   ========================================================================== */
+.spec-list{border-top:1px solid var(--line);}
+.spec-row{
+  display:flex;flex-direction:column;gap:6px;padding:24px 0;border-bottom:1px solid var(--line);
+  position:relative;transition:background-color .15s ease;
+}
+.spec-row:hover{background:var(--paper-dim);}
+.spec-row:hover .spec-label{color:var(--blue-600);}
+@media(min-width:700px){
+  .spec-row{flex-direction:row;align-items:baseline;gap:32px;padding:28px 4px;}
+  .spec-label{flex:0 0 300px;}
+}
+.spec-label{
+  font-family:var(--font-display);font-weight:700;font-size:1.35rem;text-transform:uppercase;letter-spacing:.01em;
+  color:var(--ink);transition:color .15s ease;
+}
+.spec-desc{color:var(--ink-soft);font-size:.98rem;}
+.spec-note{margin-top:24px;color:var(--steel-500);font-size:.88rem;}
+
+/* ==========================================================================
+   ESPECIFICAÇÃO TÉCNICA — blueprint
+   ========================================================================== */
+.blueprint{background:var(--bp-bg);color:#eaf3fb;}
+.blueprint::before{
+  content:'';position:absolute;inset:0;pointer-events:none;opacity:.14;
+  background-image:
+    repeating-linear-gradient(0deg, var(--bp-line) 0 1px, transparent 1px 48px),
+    repeating-linear-gradient(90deg, var(--bp-line) 0 1px, transparent 1px 48px);
+}
+.blueprint{position:relative;overflow:hidden;}
+.blueprint .section-head h2{color:#fff;}
+.blueprint .section-head .lede{color:var(--bp-line);}
+
+.caliper{
+  position:relative;display:flex;flex-direction:column;gap:34px;
+  border-left:1px solid var(--bp-line-dim);padding:8px 0 8px 28px;margin:52px 0 34px;
+}
+@media(min-width:860px){
+  .caliper{flex-direction:row;justify-content:space-between;border-left:none;padding:52px 0;gap:0;}
+  .caliper::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--bp-line-dim);}
+}
+.caliper-point{position:relative;}
+.caliper-point::before{
+  content:'';position:absolute;top:6px;left:-28px;width:16px;height:1px;background:var(--bp-line);
+}
+@media(min-width:860px){
+  .caliper-point{display:flex;flex-direction:column;align-items:center;text-align:center;z-index:1;}
+  .caliper-point::before{position:static;width:1px;height:16px;margin-bottom:12px;background:var(--bp-line);}
+}
+.caliper-point .k{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bp-line);}
+.caliper-point .v{font-family:var(--font-display);font-weight:700;font-size:1.5rem;text-transform:uppercase;color:#fff;margin-top:4px;}
+.blueprint-example{
+  border:1px solid var(--bp-line-dim);padding:24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;
+}
+.blueprint-example p{font-size:.88rem;color:var(--bp-line);max-width:46ch;}
+
+/* ==========================================================================
+   BUSCA
+   ========================================================================== */
+.search-box{display:flex;flex-direction:column;gap:14px;max-width:640px;}
+@media(min-width:600px){.search-box{flex-direction:row;}}
+.search-box input{
+  flex:1;border:1px solid var(--line);background:var(--paper);padding:15px 16px;font-size:1rem;color:var(--ink);
+  font-family:var(--font-mono);
+}
+.search-examples{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.chip{
+  font-family:var(--font-mono);font-size:.82rem;border:1px solid var(--line);padding:8px 14px;background:var(--paper);
+  color:var(--ink-soft);transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover{border-color:var(--blue-600);color:var(--blue-600);}
+#busca-resultados{margin-top:40px;}
+#busca-resultados .materiais-grid{display:none;}
+#busca-resultados .materiais-grid.show{display:grid;}
+#busca-hint{color:var(--steel-500);font-size:.9rem;}
+
+/* ==========================================================================
+   ORÇAMENTO
+   ========================================================================== */
+.orcamento-grid{display:grid;grid-template-columns:1fr;gap:52px;}
+@media(min-width:960px){.orcamento-grid{grid-template-columns:.85fr 1.15fr;gap:72px;}}
+.orcamento-copy h2{font-size:clamp(1.9rem,3.6vw,2.8rem);text-transform:none;color:#fff;}
+.orcamento-copy p{color:var(--steel-300);margin-top:16px;max-width:42ch;}
+.orcamento-wa{margin-top:32px;padding-top:28px;border-top:1px solid var(--graphite-700);}
+.orcamento-wa p{font-family:var(--font-mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--steel-300);margin-bottom:14px;}
+
+form.quote-form{display:grid;grid-template-columns:1fr;gap:22px;}
+@media(min-width:600px){form.quote-form{grid-template-columns:1fr 1fr;}}
+.field{display:flex;flex-direction:column;gap:8px;}
+.field.full{grid-column:1/-1;}
+.field label{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--steel-300);}
+.field input, .field textarea{
+  background:transparent;border:none;border-bottom:1px solid var(--graphite-700);
+  color:#fff;padding:10px 2px;font-size:1rem;transition:border-color .15s ease;
+}
+.field input:focus, .field textarea:focus{border-color:var(--blue-400);outline:none;}
+.field textarea{resize:vertical;min-height:90px;}
+.field input::placeholder,.field textarea::placeholder{color:var(--steel-500);}
+
+.file-field{
+  display:flex;align-items:center;gap:14px;border:1px dashed var(--graphite-700);padding:16px;
+}
+.file-field button{
+  font-family:var(--font-mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;
+  background:none;border:1px solid var(--steel-500);color:#fff;padding:8px 14px;
+}
+.file-field span{font-size:.85rem;color:var(--steel-300);}
+.field-note{font-size:.78rem;color:var(--steel-500);margin-top:6px;}
+
+.quote-form .btn-primary{margin-top:4px;}
+
+/* ==========================================================================
+   CTA WHATSAPP FINAL
+   ========================================================================== */
+.wa-cta{background:var(--graphite-900);border-top:1px solid var(--graphite-700);}
+.wa-cta-row{display:flex;flex-direction:column;gap:24px;align-items:flex-start;justify-content:space-between;}
+@media(min-width:800px){.wa-cta-row{flex-direction:row;align-items:center;}}
+.wa-cta h2{font-size:clamp(1.7rem,3vw,2.3rem);text-transform:none;color:#fff;}
+.wa-cta p{color:var(--steel-300);margin-top:10px;max-width:48ch;}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer{background:var(--graphite-950);color:var(--steel-300);padding:56px 0 28px;}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid var(--graphite-700);}
+@media(min-width:768px){.footer-grid{grid-template-columns:1.2fr 1fr 1fr;}}
+.footer-brand img{height:38px;margin-bottom:14px;}
+.footer-brand p{font-size:.92rem;color:var(--steel-300);}
+.footer-col h4{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--steel-500);margin-bottom:16px;}
+.footer-col ul{display:flex;flex-direction:column;gap:10px;}
+.footer-col a{font-size:.95rem;color:var(--steel-300);transition:color .15s ease;}
+.footer-col a:hover{color:#fff;}
+.footer-contact{font-family:var(--font-mono);font-size:.92rem;}
+.footer-bottom{padding-top:24px;font-size:.8rem;color:var(--steel-500);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;}
+
+/* ==========================================================================
+   WHATSAPP FLUTUANTE
+   ========================================================================== */
+.wa-float{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  display:flex;align-items:center;gap:10px;background:var(--blue-600);color:#fff;
+  padding:14px;border:none;box-shadow:0 6px 18px rgba(0,0,0,.28);
+  transition:background-color .15s ease, padding .15s ease, opacity .2s ease, transform .2s ease;
+}
+.wa-float.wa-float-hidden{opacity:0;transform:translateY(8px);pointer-events:none;}
+.wa-float:hover{background:var(--blue-700);}
+.wa-float span{display:none;font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.03em;font-size:.9rem;padding-right:4px;}
+@media(min-width:640px){.wa-float span{display:inline;}}
+
+/* utilitário visualmente oculto */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+</style>
+</head>
+<body>
+
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
+<header>
+  <div class="wrap header-row">
+    <a href="#inicio" class="brand"><img src="imagens/logo-perfiblu.png" alt="Perfiblu — Comércio de Metais"></a>
+    <nav class="primary-nav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#materiais">Materiais</a>
+      <a href="#aplicacoes">Aplicações</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#orcamento" class="btn btn-primary">Solicitar orçamento</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu">
+    <div class="wrap">
+      <a href="#inicio">Início</a>
+      <a href="#materiais">Materiais</a>
+      <a href="#aplicacoes">Aplicações</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#contato">Contato</a>
+      <a href="#orcamento" class="btn btn-primary">Solicitar orçamento</a>
+    </div>
+  </div>
+</header>
+
+<!-- ==========================================================================
+     HERO
+     ========================================================================== -->
+<section class="hero" id="inicio">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow hero-anim">Perfiblu — Metais para Usinagem</p>
+      <h1 class="hero-anim">Metal certo.<br>Na medida da<br>sua necessidade.</h1>
+      <p class="hero-sub hero-anim">Metais fracionados para usinagem, fabricação e aplicações industriais. Encontre o material, consulte o formato e solicite seu orçamento.</p>
+      <div class="hero-cta hero-anim">
+        <a href="#orcamento" class="btn btn-primary">Solicitar orçamento →</a>
+        <a href="#materiais" class="btn btn-outline">Ver materiais</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1666634157070-6fd830fb5672?q=80&w=1400&auto=format&fit=crop" alt="Barra de metal sendo usinada com precisão em torno CNC" loading="eager">
+      <div class="frame-corners"><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <ul>
+      <li>Metais para usinagem</li>
+      <li>Venda de metais fracionados</li>
+      <li>Solicite seu orçamento</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     MATERIAIS / CATÁLOGO
+     ========================================================================== -->
+<section id="materiais">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" style="margin-bottom:14px;">Catálogo</p>
+      <h2>Qual material você precisa?</h2>
+      <p class="lede">Encontre rapidamente o material e o formato que procura — aços, inox, alumínio, cobre, bronze, latão e plásticos de engenharia.</p>
+    </div>
+
+    <div class="cat-tabs" id="cat-tabs" role="tablist" aria-label="Categorias de material"></div>
+
+    <div class="filters-row">
+      <select class="filter-select" id="filter-formato" aria-label="Filtrar por formato">
+        <option value="">Formato — todos</option>
+        <option value="Redonda">Barra redonda</option>
+        <option value="Chata">Barra chata</option>
+        <option value="Sextavada">Barra sextavada</option>
+        <option value="Perfil">Perfil / cantoneira</option>
+        <option value="Tubo">Tubo</option>
+        <option value="Chapa">Chapa</option>
+      </select>
+      <select class="filter-select" id="filter-aplicacao" aria-label="Filtrar por aplicação">
+        <option value="">Aplicação — todas</option>
+        <option value="usinagem">Usinagem</option>
+        <option value="ferramentaria">Ferramentaria</option>
+        <option value="manutencao">Manutenção industrial</option>
+        <option value="maquinas">Máquinas e equipamentos</option>
+        <option value="automacao">Automação</option>
+        <option value="fabricacao">Fabricação</option>
+      </select>
+    </div>
+
+    <div class="materiais-grid" id="materiais-grid"></div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FRACIONADO
+     ========================================================================== -->
+<section class="dark">
+  <div class="split">
+    <div class="split-copy">
+      <p class="eyebrow">Metais fracionados</p>
+      <h2>Compre o material que sua produção precisa</h2>
+      <p>A proposta de metais fracionados permite consultar materiais e formatos específicos, de acordo com a necessidade do seu projeto.</p>
+      <div>
+        <a href="#" class="btn btn-primary" data-wa="consulta">Consultar material →</a>
+      </div>
+    </div>
+    <div class="split-media">
+      <img src="https://images.unsplash.com/photo-1740209475472-aa7d280f7452?q=80&w=1400&auto=format&fit=crop" alt="Barra metálica sendo cortada e medida sob especificação técnica" loading="lazy">
+      <div class="frame-corners"><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     APLICAÇÕES
+     ========================================================================== -->
+<section id="aplicacoes">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" style="margin-bottom:14px;">Aplicações</p>
+      <h2>Para quem precisa de material técnico</h2>
+      <p class="lede">Os materiais do catálogo Perfiblu têm aplicação nos seguintes contextos.</p>
+    </div>
+
+    <div class="spec-list">
+      <div class="spec-row"><span class="spec-label">Usinagem</span><span class="spec-desc">Peças e componentes usinados.</span></div>
+      <div class="spec-row"><span class="spec-label">Ferramentaria</span><span class="spec-desc">Materiais para ferramentas, matrizes e dispositivos.</span></div>
+      <div class="spec-row"><span class="spec-label">Manutenção industrial</span><span class="spec-desc">Materiais para reposição e fabricação de componentes.</span></div>
+      <div class="spec-row"><span class="spec-label">Máquinas e equipamentos</span><span class="spec-desc">Componentes e estruturas para equipamentos.</span></div>
+      <div class="spec-row"><span class="spec-label">Automação</span><span class="spec-desc">Peças e componentes mecânicos.</span></div>
+      <div class="spec-row"><span class="spec-label">Fabricação</span><span class="spec-desc">Materiais para diferentes processos de fabricação.</span></div>
+    </div>
+    <p class="spec-note">A Perfiblu disponibiliza materiais compatíveis com essas aplicações — consulte o material específico do seu projeto.</p>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     ESPECIFICAÇÃO TÉCNICA — blueprint
+     ========================================================================== -->
+<section class="blueprint">
+  <div class="wrap" style="position:relative;">
+    <div class="section-head">
+      <p class="eyebrow" style="margin-bottom:14px;">Leitura técnica</p>
+      <h2>Você sabe o que precisa.<br>A gente ajuda você a encontrar.</h2>
+      <p class="lede">Assim organizamos a especificação de um material — do tipo à aplicação final.</p>
+    </div>
+
+    <div class="caliper">
+      <div class="caliper-point"><span class="k">Material</span><span class="v">Aço</span></div>
+      <div class="caliper-point"><span class="k">Liga</span><span class="v">1045</span></div>
+      <div class="caliper-point"><span class="k">Formato</span><span class="v">Sextavado</span></div>
+      <div class="caliper-point"><span class="k">Dimensão</span><span class="v">—</span></div>
+      <div class="caliper-point"><span class="k">Aplicação</span><span class="v">Mecânica</span></div>
+    </div>
+
+    <div class="blueprint-example">
+      <p>Exemplo de leitura técnica. Os dados reais variam conforme o material e a disponibilidade — consulte antes de fechar seu pedido.</p>
+      <a href="#orcamento" class="btn btn-primary">Solicitar orçamento →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     BUSCA
+     ========================================================================== -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" style="margin-bottom:14px;">Busca rápida</p>
+      <h2>Procurando um material específico?</h2>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="busca-input" placeholder="Material, liga ou formato..." aria-label="Buscar material">
+      <button class="btn btn-primary" id="busca-btn" type="button">Buscar material</button>
+    </div>
+    <div class="search-examples">
+      <button class="chip" type="button" data-q="Aço 1045">Aço 1045</button>
+      <button class="chip" type="button" data-q="Inox 304">Inox 304</button>
+      <button class="chip" type="button" data-q="Alumínio 6063">Alumínio 6063</button>
+      <button class="chip" type="button" data-q="Cobre">Cobre</button>
+      <button class="chip" type="button" data-q="Teflon">Teflon</button>
+    </div>
+
+    <div id="busca-resultados">
+      <p id="busca-hint">Os resultados aparecem aqui.</p>
+      <div class="materiais-grid" id="busca-grid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     ORÇAMENTO
+     ========================================================================== -->
+<section class="dark" id="orcamento">
+  <div class="wrap">
+    <div class="orcamento-grid">
+      <div class="orcamento-copy">
+        <p class="eyebrow">Orçamento</p>
+        <h2 style="margin-top:14px;">Precisa de um material específico?</h2>
+        <p>Envie o que você precisa e fale com a Perfiblu para consultar disponibilidade e solicitar seu orçamento.</p>
+
+        <div class="orcamento-wa">
+          <p>Ou fale diretamente pelo WhatsApp</p>
+          <a href="#" class="btn btn-outline" data-wa="geral">Chamar no WhatsApp</a>
+        </div>
+      </div>
+
+      <form class="quote-form" id="quote-form">
+        <div class="field"><label for="q-nome">Nome</label><input id="q-nome" name="nome" type="text" required autocomplete="name"></div>
+        <div class="field"><label for="q-empresa">Empresa</label><input id="q-empresa" name="empresa" type="text" autocomplete="organization"></div>
+        <div class="field"><label for="q-whats">WhatsApp</label><input id="q-whats" name="whatsapp" type="tel" required autocomplete="tel" placeholder="(00) 0 0000-0000"></div>
+        <div class="field"><label for="q-material">Material / produto</label><input id="q-material" name="material" type="text" placeholder="Ex: Aço 1045"></div>
+        <div class="field"><label for="q-formato">Formato / medida</label><input id="q-formato" name="formato" type="text" placeholder="Ex: Redonda 25mm"></div>
+        <div class="field"><label for="q-qtd">Quantidade</label><input id="q-qtd" name="quantidade" type="text" placeholder="Ex: 2 metros"></div>
+        <div class="field full"><label for="q-msg">Mensagem</label><textarea id="q-msg" name="mensagem" placeholder="Detalhe o que você precisa"></textarea></div>
+
+        <div class="field full">
+          <label>Anexar desenho ou arquivo (opcional)</label>
+          <div class="file-field">
+            <button type="button" id="file-trigger">Escolher arquivo</button>
+            <span id="file-name">Nenhum arquivo selecionado</span>
+            <input type="file" id="q-file" class="sr-only" tabindex="-1">
+          </div>
+          <p class="field-note">Arquivos grandes? Envie diretamente pelo WhatsApp após o primeiro contato.</p>
+        </div>
+
+        <div class="field full">
+          <button type="submit" class="btn btn-primary">Solicitar orçamento →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     CTA WHATSAPP FINAL
+     ========================================================================== -->
+<section class="wa-cta">
+  <div class="wrap wa-cta-row">
+    <div>
+      <h2>Já sabe o que precisa?</h2>
+      <p>Envie o material, formato e quantidade. A equipe da Perfiblu pode orientar o próximo passo do seu orçamento.</p>
+    </div>
+    <a href="#" class="btn btn-primary" data-wa="geral">Falar com a Perfiblu →</a>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer id="contato">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="imagens/logo-perfiblu.png" alt="Perfiblu — Comércio de Metais">
+        <p>Metais para Usinagem</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li class="footer-contact"><a href="#" data-wa="geral">(47) 9 8860-9561</a></li>
+          <li class="footer-contact"><a href="mailto:contato@perfiblu.com.br">contato@perfiblu.com.br</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#materiais">Materiais</a></li>
+          <li><a href="#aplicacoes">Aplicações</a></li>
+          <li><a href="#orcamento">Orçamento</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Perfiblu — Comércio de Metais.</span>
+      <span><!-- TROCAR: incluir CNPJ/registro se a empresa confirmar --></span>
+    </div>
+  </div>
+</footer>
+
+<noscript>
+  <div style="position:fixed;bottom:16px;right:16px;background:#02579a;padding:12px 18px;">
+    <a href="https://wa.me/5547988609561?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Perfiblu%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." style="color:#fff;font-weight:600;">Falar no WhatsApp</a>
+  </div>
+</noscript>
+
+<a href="#" class="wa-float" id="wa-float" data-wa="geral" aria-label="Falar no WhatsApp" rel="noopener">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.36 2 11.72c0 2.05.64 3.95 1.73 5.52L2.2 22l4.9-1.28a10.2 10.2 0 0 0 4.9 1.24c5.52 0 10-4.36 10-9.72S17.52 2 12 2Zm0 17.6c-1.6 0-3.09-.44-4.36-1.2l-.31-.18-2.9.76.78-2.8-.2-.29A7.8 7.8 0 0 1 3.9 11.7C3.9 7.4 7.5 3.9 12 3.9s8.1 3.5 8.1 7.8-3.6 7.9-8.1 7.9Zm4.44-5.88c-.24-.12-1.44-.7-1.66-.78-.22-.08-.38-.12-.55.12-.16.24-.63.78-.77.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.92-1.18-.71-.63-1.19-1.4-1.33-1.64-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.8-.2-.48-.4-.42-.55-.42-.14 0-.3-.02-.46-.02-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.19.87 2.34.99 2.5.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============== CONFIGURAÇÃO — fonte única de dados ============== */
+  var PERFIBLU = {
+    whatsapp: "5547988609561",
+    mensagens: {
+      geral: "Olá! Vim pelo site da Perfiblu e gostaria de solicitar um orçamento.",
+      consulta: "Olá! Preciso consultar disponibilidade de um material específico da Perfiblu."
+    }
+  };
+
+  var MATERIAIS = [
+    { codigo:"1020", nome:"Aço 1020", categoria:"acos", swatch:"swatch-acos",
+      formatos:["Redonda","Chata"], formatosLabel:"Barra redonda / chata",
+      aplicacao:"Usinagem geral, eixos e pinos.", tags:["usinagem","fabricacao"] },
+    { codigo:"1045", nome:"Aço 1045", categoria:"acos", swatch:"swatch-acos",
+      formatos:["Redonda","Sextavada"], formatosLabel:"Barra redonda / sextavada",
+      aplicacao:"Peças mecânicas de maior resistência.", tags:["usinagem","maquinas"] },
+    { codigo:"VC131", nome:"Aço VC131", categoria:"acos", swatch:"swatch-acos",
+      formatos:["Redonda","Chata"], formatosLabel:"Barra redonda / chata",
+      aplicacao:"Ferramentaria, matrizes e moldes.", tags:["ferramentaria"] },
+    { codigo:"M2", nome:"Aço Rápido M2", categoria:"acos", swatch:"swatch-acos",
+      formatos:["Redonda"], formatosLabel:"Barra redonda",
+      aplicacao:"Ferramentas de corte, brocas e fresas.", tags:["ferramentaria"] },
+    { codigo:"304", nome:"Inox 304", categoria:"inox", swatch:"swatch-inox",
+      formatos:["Redonda","Chapa"], formatosLabel:"Barra redonda / chapa",
+      aplicacao:"Componentes com resistência à corrosão.", tags:["fabricacao","manutencao"] },
+    { codigo:"6063", nome:"Alumínio 6063", categoria:"aluminio", swatch:"swatch-aluminio",
+      formatos:["Redonda","Perfil"], formatosLabel:"Barra redonda / perfil",
+      aplicacao:"Peças usinadas e estruturas leves.", tags:["usinagem","automacao"] },
+    { codigo:"6351", nome:"Alumínio 6351", categoria:"aluminio", swatch:"swatch-aluminio",
+      formatos:["Redonda","Chapa"], formatosLabel:"Barra redonda / chapa",
+      aplicacao:"Componentes estruturais e usinagem.", tags:["usinagem","maquinas"] },
+    { codigo:"CU-ETP", nome:"Cobre Eletrolítico", categoria:"cobre", swatch:"swatch-cobre",
+      formatos:["Redonda","Chapa"], formatosLabel:"Barra redonda / chapa",
+      aplicacao:"Componentes elétricos e condutores.", tags:["automacao","fabricacao"] },
+    { codigo:"PTFE", nome:"Teflon", categoria:"plasticos", swatch:"swatch-plasticos",
+      formatos:["Redonda","Chapa"], formatosLabel:"Barra redonda / chapa",
+      aplicacao:"Vedações e componentes de baixo atrito.", tags:["manutencao","maquinas"] }
+  ];
+
+  var CATEGORIAS = [
+    { id:"todos", nome:"Todos" },
+    { id:"acos", nome:"Aços" },
+    { id:"inox", nome:"Inox" },
+    { id:"aluminio", nome:"Alumínio" },
+    { id:"cobre", nome:"Cobre" },
+    { id:"bronze", nome:"Bronze" },
+    { id:"latao", nome:"Latão" },
+    { id:"plasticos", nome:"Plásticos de engenharia" }
+  ];
+
+  /* ============== WHATSAPP — wiring central ============== */
+  function waLink(msg){
+    return "https://wa.me/" + PERFIBLU.whatsapp + "?text=" + encodeURIComponent(msg);
+  }
+  function wireWhatsAppButtons(){
+    document.querySelectorAll("[data-wa]").forEach(function(el){
+      var key = el.getAttribute("data-wa");
+      var msg = PERFIBLU.mensagens[key] || PERFIBLU.mensagens.geral;
+      el.setAttribute("href", waLink(msg));
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+    });
+  }
+
+  /* ============== RENDER — cards de material ============== */
+  function cardHTML(m){
+    var msg = "Olá! Tenho interesse no material " + m.nome + " e gostaria de consultar disponibilidade e orçamento.";
+    return (
+      '<article class="material-card">' +
+        '<div class="code-row"><span class="code">' + m.codigo + '</span><span class="fam">' + labelCategoria(m.categoria) + '</span></div>' +
+        '<div class="swatch ' + m.swatch + '"></div>' +
+        '<h3>' + m.nome + '</h3>' +
+        '<p class="formatos">' + m.formatosLabel + '</p>' +
+        '<p class="aplicacao">' + m.aplicacao + '</p>' +
+        '<div class="card-foot"><a class="btn-link" href="' + waLink(msg) + '" target="_blank" rel="noopener">Ver material →</a></div>' +
+      '</article>'
+    );
+  }
+
+  function labelCategoria(id){
+    var c = CATEGORIAS.filter(function(c){ return c.id === id; })[0];
+    return c ? c.nome : id;
+  }
+
+  function emptyStateHTML(categoriaNome){
+    var msg = "Olá! Gostaria de consultar disponibilidade de " + categoriaNome.toLowerCase() + " no catálogo da Perfiblu.";
+    return (
+      '<div class="empty-state">' +
+        '<h3>' + categoriaNome + ' sob consulta</h3>' +
+        '<p>Esse material faz parte do catálogo Perfiblu. Ligas e formatos disponíveis são informados diretamente pela equipe.</p>' +
+        '<a class="btn btn-outline" href="' + waLink(msg) + '" target="_blank" rel="noopener">Consultar ' + categoriaNome.toLowerCase() + ' →</a>' +
+      '</div>'
+    );
+  }
+
+  /* ============== TABS DE CATEGORIA ============== */
+  var tabsEl = document.getElementById("cat-tabs");
+  var gridEl = document.getElementById("materiais-grid");
+  var formatoSel = document.getElementById("filter-formato");
+  var aplicacaoSel = document.getElementById("filter-aplicacao");
+  var categoriaAtiva = "todos";
+
+  CATEGORIAS.forEach(function(cat, i){
+    var btn = document.createElement("button");
+    btn.className = "cat-tab";
+    btn.type = "button";
+    btn.setAttribute("role", "tab");
+    btn.setAttribute("aria-selected", i === 0 ? "true" : "false");
+    btn.textContent = cat.nome;
+    btn.addEventListener("click", function(){
+      categoriaAtiva = cat.id;
+      tabsEl.querySelectorAll(".cat-tab").forEach(function(t){ t.setAttribute("aria-selected","false"); });
+      btn.setAttribute("aria-selected","true");
+      renderCatalogo();
+    });
+    tabsEl.appendChild(btn);
+  });
+
+  function renderCatalogo(){
+    var formato = formatoSel.value;
+    var aplicacao = aplicacaoSel.value;
+    var lista = MATERIAIS.filter(function(m){
+      if(categoriaAtiva !== "todos" && m.categoria !== categoriaAtiva) return false;
+      if(formato && m.formatos.indexOf(formato) === -1) return false;
+      if(aplicacao && m.tags.indexOf(aplicacao) === -1) return false;
+      return true;
+    });
+
+    if(lista.length === 0){
+      var nomeCategoria = labelCategoria(categoriaAtiva === "todos" ? "bronze" : categoriaAtiva);
+      gridEl.innerHTML = emptyStateHTML(nomeCategoria);
+      wireWhatsAppButtons();
+      return;
+    }
+    gridEl.innerHTML = lista.map(cardHTML).join("");
+    wireWhatsAppButtons();
+  }
+
+  formatoSel.addEventListener("change", renderCatalogo);
+  aplicacaoSel.addEventListener("change", renderCatalogo);
+  renderCatalogo();
+
+  /* ============== BUSCA ============== */
+  var buscaInput = document.getElementById("busca-input");
+  var buscaBtn = document.getElementById("busca-btn");
+  var buscaGrid = document.getElementById("busca-grid");
+  var buscaHint = document.getElementById("busca-hint");
+
+  function normaliza(s){
+    return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+  }
+
+  function executarBusca(q){
+    q = normaliza(q.trim());
+    if(!q){
+      buscaGrid.classList.remove("show");
+      buscaHint.style.display = "block";
+      buscaHint.textContent = "Os resultados aparecem aqui.";
+      return;
+    }
+    var lista = MATERIAIS.filter(function(m){
+      return normaliza(m.nome).indexOf(q) !== -1 || normaliza(m.codigo).indexOf(q) !== -1 || normaliza(m.aplicacao).indexOf(q) !== -1;
+    });
+    if(lista.length === 0){
+      buscaGrid.classList.remove("show");
+      buscaHint.style.display = "block";
+      var msg = "Olá! Procuro o material \"" + q + "\" e gostaria de consultar disponibilidade na Perfiblu.";
+      buscaHint.innerHTML = 'Nenhum resultado direto para "' + q + '". <a class="btn-link" href="' + waLink(msg) + '" target="_blank" rel="noopener">Consultar pelo WhatsApp →</a>';
+      return;
+    }
+    buscaHint.style.display = "none";
+    buscaGrid.classList.add("show");
+    buscaGrid.innerHTML = lista.map(cardHTML).join("");
+    wireWhatsAppButtons();
+  }
+
+  buscaBtn.addEventListener("click", function(){ executarBusca(buscaInput.value); });
+  buscaInput.addEventListener("keydown", function(e){ if(e.key === "Enter"){ e.preventDefault(); executarBusca(buscaInput.value); } });
+  document.querySelectorAll(".chip").forEach(function(chip){
+    chip.addEventListener("click", function(){
+      buscaInput.value = chip.getAttribute("data-q");
+      executarBusca(buscaInput.value);
+      buscaInput.focus();
+    });
+  });
+
+  /* ============== ANEXO (cosmético) ============== */
+  var fileTrigger = document.getElementById("file-trigger");
+  var fileInput = document.getElementById("q-file");
+  var fileName = document.getElementById("file-name");
+  fileTrigger.addEventListener("click", function(){ fileInput.click(); });
+  fileInput.addEventListener("change", function(){
+    fileName.textContent = fileInput.files.length ? fileInput.files[0].name : "Nenhum arquivo selecionado";
+  });
+
+  /* ============== FORMULÁRIO DE ORÇAMENTO -> WHATSAPP ============== */
+  var quoteForm = document.getElementById("quote-form");
+  quoteForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    var f = quoteForm;
+    var linhas = [
+      "Olá! Gostaria de solicitar um orçamento na Perfiblu.",
+      "",
+      "Nome: " + (f.nome.value || "-"),
+      "Empresa: " + (f.empresa.value || "-"),
+      "WhatsApp: " + (f.whatsapp.value || "-"),
+      "Material/Produto: " + (f.material.value || "-"),
+      "Formato/Medida: " + (f.formato.value || "-"),
+      "Quantidade: " + (f.quantidade.value || "-"),
+      "Mensagem: " + (f.mensagem.value || "-")
+    ];
+    if(fileInput.files.length){
+      linhas.push("Arquivo anexado: " + fileInput.files[0].name + " (enviarei em seguida pelo WhatsApp)");
+    }
+    window.open(waLink(linhas.join("\n")), "_blank", "noopener");
+  });
+
+  /* ============== MENU MOBILE ============== */
+  var navToggle = document.getElementById("nav-toggle");
+  var mobileMenu = document.getElementById("mobile-menu");
+  navToggle.addEventListener("click", function(){
+    var open = mobileMenu.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  mobileMenu.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){ mobileMenu.classList.remove("open"); navToggle.setAttribute("aria-expanded","false"); });
+  });
+
+  /* ============== INIT ============== */
+  document.getElementById("year").textContent = new Date().getFullYear();
+  wireWhatsAppButtons();
+
+  /* esconde o botão flutuante quando o CTA final de WhatsApp já está visível,
+     evitando sobrepor o texto dessa seção */
+  var waFloatBtn = document.getElementById("wa-float");
+  var waCtaSection = document.querySelector(".wa-cta");
+  if(waCtaSection && "IntersectionObserver" in window){
+    var waObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        waFloatBtn.classList.toggle("wa-float-hidden", entry.isIntersecting);
+      });
+    }, { threshold: 0.15 });
+    waObserver.observe(waCtaSection);
+  }
+})();
+</script>
+</body>
+</html>
