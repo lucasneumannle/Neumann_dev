@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ane Lampert · Micropigmentação hiper-realista e cílios em Guaramirim</title>
+<meta name="description" content="Micropigmentação hiper-realista de sobrancelhas e extensão de cílios em Guaramirim-SC. 13 anos de estética com a especialista Ane Lampert. Agende pelo WhatsApp.">
+<!-- TROCAR: domínio canônico e imagem OG -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ane Lampert · Micropigmentação e cílios em Guaramirim">
+<meta property="og:description" content="Micropigmentação hiper-realista de sobrancelhas e extensão de cílios. 13 anos de estética em Guaramirim-SC.">
+<meta property="og:image" content="imagens/og-ane.jpg">
+<meta property="og:url" content="https://TROCAR.com.br">
+<link rel="canonical" href="https://TROCAR.com.br">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23241C17'/%3E%3Cpath d='M7 20 C13 13, 19 13, 25 18' stroke='%23F4EFE9' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4EFE9; --bg-2:#EBE3D8; --paper:#FBF8F3; --sand:#C9B8A6;
+  --line:#DED3C4; --line-2:#CBBBA8;
+  --espresso:#241C17; --ink:#1C1613; --mocha:#6B5B4E; --clay:#8A6440;
+  --bronze:#A9835B;
+  --radius:2px; --maxw:1200px;
+  --shadow:0 20px 50px -28px rgba(42,32,23,.45);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--espresso);
+  font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.eyebrow{font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--clay)}
+.mono{font-family:var(--mono);font-feature-settings:"tnum"}
+.serif-it{font-style:italic}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:500;
+  font-size:.95rem;letter-spacing:.02em;padding:16px 30px;border-radius:var(--radius);
+  cursor:pointer;transition:.28s ease;border:1px solid transparent;white-space:nowrap}
+.btn-dark{background:var(--espresso);color:var(--bg)}
+.btn-dark:hover{background:#000;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--espresso);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--espresso);background:rgba(36,28,23,.03)}
+.btn-light{background:var(--bg);color:var(--espresso)}
+.btn-light:hover{background:#fff;transform:translateY(-1px)}
+.wa-ic{width:17px;height:17px;flex:none}
+.link-underline{font-weight:500;letter-spacing:.02em;border-bottom:1px solid var(--line-2);
+  padding-bottom:2px;transition:.25s}
+.link-underline:hover{border-color:var(--espresso)}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(244,239,233,.82);
+  backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:.3s}
+header.scrolled{border-color:var(--line);background:rgba(244,239,233,.94)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand .name{font-family:var(--sans);font-weight:500;font-size:1.02rem;letter-spacing:.34em;
+  text-transform:uppercase}
+.brand .sub{font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.36em;
+  text-transform:uppercase;color:var(--mocha);margin-top:5px}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;font-weight:400;
+  color:var(--mocha);transition:.2s}
+.nav-links a:hover{color:var(--espresso)}
+.nav-cta{display:flex;align-items:center;gap:18px}
+
+/* hero */
+.hero{padding:72px 0 40px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.7rem,5.6vw,4.5rem);margin:22px 0 0}
+.hero h1 em{color:var(--clay)}
+.hero .lead{font-size:1.1rem;color:var(--mocha);max-width:30em;margin:26px 0 34px;font-weight:400}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.brow-rule{margin:30px 0 0;max-width:260px;height:26px;color:var(--bronze)}
+.microproof{display:flex;align-items:center;gap:18px;margin-top:30px;flex-wrap:wrap;
+  font-size:.86rem;color:var(--mocha)}
+.microproof .dot{width:3px;height:3px;border-radius:50%;background:var(--line-2)}
+.microproof b{color:var(--espresso);font-weight:500}
+.stars{color:var(--bronze);letter-spacing:2px;font-size:.8rem}
+
+/* portrait frame (robust placeholder) */
+.frame{position:relative;overflow:hidden;background:
+   radial-gradient(120% 90% at 30% 15%,#EFE6D9,#E4D8C7 60%,#D9CAB6);
+  border:1px solid var(--line-2);border-radius:var(--radius)}
+.frame .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px}
+.frame .ph .mono-monogram{font-family:var(--serif);font-size:3.4rem;color:#B9A488;line-height:1}
+.frame .ph small{display:block;margin-top:12px;font-family:var(--sans);font-size:.62rem;
+  letter-spacing:.28em;text-transform:uppercase;color:#A0866A}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .6s ease}
+.frame img.loaded{opacity:1}
+.hero-portrait{aspect-ratio:4/5;box-shadow:var(--shadow)}
+.hero-portrait::after{content:"";position:absolute;inset:9px;border:1px solid rgba(255,255,255,.35);
+  pointer-events:none;border-radius:1px}
+
+/* credibility strip */
+.cred{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:50px}
+.cred-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.cred-cell{padding:30px 26px;border-left:1px solid var(--line)}
+.cred-cell:first-child{border-left:none}
+.cred-cell .k{font-family:var(--serif);font-size:2rem;line-height:1;color:var(--espresso)}
+.cred-cell .k .u{font-size:.9rem;color:var(--mocha);font-family:var(--sans);margin-left:2px}
+.cred-cell .l{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mocha);
+  margin-top:10px}
+
+/* section */
+section{padding:104px 0}
+.sec-head{max-width:44em}
+.sec-head h2{font-size:clamp(2rem,4vw,3.1rem);margin:16px 0 0}
+.sec-head p{color:var(--mocha);margin-top:18px;font-size:1.05rem;max-width:34em}
+
+/* especialidades — editorial index */
+.spec-list{margin-top:56px;border-top:1px solid var(--line)}
+.spec{display:grid;grid-template-columns:auto 1fr auto;gap:34px;align-items:baseline;
+  padding:34px 4px;border-bottom:1px solid var(--line);transition:.3s}
+.spec:hover{background:linear-gradient(90deg,rgba(201,184,166,.14),transparent 70%)}
+.spec .num{font-family:var(--mono);font-size:.8rem;color:var(--bronze);padding-top:8px}
+.spec .body h3{font-size:1.7rem}
+.spec .body p{color:var(--mocha);margin-top:8px;max-width:40em;font-size:1rem}
+.spec .go{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);
+  white-space:nowrap;font-weight:500;transition:.25s}
+.spec .go .arw{display:inline-block;transition:transform .25s}
+.spec:hover .go .arw{transform:translateX(5px)}
+
+/* sobre — dark */
+.sobre{background:var(--espresso);color:var(--bg)}
+.sobre .eyebrow{color:var(--bronze)}
+.sobre-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.sobre h2{color:var(--bg);font-size:clamp(2.1rem,4vw,3.2rem)}
+.sobre p{color:var(--sand);margin-top:22px;font-size:1.08rem;max-width:36em}
+.sobre p b{color:var(--bg);font-weight:400}
+.sobre .facts{display:flex;gap:40px;margin-top:38px;flex-wrap:wrap}
+.sobre .facts .f .n{font-family:var(--serif);font-size:2.2rem;color:var(--bg);line-height:1}
+.sobre .facts .f .t{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--sand);margin-top:8px}
+.sobre-portrait{aspect-ratio:4/5;background:
+   radial-gradient(120% 90% at 30% 15%,#3a2e25,#2a2019 65%,#201812);
+  border-color:#4a3b2e}
+.sobre-portrait .ph .mono-monogram{color:#6b5842}
+.sobre-portrait .ph small{color:#7d6a53}
+.sobre-portrait::after{content:"";position:absolute;inset:9px;border:1px solid rgba(201,184,166,.2);
+  pointer-events:none}
+
+/* resultados */
+.res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px}
+.res-grid .frame{aspect-ratio:3/4}
+.res-note{margin-top:22px;font-size:.86rem;color:var(--mocha);letter-spacing:.02em}
+.res-note a{color:var(--clay);border-bottom:1px solid var(--line-2)}
+
+/* avaliações */
+.aval{background:var(--bg-2)}
+.aval-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.rate-badges{display:flex;gap:14px;flex-wrap:wrap}
+.rate{background:var(--paper);border:1px solid var(--line);padding:16px 22px;border-radius:var(--radius);
+  display:flex;align-items:center;gap:14px}
+.rate .score{font-family:var(--serif);font-size:2rem;line-height:1}
+.rate .rt{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mocha)}
+.rate .rt b{display:block;color:var(--espresso);font-size:.82rem;letter-spacing:.06em;margin-top:3px}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
+.quote{border-top:2px solid var(--espresso);padding-top:24px}
+.quote .stars{margin-bottom:14px;display:block}
+.quote p{font-family:var(--serif);font-style:italic;font-size:1.5rem;line-height:1.25;
+  color:var(--espresso)}
+.quote .src{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mocha);
+  margin-top:16px}
+
+/* profissionais */
+.prof-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.prof .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.prof .tags span{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);
+  border:1px solid var(--line-2);padding:9px 16px;border-radius:100px}
+.prof .side{border-left:1px solid var(--line);padding-left:44px}
+.prof .side h3{font-size:1.9rem}
+.prof .side p{color:var(--mocha);margin:14px 0 26px}
+
+/* agendar */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;
+  border:1px solid var(--line)}
+.step{padding:40px 34px;border-left:1px solid var(--line)}
+.step:first-child{border-left:none}
+.step .n{font-family:var(--mono);font-size:.8rem;color:var(--bronze)}
+.step h3{font-size:1.35rem;margin:18px 0 10px}
+.step p{color:var(--mocha);font-size:.96rem}
+
+/* faq */
+.faq{max-width:820px;margin:52px auto 0}
+.faq details{border-bottom:1px solid var(--line);padding:8px 0}
+.faq summary{list-style:none;cursor:pointer;padding:22px 0;font-family:var(--serif);
+  font-size:1.4rem;color:var(--espresso);display:flex;justify-content:space-between;
+  align-items:center;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ic{font-family:var(--sans);font-size:1.4rem;color:var(--clay);transition:.3s;flex:none}
+.faq details[open] summary .ic{transform:rotate(45deg)}
+.faq .ans{color:var(--mocha);padding:0 0 24px;font-size:1.02rem;max-width:64ch}
+
+/* final cta */
+.final{background:var(--espresso);color:var(--bg);text-align:center;position:relative;overflow:hidden}
+.final .brow-rule{margin:0 auto 26px;color:var(--bronze)}
+.final h2{color:var(--bg);font-size:clamp(2.2rem,5vw,3.6rem)}
+.final p{color:var(--sand);margin:20px auto 36px;max-width:32em;font-size:1.08rem}
+.final .tel{margin-top:22px;font-size:.9rem;color:var(--sand)}
+.final .tel a{color:var(--bg);border-bottom:1px solid rgba(201,184,166,.4)}
+
+/* footer */
+footer{background:var(--ink);color:var(--sand);padding:76px 0 34px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
+footer .name{font-family:var(--sans);font-weight:500;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--bg);font-size:1rem}
+footer .foot-grid p{color:var(--sand);font-size:.9rem;margin-top:16px;max-width:32em;line-height:1.7}
+footer h4{font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.2em;
+  text-transform:uppercase;color:#8d7a63;margin-bottom:18px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+footer ul a,footer ul li{color:var(--sand);font-size:.92rem;display:flex;gap:10px;align-items:flex-start}
+footer ul a:hover{color:var(--bg)}
+footer .ic{width:15px;height:15px;flex:none;margin-top:3px;opacity:.7}
+.foot-bot{border-top:1px solid #33291f;margin-top:56px;padding-top:26px;display:flex;
+  justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.78rem;color:#8d7a63}
+.foot-bot a{color:#b7a488;border-bottom:1px solid #4a3b2e}
+
+/* floating + mobile bar */
+.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;width:56px;height:56px;border-radius:50%;
+  background:#128C7E;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.4);
+  transition:.25s}
+.float-wa:hover{transform:scale(1.06)}
+.float-wa svg{width:28px;height:28px}
+.mobile-bar{display:none}
+
+
+/* e-book */
+.ebook{background:linear-gradient(160deg,#EFE6D9,#E7DBCB)}
+.ebook-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+.ebook-cover{position:relative;aspect-ratio:3/4;max-width:360px;margin:0 auto;
+  border-radius:3px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(42,32,23,.55);
+  background:linear-gradient(135deg,#2f251d,#241c17 60%,#1b140f)}
+.ebook-cover::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;
+  background:linear-gradient(90deg,rgba(255,255,255,.14),rgba(255,255,255,0));z-index:3}
+.ebook-cover .cv{position:absolute;inset:0;display:flex;flex-direction:column;
+  justify-content:space-between;padding:34px 30px;color:var(--bg);z-index:2}
+.ebook-cover .cv .top{font-family:var(--sans);font-size:.66rem;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--bronze)}
+.ebook-cover .cv .ttl{font-family:var(--serif);font-size:2.5rem;line-height:1.02;font-weight:500}
+.ebook-cover .cv .ttl em{font-style:italic;color:#e7c9a6}
+.ebook-cover .cv .by{font-family:var(--sans);font-size:.72rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--sand)}
+.ebook-cover .brow-cv{width:120px;color:var(--bronze);margin:14px 0}
+.ebook-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .6s ease;z-index:4}
+.ebook-cover img.loaded{opacity:1}
+.ebook h2{font-size:clamp(2rem,4vw,3.1rem);margin-top:16px}
+.ebook .desc{color:var(--mocha);margin-top:20px;font-size:1.06rem;max-width:34em}
+.ebook .feats{list-style:none;margin:28px 0 0;display:flex;flex-direction:column;gap:14px}
+.ebook .feats li{display:flex;gap:14px;align-items:flex-start;font-size:1rem;color:var(--espresso)}
+.ebook .feats li svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--clay)}
+.ebook .buy{display:flex;align-items:center;gap:22px;margin-top:34px;flex-wrap:wrap}
+.ebook .byline{display:flex;align-items:center;gap:12px;margin-top:30px}
+.ebook .byline img{width:46px;height:46px;border-radius:50%;object-fit:cover;
+  border:1px solid var(--line-2)}
+.ebook .byline .bx{font-size:.82rem;color:var(--mocha);line-height:1.4}
+.ebook .byline .bx b{display:block;color:var(--espresso);font-weight:500;
+  font-family:var(--sans);letter-spacing:.02em}
+@media(max-width:980px){.ebook-grid{grid-template-columns:1fr;gap:44px}
+  .ebook-cover{order:-1}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* responsive */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-portrait{aspect-ratio:3/4;max-width:440px}
+  .sobre-grid{grid-template-columns:1fr;gap:40px}
+  .sobre-portrait{max-width:420px;order:-1}
+  .prof-grid{grid-template-columns:1fr;gap:38px}
+  .prof .side{border-left:none;border-top:1px solid var(--line);padding-left:0;padding-top:34px}
+  .cred-grid{grid-template-columns:1fr 1fr}
+  .cred-cell:nth-child(3){border-left:none}
+  .cred-cell{border-top:1px solid var(--line)}
+  .cred-cell:nth-child(-n+2){border-top:none}
+  .res-grid{grid-template-columns:1fr 1fr}
+  .quotes{grid-template-columns:1fr}
+  .quote{border-top:none;border-left:2px solid var(--espresso);padding:4px 0 4px 22px}
+}
+@media(max-width:640px){
+  .wrap{padding:0 20px}
+  section{padding:76px 0}
+  .nav-links{display:none}
+  header .nav-cta .btn{display:none}
+  .nav{height:64px}
+  .hero{padding:44px 0 30px}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{justify-content:center;width:100%}
+  .brand .name{font-size:.9rem;letter-spacing:.28em}
+  .steps{grid-template-columns:1fr}
+  .step{border-left:none;border-top:1px solid var(--line)}
+  .step:first-child{border-top:none}
+  .spec{grid-template-columns:auto 1fr;gap:16px}
+  .spec .go{grid-column:2;margin-top:6px}
+  .res-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .float-wa{display:none}
+  .mobile-bar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--espresso);padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+    border-top:1px solid #3a2e25}
+  .mobile-bar a{display:flex;align-items:center;justify-content:center;gap:10px;
+    color:var(--bg);font-weight:500;font-size:1rem;letter-spacing:.02em;padding:6px}
+  body{padding-bottom:64px}
+  footer{padding-bottom:80px}
+  .foot-grid{grid-template-columns:1fr;gap:36px}
+  .sec-head p{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Ane Lampert - início">
+      <span class="name">Ane Lampert</span>
+      <span class="sub">Estética · Guaramirim</span>
+    </a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#especialidades">Especialidades</a>
+      <a href="#sobre">A Ane</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#profissionais">Cursos</a>
+      <a href="#ebook">E-book</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-dark" data-wa="Olá, Ane! Vim pelo site e gostaria de agendar um horário 😊">
+        <svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-2.8.8.8-2.7-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.5.3-.4.7-1.4.1-.2 0-.4 0-.5s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3c-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z"/></svg>
+        Agendar
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Micropigmentação · Cílios · Guaramirim-SC</span>
+      <h1 class="reveal">O seu <em>olhar</em>, no traço de quem faz há 13 anos.</h1>
+      <svg class="brow-rule reveal" viewBox="0 0 260 26" fill="none" aria-hidden="true">
+        <path d="M4 20 C70 6, 150 6, 256 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" class="draw"/>
+      </svg>
+      <p class="lead reveal">Micropigmentação hiper-realista de sobrancelhas e extensão de cílios,
+        com a técnica e o cuidado da Ane Lampert. Um atendimento pensado para
+        valorizar a sua beleza natural.</p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-dark" data-wa="Olá, Ane! Vim pelo site e gostaria de agendar um horário 😊">
+          <svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-2.8.8.8-2.7-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.5.3-.4.7-1.4.1-.2 0-.4 0-.5s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3c-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#especialidades">Ver especialidades</a>
+      </div>
+      <div class="microproof reveal">
+        <span><span class="stars">★★★★★</span> <b class="mono">4,7</b> no Google</span>
+        <span class="dot"></span>
+        <span><b class="mono">4,9</b> no Facebook</span>
+        <span class="dot"></span>
+        <span><b class="mono">13</b> anos de estética</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <!-- TROCAR: imagens/ane-hero.jpg (retrato editorial da Ane, vertical 4:5) -->
+      <div class="frame hero-portrait">
+        <div class="ph"><div><span class="mono-monogram">AL</span><small>Retrato · @anelampert</small></div></div>
+        <img src="imagens/ane-hero.jpg" alt="Ane Lampert, especialista em micropigmentação e cílios em Guaramirim"
+             onload="this.classList.add('loaded')" onerror="this.remove()">
+      </div>
+    </div>
+  </div>
+
+  <!-- credibility -->
+  <div class="cred reveal">
+    <div class="wrap"><div class="cred-grid">
+      <div class="cred-cell"><div class="k mono">13</div><div class="l">Anos na estética</div></div>
+      <div class="cred-cell"><div class="k mono">4,7<span class="u">/5</span></div><div class="l">27 avaliações · Google</div></div>
+      <div class="cred-cell"><div class="k mono">4,9<span class="u">/5</span></div><div class="l">18 votos · Facebook</div></div>
+      <div class="cred-cell"><div class="k">Guaramirim</div><div class="l">Centro · fácil acesso</div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ESPECIALIDADES -->
+<section id="especialidades">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">O que a Ane faz</span>
+      <h2>Especialidades pensadas para o olhar.</h2>
+      <p>Cada procedimento é conduzido com técnica apurada e um desenho feito
+        para o seu rosto. Escolha o que faz sentido para você e fale direto no WhatsApp.</p>
+    </div>
+    <div class="spec-list">
+      <a class="spec reveal" data-wa="Olá, Ane! Tenho interesse em micropigmentação de sobrancelhas hiper-realista. Pode me passar mais informações?">
+        <span class="num">01</span>
+        <div class="body">
+          <h3>Micropigmentação hiper-realista</h3>
+          <p>Sobrancelhas desenhadas fio a fio, com aparência natural e feitas
+             para harmonizar com os traços do seu rosto.</p>
+        </div>
+        <span class="go">Saber mais <span class="arw">→</span></span>
+      </a>
+      <a class="spec reveal" data-wa="Olá, Ane! Quero saber mais sobre extensão de cílios (volume classic).">
+        <span class="num">02</span>
+        <div class="body">
+          <h3>Extensão de cílios</h3>
+          <p>Volume classic e técnicas de alongamento para um olhar mais marcante,
+             sem precisar de máscara todos os dias.</p>
+        </div>
+        <span class="go">Saber mais <span class="arw">→</span></span>
+      </a>
+      <a class="spec reveal" data-wa="Olá, Ane! Gostaria de saber sobre o lash lifting.">
+        <span class="num">03</span>
+        <div class="body">
+          <h3>Lash lifting</h3>
+          <p>Curvatura e realce dos seus próprios cílios, para um efeito natural
+             e duradouro, sem extensão.</p>
+        </div>
+        <span class="go">Saber mais <span class="arw">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE (dark) -->
+<section id="sobre" class="sobre">
+  <div class="wrap sobre-grid">
+    <div class="reveal">
+      <!-- TROCAR: imagens/ane-retrato.jpg -->
+      <div class="frame sobre-portrait">
+        <div class="ph"><div><span class="mono-monogram">AL</span><small>Ane Lampert</small></div></div>
+        <img src="imagens/ane-retrato.jpg" alt="Retrato de Ane Lampert"
+             onload="this.classList.add('loaded')" onerror="this.remove()">
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Quem atende você</span>
+      <h2>Ane Lampert</h2>
+      <p>Há <b>13 anos na estética</b> e estudante de Biomedicina, a Ane é especialista
+         em <b>micropigmentação hiper-realista</b> e em <b>extensão de cílios</b>. Um trabalho
+         reconhecido pela clientela de Guaramirim e acompanhado por uma comunidade
+         de mais de 18 mil pessoas no Instagram.</p>
+      <p>Cada atendimento une técnica, estudo constante e um olhar atento ao que
+         combina com você — porque um bom resultado começa em ouvir.</p>
+      <div class="facts">
+        <div class="f"><div class="n mono">13</div><div class="t">Anos de estética</div></div>
+        <div class="f"><div class="n">Biomedicina</div><div class="t">Em formação</div></div>
+        <div class="f"><div class="n mono">+18mil</div><div class="t">No Instagram</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section id="resultados">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Resultados</span>
+      <h2>O traço fala por si.</h2>
+      <p>Uma amostra do trabalho da Ane em sobrancelhas e cílios.</p>
+    </div>
+    <div class="res-grid">
+      <!-- TROCAR: imagens/resultado-1.jpg … 4.jpg (fotos reais do @anelampert, com autorização) -->
+      <div class="frame reveal"><div class="ph"><div><span class="mono-monogram">AL</span><small>Resultado 01</small></div></div>
+        <img src="imagens/resultado-1.jpg" alt="Resultado de micropigmentação de sobrancelhas" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+      <div class="frame reveal"><div class="ph"><div><span class="mono-monogram">AL</span><small>Resultado 02</small></div></div>
+        <img src="imagens/resultado-2.jpg" alt="Resultado de extensão de cílios" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+      <div class="frame reveal"><div class="ph"><div><span class="mono-monogram">AL</span><small>Resultado 03</small></div></div>
+        <img src="imagens/resultado-3.jpg" alt="Resultado de lash lifting" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+      <div class="frame reveal"><div class="ph"><div><span class="mono-monogram">AL</span><small>Resultado 04</small></div></div>
+        <img src="imagens/resultado-4.jpg" alt="Resultado de sobrancelhas hiper-realistas" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+    </div>
+    <p class="res-note reveal">Resultados reais publicados no Instagram
+      <a href="https://www.instagram.com/anelampert/" target="_blank" rel="noopener">@anelampert</a>.</p>
+  </div>
+</section>
+
+<!-- AVALIAÇÕES -->
+<section id="avaliacoes" class="aval">
+  <div class="wrap">
+    <div class="aval-top">
+      <div class="sec-head reveal" style="margin:0">
+        <span class="eyebrow">O que dizem</span>
+        <h2>Quem já sentou na cadeira.</h2>
+      </div>
+      <div class="rate-badges reveal">
+        <div class="rate">
+          <span class="score mono">4,7</span>
+          <span class="rt">Nota no<b>Google · 27</b></span>
+        </div>
+        <div class="rate">
+          <span class="score mono">4,9</span>
+          <span class="rt">Nota no<b>Facebook · 18</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p>"Maravilhoso trabalho e incrível esta profissional."</p>
+        <div class="src">Avaliação no Google</div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p>"O melhor lugar do mundo!"</p>
+        <div class="src">Avaliação no Google</div>
+      </div>
+      <div class="quote reveal">
+        <span class="stars">★★★★★</span>
+        <p>"Serviço maravilhoso, atendimento especial."</p>
+        <div class="src">Avaliação no Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFISSIONAIS -->
+<section id="profissionais">
+  <div class="wrap prof prof-grid">
+    <div class="reveal">
+      <span class="eyebrow">Para profissionais</span>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);margin-top:16px">Também ensino quem quer viver de estética.</h2>
+      <p style="color:var(--mocha);margin-top:20px;max-width:34em">Além do atendimento, a Ane
+        compartilha o que aprendeu em 13 anos de profissão através de cursos e mentoria
+        para quem quer se especializar em micropigmentação e cílios.</p>
+      <div class="tags">
+        <span>Cursos</span><span>Mentoria</span><span>E-book</span><span>Atendimento</span>
+      </div>
+    </div>
+    <div class="side reveal">
+      <h3>Quer aprender com a Ane?</h3>
+      <p>Fale sobre os cursos, a mentoria e os próximos conteúdos disponíveis.</p>
+      <a class="btn btn-dark" data-wa="Olá, Ane! Sou (ou quero ser) profissional da área e tenho interesse nos seus cursos e mentoria.">
+        <svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-2.8.8.8-2.7-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.5.3-.4.7-1.4.1-.2 0-.4 0-.5s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3c-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z"/></svg>
+        Falar sobre cursos
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- E-BOOK -->
+<section id="ebook" class="ebook">
+  <div class="wrap ebook-grid">
+    <div class="reveal">
+      <!-- TROCAR: imagens/ebook-capa.jpg (capa real do e-book) -->
+      <div class="ebook-cover">
+        <div class="cv">
+          <div class="top">E-book</div>
+          <div>
+            <svg class="brow-cv" viewBox="0 0 120 16" fill="none" aria-hidden="true"><path d="M2 12 C32 3, 70 3, 118 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <div class="ttl">Brow<br><em>Lamination</em></div>
+          </div>
+          <div class="by">Ane Lampert</div>
+        </div>
+        <img src="imagens/ebook-capa.jpg" alt="Capa do e-book Brow Lamination, por Ane Lampert"
+             onload="this.classList.add('loaded')" onerror="this.remove()">
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">E-book · material digital</span>
+      <h2>Brow Lamination, no seu tempo.</h2>
+      <p class="desc">O e-book de <b>Brow Lamination</b> da Ane reúne a técnica de laminação
+        de sobrancelhas em um material digital, para você estudar quando e onde quiser —
+        do fundamento ao acabamento.</p>
+      <!-- TROCAR: confirmar os tópicos reais da ementa com a Ane -->
+      <ul class="feats">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Passo a passo da técnica de laminação</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Produtos, tempos de pausa e finalização</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Cuidados e manutenção pós-procedimento</li>
+      </ul>
+      <div class="buy">
+        <!-- TROCAR: se houver link de checkout direto, troque o data-wa por href do produto -->
+        <a class="btn btn-dark" data-wa="Olá, Ane! Tenho interesse no e-book de Brow Lamination. Como faço para adquirir?">
+          <svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-2.8.8.8-2.7-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.5.3-.4.7-1.4.1-.2 0-.4 0-.5s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3c-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z"/></svg>
+          Quero o e-book
+        </a>
+        <!-- TROCAR: valor do e-book, se for divulgar -->
+      </div>
+      <div class="byline">
+        <img src="data:image/jpeg;base64,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" alt="Ane Lampert">
+        <div class="bx"><b>Ane Lampert</b>13 anos de estética · @anelampert</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDAR -->
+<section id="agendar" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:none;text-align:center;margin:0 auto">
+      <span class="eyebrow">Como agendar</span>
+      <h2 style="margin-top:14px">Seu horário começa com uma mensagem.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3>Chame no WhatsApp</h3>
+        <p>Conte qual procedimento você quer e tire suas dúvidas com a Ane.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3>Escolha o melhor dia</h3>
+        <p>Combinem juntas o horário que encaixa na sua rotina.</p></div>
+      <div class="step reveal"><div class="n">03</div><h3>Cuide do seu olhar</h3>
+        <p>É só comparecer no studio, no Centro de Guaramirim, e relaxar.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:44px" class="reveal">
+      <a class="btn btn-dark" data-wa="Olá, Ane! Vim pelo site e gostaria de agendar um horário 😊">
+        <svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-2.8.8.8-2.7-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.5.3-.4.7-1.4.1-.2 0-.4 0-.5s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3c-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z"/></svg>
+        Agendar meu horário
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin:0 auto">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2 style="margin-top:14px">Antes de agendar.</h2>
+    </div>
+    <div class="faq">
+      <details class="reveal" open>
+        <summary>O que é micropigmentação hiper-realista? <span class="ic">+</span></summary>
+        <div class="ans">É uma técnica de sobrancelhas que busca o efeito mais natural possível,
+          com fios desenhados para imitar os pelos reais. O desenho é feito de acordo com o
+          seu rosto. Para detalhes sobre o seu caso, fale com a Ane pelo WhatsApp.</div>
+      </details>
+      <details class="reveal">
+        <summary>Extensão de cílios precisa de manutenção? <span class="ic">+</span></summary>
+        <div class="ans">Sim — como os cílios têm ciclo natural de queda, manutenções periódicas
+          ajudam a manter o volume. A Ane orienta o intervalo ideal para você no atendimento.</div>
+      </details>
+      <details class="reveal">
+        <summary>Onde fica o studio? <span class="ic">+</span></summary>
+        <div class="ans">Na R. Vinte e Oito de Agosto, 1556 — Sala 16, Centro, Guaramirim-SC.
+          Fácil acesso e estacionamento na região.</div>
+      </details>
+      <details class="reveal">
+        <summary>Como faço para agendar? <span class="ic">+</span></summary>
+        <div class="ans">O agendamento é feito pelo WhatsApp. É só chamar, contar o que você
+          procura e combinar o melhor dia e horário direto com a Ane.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <svg class="brow-rule reveal" viewBox="0 0 260 26" fill="none" aria-hidden="true">
+      <path d="M4 20 C70 6, 150 6, 256 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+    <h2 class="reveal">Pronta para realçar o seu olhar?</h2>
+    <p class="reveal">Fale com a Ane pelo WhatsApp e agende o seu horário no studio em Guaramirim.</p>
+    <div class="reveal">
+      <a class="btn btn-light" data-wa="Olá, Ane! Vim pelo site e gostaria de agendar um horário 😊">
+        <svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-2.8.8.8-2.7-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.5.3-.4.7-1.4.1-.2 0-.4 0-.5s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3c-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+    </div>
+    <div class="tel reveal">ou ligue: <a data-tel>(47) 99233-3342</a></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="name">Ane Lampert</div>
+        <p>Micropigmentação hiper-realista de sobrancelhas e extensão de cílios em
+           Guaramirim-SC. 13 anos de estética, técnica e cuidado com o seu olhar.</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            R. Vinte e Oito de Agosto, 1556 — Sl 16<br>Centro, Guaramirim-SC · 89270-000</li>
+          <li><a data-tel><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2H7a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.1a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+            <span class="mono">(47) 99233-3342</span></a></li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Atendimento até às 20h30</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Encontre a Ane</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/anelampert/" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@anelampert</a></li>
+          <li><a href="https://www.facebook.com/StudioAneLampert" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>Studio Ane Lampert</a></li>
+          <li><a href="https://www.google.com/search?q=ANE+LAMPERT+Guaramirim" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ver no Google Maps</a></li>
+          <li style="margin-top:6px"><a class="btn btn-dark" style="padding:12px 22px" data-wa="Olá, Ane! Vim pelo site e gostaria de agendar um horário 😊">Chamar no WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr"></span> Ane Lampert · Guaramirim-SC</span>
+      <span>Feito por <a href="#" rel="noopener">Neumann Dev</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" data-wa="Olá, Ane! Vim pelo site e gostaria de agendar um horário 😊" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-2.8.8.8-2.7-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.5.3-.4.7-1.4.1-.2 0-.4 0-.5s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3c-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<div class="mobile-bar">
+  <a data-wa="Olá, Ane! Vim pelo site e gostaria de agendar um horário 😊">
+    <svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-2.8.8.8-2.7-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.5.3-.4.7-1.4.1-.2 0-.4 0-.5s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3c-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4z"/></svg>
+    Agendar pelo WhatsApp
+  </a>
+</div>
+
+<!-- JSON-LD (apenas dados reais e verificáveis) -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BeautySalon",
+  "name":"Clínica Ane Lampert",
+  "description":"Micropigmentação hiper-realista de sobrancelhas e extensão de cílios em Guaramirim-SC.",
+  "image":"imagens/og-ane.jpg",
+  "url":"https://TROCAR.com.br",
+  "telephone":"+5547992333342",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"R. Vinte e Oito de Agosto, 1556 - Sl 16",
+    "addressLocality":"Guaramirim",
+    "addressRegion":"SC",
+    "postalCode":"89270-000",
+    "addressCountry":"BR"
+  },
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"4.7",
+    "reviewCount":"27",
+    "bestRating":"5"
+  },
+  "sameAs":[
+    "https://www.instagram.com/anelampert/",
+    "https://www.facebook.com/StudioAneLampert"
+  ]
+}
+</script>
+
+<script>
+/* ===== Fonte única de configuração ===== */
+var empresa = {
+  whatsapp: "5547992333342",       // TROCAR se o número comercial for outro
+  telefoneLink: "+5547992333342"
+};
+
+/* Monta links de WhatsApp com mensagem contextual */
+document.querySelectorAll("[data-wa]").forEach(function(el){
+  var msg = el.getAttribute("data-wa") || "Olá! Vim pelo site 😊";
+  el.setAttribute("href","https://wa.me/"+empresa.whatsapp+"?text="+encodeURIComponent(msg));
+  el.setAttribute("target","_blank");
+  el.setAttribute("rel","noopener");
+});
+/* Links de telefone */
+document.querySelectorAll("[data-tel]").forEach(function(el){
+  el.setAttribute("href","tel:"+empresa.telefoneLink);
+});
+
+/* Ano no rodapé */
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* Sombra do header ao rolar */
+var hdr = document.querySelector("header");
+addEventListener("scroll",function(){
+  hdr.classList.toggle("scrolled", scrollY > 20);
+});
+
+/* Reveal on scroll */
+var reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+if(reduce){
+  document.querySelectorAll(".reveal").forEach(function(e){e.classList.add("in")});
+}else{
+  var io = new IntersectionObserver(function(ents){
+    ents.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  },{threshold:.12, rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll(".reveal").forEach(function(e){io.observe(e)});
+}
+</script>
+</body>
+</html>
