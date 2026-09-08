@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RD Agro Drones — Soluções Agrícolas com Drones em Rio Negro/PR</title>
+<meta name="description" content="Pulverização agrícola e soluções para o campo com tecnologia de drones. Mais precisão, mais agilidade, menos desperdício. Atendimento em Rio Negro e região.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="RD Agro Drones — Tecnologia que voa. Resultados que ficam no campo.">
+<meta property="og:description" content="Soluções agrícolas com drones para aplicações mais precisas, rápidas e eficientes. Rio Negro – PR.">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* ===== Paleta — extraída da marca RD Agro Drones ===== */
+  --verde-floresta: #0E2A1C;   /* base escura principal */
+  --verde-floresta-2: #0A2116; /* ainda mais escuro, transições */
+  --verde-mata: #163B26;       /* seções escuras secundárias */
+  --verde-mata-2: #1D4A2E;     /* cards / hover sobre escuro */
+  --verde-vivo: #3EA65C;       /* destaque — cor da logo */
+  --verde-vivo-2: #4FC470;     /* hover do destaque */
+  --grafite: #16171A;          /* seção diferencial */
+  --grafite-2: #202220;
+  --off-white: #F5F1E4;        /* base clara */
+  --off-white-2: #EDE7D4;      /* seções claras alternadas */
+  --dourado: #B99341;          /* acento pontual */
+  --texto-claro: #F5F1E4;
+  --texto-claro-dim: rgba(245,241,228,0.72);
+  --texto-escuro: #14170F;
+  --texto-escuro-dim: rgba(20,23,15,0.66);
+  --linha-clara: rgba(245,241,228,0.16);
+  --linha-escura: rgba(20,23,15,0.12);
+
+  --font-display: 'Fraunces', 'Iowan Old Style', 'Georgia', serif;
+  --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
+
+  --container: 1240px;
+  --header-h: 84px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--texto-escuro);
+  background:var(--off-white);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+h1,h2,h3,h4{ margin:0; font-family:var(--font-display); font-weight:600; }
+p{ margin:0; }
+ul{ margin:0; padding:0; list-style:none; }
+button{ font-family:inherit; cursor:pointer; }
+section{ scroll-margin-top: var(--header-h); }
+
+.wrap{ max-width:var(--container); margin:0 auto; padding:0 28px; }
+
+@media (max-width:768px){
+  .wrap{ padding:0 20px; }
+  :root{ --header-h:64px; }
+}
+
+/* Foco visível para acessibilidade */
+a:focus-visible, button:focus-visible{
+  outline:2px solid var(--verde-vivo);
+  outline-offset:3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+}
+
+/* ============ Botões ============ */
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:16px 30px;
+  font-family:var(--font-body); font-weight:700; font-size:15px;
+  letter-spacing:0.02em;
+  border-radius:2px;
+  border:1px solid transparent;
+  transition:transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+  white-space:nowrap;
+}
+.btn:hover{ transform:translateY(-2px); }
+.btn-primary{ background:var(--verde-vivo); color:#0B1A10; }
+.btn-primary:hover{ background:var(--verde-vivo-2); }
+.btn-outline-light{ border-color:rgba(245,241,228,0.42); color:var(--texto-claro); }
+.btn-outline-light:hover{ border-color:var(--texto-claro); background:rgba(245,241,228,0.08); }
+.btn-outline-dark{ border-color:rgba(20,23,15,0.3); color:var(--texto-escuro); }
+.btn-outline-dark:hover{ border-color:var(--texto-escuro); background:rgba(20,23,15,0.05); }
+.btn-lg{ padding:20px 40px; font-size:16px; }
+.btn-block{ width:100%; justify-content:center; }
+
+/* ============ Header ============ */
+.header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  height:var(--header-h);
+  display:flex; align-items:center;
+  background:transparent;
+  transition:background .35s ease, border-color .35s ease, box-shadow .35s ease;
+  border-bottom:1px solid transparent;
+}
+.header.is-scrolled{
+  background:rgba(14,42,28,0.94);
+  backdrop-filter:blur(10px);
+  border-bottom-color:rgba(245,241,228,0.08);
+  box-shadow:0 8px 30px rgba(0,0,0,0.18);
+}
+.header .wrap{ display:flex; align-items:center; justify-content:space-between; width:100%; }
+.marca{ display:flex; align-items:center; gap:12px; }
+.marca img{ height:34px; width:auto; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.25)); }
+.marca-texto{ display:flex; flex-direction:column; line-height:1; }
+.marca-texto strong{ font-family:var(--font-display); font-weight:600; font-size:17px; letter-spacing:0.02em; color:var(--texto-claro); }
+.marca-texto span{ font-family:var(--font-body); font-weight:500; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--verde-vivo-2); margin-top:3px; }
+
+.nav-desktop{ display:flex; align-items:center; gap:38px; }
+.nav-desktop a{
+  font-size:14.5px; font-weight:600; color:var(--texto-claro-dim);
+  position:relative; padding:6px 0;
+  transition:color .2s ease;
+}
+.nav-desktop a::after{
+  content:''; position:absolute; left:0; right:100%; bottom:0; height:1px;
+  background:var(--verde-vivo); transition:right .25s ease;
+}
+.nav-desktop a:hover{ color:var(--texto-claro); }
+.nav-desktop a:hover::after{ right:0; }
+
+.header-actions{ display:flex; align-items:center; gap:22px; }
+.header .btn-primary{ padding:12px 22px; font-size:13.5px; }
+
+.hamburger{
+  display:none; flex-direction:column; justify-content:center; gap:5px;
+  width:40px; height:40px; background:none; border:none; padding:0;
+}
+.hamburger span{ display:block; height:2px; width:24px; background:var(--texto-claro); transition:transform .3s ease, opacity .3s ease; }
+.hamburger.is-open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.hamburger.is-open span:nth-child(2){ opacity:0; }
+.hamburger.is-open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+.nav-mobile{
+  position:fixed; inset:var(--header-h) 0 0 0; z-index:99;
+  background:var(--verde-floresta);
+  display:flex; flex-direction:column; justify-content:space-between;
+  padding:36px 28px 30px;
+  transform:translateY(-8px); opacity:0; visibility:hidden;
+  transition:opacity .3s ease, transform .3s ease, visibility .3s;
+}
+.nav-mobile.is-open{ opacity:1; transform:translateY(0); visibility:visible; }
+.nav-mobile ul{ display:flex; flex-direction:column; gap:6px; }
+.nav-mobile a{
+  display:block; padding:16px 4px; font-family:var(--font-display); font-size:26px; font-weight:500;
+  color:var(--texto-claro); border-bottom:1px solid var(--linha-clara);
+}
+.nav-mobile-foot{ display:flex; flex-direction:column; gap:14px; }
+
+@media (max-width:980px){
+  .nav-desktop{ display:none; }
+  .header-actions .btn-primary{ display:none; }
+  .hamburger{ display:flex; }
+}
+
+/* ============ Hero ============ */
+.hero{
+  position:relative; min-height:100svh;
+  display:flex; align-items:flex-end;
+  overflow:hidden; isolation:isolate;
+  background:var(--verde-floresta-2);
+}
+.hero-bg{
+  position:absolute; inset:0; z-index:-2;
+  width:100%; height:112%; object-fit:cover; object-position:center 38%;
+  will-change:transform;
+}
+.hero::after{
+  content:''; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(8,20,13,0.55) 0%, rgba(9,22,14,0.42) 30%, rgba(8,19,12,0.78) 78%, rgba(7,17,11,0.94) 100%);
+}
+.hero-conteudo{ position:relative; width:100%; padding:calc(var(--header-h) + 64px) 0 92px; }
+.hero-eyebrow{
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--font-mono); font-size:12.5px; letter-spacing:0.06em; color:var(--verde-vivo-2);
+  margin-bottom:26px;
+}
+.hero-eyebrow .ponto{ width:6px; height:6px; border-radius:50%; background:var(--verde-vivo); }
+.hero h1{
+  color:var(--texto-claro);
+  font-size:clamp(38px, 6.4vw, 82px);
+  line-height:1.03; letter-spacing:-0.01em;
+  max-width:16ch;
+  text-transform:uppercase;
+}
+.hero h1 em{ font-style:normal; color:var(--verde-vivo-2); }
+.hero-sub{
+  margin-top:26px; max-width:520px;
+  font-size:clamp(16px,1.7vw,19px); line-height:1.55;
+  color:var(--texto-claro-dim);
+  font-weight:400;
+}
+.hero-ctas{ display:flex; flex-wrap:wrap; gap:16px; margin-top:40px; }
+.hero-info{
+  display:flex; flex-wrap:wrap; gap:28px;
+  margin-top:44px; padding-top:26px; border-top:1px solid var(--linha-clara);
+  max-width:560px;
+}
+.hero-info-item{ display:flex; align-items:center; gap:9px; font-size:13.5px; color:var(--texto-claro-dim); font-weight:500; }
+.hero-info-item svg{ width:17px; height:17px; color:var(--verde-vivo-2); flex-shrink:0; }
+
+@media (max-width:600px){
+  .hero-conteudo{ padding-top:calc(var(--header-h) + 40px); padding-bottom:64px; }
+  .hero-ctas{ flex-direction:column; align-items:stretch; }
+  .hero-ctas .btn{ justify-content:center; }
+}
+
+/* ============ Barra de confiança ============ */
+.confianca{
+  background:var(--off-white);
+  border-bottom:1px solid var(--linha-escura);
+}
+.confianca .wrap{
+  display:grid; grid-template-columns:repeat(4,1fr);
+}
+.confianca-item{
+  display:flex; align-items:center; gap:13px;
+  padding:26px 22px;
+  border-left:1px solid var(--linha-escura);
+}
+.confianca-item:first-child{ border-left:none; padding-left:0; }
+.confianca-item svg{ width:24px; height:24px; color:var(--verde-vivo); flex-shrink:0; }
+.confianca-item span{ font-size:14px; font-weight:700; color:var(--texto-escuro); letter-spacing:-0.01em; }
+
+@media (max-width:860px){
+  .confianca .wrap{ grid-template-columns:repeat(2,1fr); }
+  .confianca-item{ padding:20px 16px; }
+  .confianca-item:nth-child(3){ border-left:none; }
+}
+@media (max-width:480px){
+  .confianca-item span{ font-size:13px; }
+}
+
+/* ============ Seção Problema ============ */
+.problema{ background:var(--off-white); padding:120px 0; }
+.problema-topo{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:80px; align-items:end; }
+.rotulo{
+  font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; color:var(--verde-vivo);
+  margin-bottom:20px; display:block;
+}
+.problema h2{
+  font-size:clamp(30px,4vw,48px); line-height:1.08; color:var(--texto-escuro);
+  text-transform:uppercase; letter-spacing:-0.01em;
+}
+.problema-texto{ font-size:17px; line-height:1.65; color:var(--texto-escuro-dim); max-width:46ch; }
+
+.problema-lista{ margin-top:64px; border-top:1px solid var(--linha-escura); }
+.problema-linha{
+  display:grid; grid-template-columns:220px 1fr; gap:40px;
+  padding:34px 0; border-bottom:1px solid var(--linha-escura);
+  align-items:baseline;
+}
+.problema-linha h3{
+  font-size:22px; font-weight:600; color:var(--texto-escuro); text-transform:uppercase; letter-spacing:0.01em;
+}
+.problema-linha p{ font-size:15.5px; line-height:1.6; color:var(--texto-escuro-dim); max-width:56ch; }
+
+.problema-fecho{
+  margin-top:56px; display:flex; align-items:center; gap:18px;
+}
+.problema-fecho .linha-verde{ width:52px; height:2px; background:var(--verde-vivo); flex-shrink:0; }
+.problema-fecho p{
+  font-family:var(--font-display); font-size:clamp(20px,2.6vw,28px); font-weight:500; color:var(--texto-escuro);
+}
+
+@media (max-width:860px){
+  .problema{ padding:80px 0; }
+  .problema-topo{ grid-template-columns:1fr; gap:24px; }
+  .problema-linha{ grid-template-columns:1fr; gap:8px; padding:26px 0; }
+}
+
+/* ============ Seção Soluções ============ */
+.solucoes{ background:var(--verde-mata); padding:120px 0; color:var(--texto-claro); }
+.solucoes-topo{ max-width:640px; margin-bottom:64px; }
+.solucoes .rotulo{ color:var(--verde-vivo-2); }
+.solucoes h2{
+  font-size:clamp(30px,4vw,48px); line-height:1.08; color:var(--texto-claro);
+  text-transform:uppercase; letter-spacing:-0.01em;
+}
+.solucoes-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:26px; }
+.solucoes-col{ display:flex; flex-direction:column; gap:26px; }
+.sol-card{
+  position:relative; overflow:hidden;
+  border-radius:2px; isolation:isolate;
+  min-height:420px; display:flex; align-items:flex-end;
+  background:var(--verde-mata-2);
+}
+.sol-card img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2;
+  transition:transform .7s ease;
+}
+.sol-card::after{
+  content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, rgba(10,25,17,0.05) 0%, rgba(8,18,12,0.92) 88%);
+}
+.sol-card:hover img{ transform:scale(1.06); }
+.solucoes-col .sol-card{ min-height:187px; }
+.sol-card-conteudo{ position:relative; padding:34px; width:100%; }
+.sol-card-num{ font-family:var(--font-mono); font-size:12px; color:var(--verde-vivo-2); display:block; margin-bottom:10px; }
+.sol-card h3{ font-size:24px; color:var(--texto-claro); text-transform:uppercase; margin-bottom:10px; letter-spacing:0.01em; }
+.sol-card p{ font-size:14.5px; line-height:1.55; color:var(--texto-claro-dim); max-width:36ch; margin-bottom:16px; }
+.sol-card-link{ display:inline-flex; align-items:center; gap:8px; font-size:13.5px; font-weight:700; color:var(--verde-vivo-2); letter-spacing:0.02em; }
+.sol-card-link svg{ width:14px; height:14px; transition:transform .2s ease; }
+.sol-card:hover .sol-card-link svg{ transform:translateX(4px); }
+
+@media (max-width:900px){
+  .solucoes{ padding:80px 0; }
+  .solucoes-grid{ grid-template-columns:1fr; }
+  .sol-card, .solucoes-col .sol-card{ min-height:300px; }
+}
+
+/* ============ Seção Benefícios ============ */
+.beneficios{ background:var(--off-white); padding:120px 0; }
+.beneficios-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:70px; align-items:center; }
+.beneficios-img{ position:relative; }
+.beneficios-img img{ width:100%; height:560px; object-fit:cover; }
+.beneficios-img-tag{
+  position:absolute; left:-1px; bottom:-1px;
+  background:var(--verde-floresta); color:var(--texto-claro);
+  padding:16px 22px; font-family:var(--font-mono); font-size:12px; letter-spacing:0.04em;
+  border-top:1px solid rgba(245,241,228,0.15); border-right:1px solid rgba(245,241,228,0.15);
+}
+.beneficios h2{
+  font-size:clamp(28px,3.6vw,42px); line-height:1.1; color:var(--texto-escuro);
+  text-transform:uppercase; margin-bottom:44px; max-width:14ch;
+}
+.beneficios-lista{ display:grid; grid-template-columns:1fr 1fr; gap:0 40px; border-top:1px solid var(--linha-escura); }
+.beneficio-item{ padding:26px 0; border-bottom:1px solid var(--linha-escura); }
+.beneficio-item h3{
+  font-size:16px; font-weight:700; color:var(--texto-escuro); text-transform:uppercase; letter-spacing:0.02em;
+  display:flex; align-items:center; gap:10px; margin-bottom:8px;
+}
+.beneficio-item h3::before{ content:''; width:8px; height:8px; background:var(--verde-vivo); flex-shrink:0; }
+.beneficio-item p{ font-size:14px; line-height:1.55; color:var(--texto-escuro-dim); padding-left:18px; }
+
+@media (max-width:900px){
+  .beneficios{ padding:80px 0; }
+  .beneficios-grid{ grid-template-columns:1fr; gap:40px; }
+  .beneficios-img img{ height:340px; }
+  .beneficios-lista{ grid-template-columns:1fr; }
+}
+
+/* ============ Como funciona ============ */
+.como{ background:var(--verde-floresta); padding:120px 0; color:var(--texto-claro); }
+.como .rotulo{ color:var(--verde-vivo-2); }
+.como h2{
+  font-size:clamp(30px,4vw,48px); line-height:1.08; color:var(--texto-claro);
+  text-transform:uppercase; margin-bottom:70px; max-width:16ch;
+}
+.como-passos{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; }
+.como-passos::before{
+  content:''; position:absolute; top:29px; left:0; right:0; height:1px; background:var(--linha-clara);
+}
+.passo{ padding-right:32px; position:relative; }
+.passo-num{
+  font-family:var(--font-display); font-size:22px; font-weight:500; color:var(--verde-vivo-2);
+  width:58px; height:58px; border:1px solid var(--linha-clara); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--verde-floresta); position:relative; z-index:1; margin-bottom:28px;
+}
+.passo h3{ font-size:17px; color:var(--texto-claro); text-transform:uppercase; letter-spacing:0.02em; margin-bottom:10px; }
+.passo p{ font-size:14.5px; line-height:1.6; color:var(--texto-claro-dim); max-width:26ch; }
+
+@media (max-width:860px){
+  .como{ padding:80px 0; }
+  .como-passos{ grid-template-columns:1fr; gap:36px; }
+  .como-passos::before{ display:none; }
+  .passo{ padding-right:0; padding-left:28px; border-left:1px solid var(--linha-clara); }
+  .passo-num{ margin-left:-29px; }
+}
+
+/* ============ Seção Split visual ============ */
+.split{ background:var(--off-white); display:grid; grid-template-columns:1fr 1fr; min-height:640px; }
+.split-img{ position:relative; overflow:hidden; }
+.split-img img{ width:100%; height:100%; object-fit:cover; min-height:340px; }
+.split-texto{
+  display:flex; flex-direction:column; justify-content:center;
+  padding:90px 64px; background:var(--verde-floresta); color:var(--texto-claro);
+}
+.split-texto h2{
+  font-size:clamp(32px,4.4vw,58px); line-height:1.02; text-transform:uppercase;
+  color:var(--texto-claro); letter-spacing:-0.01em;
+}
+.split-texto p{ margin-top:26px; font-size:16.5px; line-height:1.6; color:var(--texto-claro-dim); max-width:34ch; }
+.split-texto .btn{ margin-top:38px; align-self:flex-start; }
+
+@media (max-width:900px){
+  .split{ grid-template-columns:1fr; min-height:0; }
+  .split-img img{ height:340px; }
+  .split-texto{ padding:64px 24px; }
+}
+
+/* ============ Para quem ============ */
+.para-quem{ background:var(--off-white); padding:120px 0; border-top:1px solid var(--linha-escura); }
+.para-quem h2{
+  font-size:clamp(28px,3.6vw,42px); line-height:1.1; text-transform:uppercase;
+  color:var(--texto-escuro); max-width:14ch; margin-bottom:56px;
+}
+.pq-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr 0.9fr; gap:22px; }
+.pq-card{ position:relative; overflow:hidden; min-height:400px; isolation:isolate; }
+.pq-card img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2; transition:transform .7s ease; }
+.pq-card::after{ content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg, rgba(10,25,17,0) 45%, rgba(8,18,12,0.88) 100%); }
+.pq-card:hover img{ transform:scale(1.06); }
+.pq-card-conteudo{ position:absolute; left:0; right:0; bottom:0; padding:26px; }
+.pq-card h3{ font-size:18px; color:var(--texto-claro); text-transform:uppercase; margin-bottom:8px; letter-spacing:0.01em; }
+.pq-card p{ font-size:13px; line-height:1.5; color:var(--texto-claro-dim); }
+
+@media (max-width:980px){
+  .pq-grid{ grid-template-columns:1fr 1fr; }
+  .pq-card{ min-height:280px; }
+}
+@media (max-width:560px){
+  .para-quem{ padding:80px 0; }
+  .pq-grid{ grid-template-columns:1fr; }
+}
+
+/* ============ Sobre ============ */
+.sobre{ background:var(--verde-mata); color:var(--texto-claro); padding:120px 0; }
+.sobre-grid{ display:grid; grid-template-columns:1fr 0.9fr; gap:70px; align-items:center; }
+.sobre .rotulo{ color:var(--verde-vivo-2); }
+.sobre h2{
+  font-size:clamp(28px,3.6vw,42px); line-height:1.1; text-transform:uppercase; color:var(--texto-claro); margin-bottom:30px; max-width:13ch;
+}
+.sobre-texto p{ font-size:16px; line-height:1.7; color:var(--texto-claro-dim); margin-bottom:18px; max-width:48ch; }
+.sobre-img{ height:520px; overflow:hidden; }
+.sobre-img img{ width:100%; height:100%; object-fit:cover; }
+
+@media (max-width:900px){
+  .sobre{ padding:80px 0; }
+  .sobre-grid{ grid-template-columns:1fr; gap:36px; }
+  .sobre-img{ height:320px; order:-1; }
+}
+
+/* ============ Diferencial ============ */
+.diferencial{
+  background:var(--grafite); color:var(--texto-claro);
+  padding:150px 0; position:relative; overflow:hidden;
+}
+.diferencial::before{
+  content:''; position:absolute; top:-30%; right:-10%; width:60%; height:160%;
+  background:radial-gradient(circle, rgba(62,166,92,0.14) 0%, rgba(62,166,92,0) 68%);
+  pointer-events:none;
+}
+.diferencial-conteudo{ position:relative; max-width:800px; }
+.diferencial h2{
+  font-size:clamp(28px,4.2vw,50px); line-height:1.12; text-transform:uppercase; color:var(--texto-claro-dim);
+  letter-spacing:-0.01em;
+}
+.diferencial h2 + h2{ color:var(--verde-vivo-2); margin-top:10px; }
+.diferencial-lema{
+  margin-top:40px; font-family:var(--font-display); font-style:italic; font-weight:400;
+  font-size:clamp(18px,2vw,22px); color:var(--texto-claro-dim); line-height:1.5;
+}
+.diferencial .btn{ margin-top:48px; }
+
+@media (max-width:768px){
+  .diferencial{ padding:96px 0; }
+}
+
+/* ============ Portfólio / Galeria ============ */
+.galeria{ background:var(--off-white); padding:120px 0 130px; }
+.galeria-topo{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:52px; flex-wrap:wrap; }
+.galeria h2{
+  font-size:clamp(28px,3.6vw,42px); line-height:1.1; text-transform:uppercase; color:var(--texto-escuro); max-width:12ch;
+}
+.galeria-topo p{ font-size:15px; color:var(--texto-escuro-dim); max-width:34ch; line-height:1.55; }
+
+.galeria-grid{
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  grid-auto-rows:130px;
+  gap:14px;
+}
+.g-item{ position:relative; overflow:hidden; }
+.g-item img{ width:100%; height:100%; object-fit:cover; transition:transform .7s ease; }
+.g-item:hover img{ transform:scale(1.06); }
+.g-item.g1{ grid-column:span 4; grid-row:span 3; }
+.g-item.g2{ grid-column:span 2; grid-row:span 2; }
+.g-item.g3{ grid-column:span 2; grid-row:span 3; }
+.g-item.g4{ grid-column:span 2; grid-row:span 2; }
+.g-item.g5{ grid-column:span 3; grid-row:span 2; }
+.g-item.g6{ grid-column:span 3; grid-row:span 2; }
+.g-item.g7{ grid-column:span 3; grid-row:span 2; }
+.g-item.g8{ grid-column:span 3; grid-row:span 2; }
+
+@media (max-width:900px){
+  .galeria{ padding:80px 0 90px; }
+  .galeria-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:170px; }
+  .g-item, .g-item.g1, .g-item.g2, .g-item.g3, .g-item.g4, .g-item.g5, .g-item.g6, .g-item.g7, .g-item.g8{ grid-column:span 1; grid-row:span 1; }
+  .g-item.g1{ grid-column:span 2; grid-row:span 2; }
+}
+
+/* ============ CTA final ============ */
+.cta-final{
+  position:relative; padding:170px 0; isolation:isolate; overflow:hidden;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+}
+.cta-final img{ position:absolute; inset:0; z-index:-2; width:100%; height:100%; object-fit:cover; }
+.cta-final::after{
+  content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, rgba(7,17,11,0.72) 0%, rgba(7,17,11,0.5) 40%, rgba(7,17,11,0.88) 100%);
+}
+.cta-final-conteudo{ max-width:720px; margin:0 auto; padding:0 24px; }
+.cta-final .rotulo{ color:var(--verde-vivo-2); justify-content:center; display:flex; }
+.cta-final h2{
+  font-size:clamp(32px,5vw,58px); line-height:1.05; text-transform:uppercase; color:var(--texto-claro);
+}
+.cta-final p{ margin-top:22px; font-size:17px; line-height:1.6; color:var(--texto-claro-dim); max-width:52ch; margin-left:auto; margin-right:auto; }
+.cta-final .btn{ margin-top:42px; }
+.cta-final-whats{
+  margin-top:30px; display:flex; align-items:center; justify-content:center; gap:10px;
+  font-family:var(--font-mono); font-size:16px; color:var(--texto-claro);
+}
+.cta-final-whats svg{ width:18px; height:18px; color:var(--verde-vivo-2); }
+
+@media (max-width:600px){
+  .cta-final{ padding:120px 0; }
+}
+
+/* ============ Footer ============ */
+.footer{ background:var(--verde-floresta-2); color:var(--texto-claro-dim); padding:80px 0 26px; }
+.footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:50px; padding-bottom:56px; border-bottom:1px solid var(--linha-clara); }
+.footer-marca{ display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+.footer-marca img{ height:36px; }
+.footer-marca strong{ font-family:var(--font-display); font-size:19px; color:var(--texto-claro); }
+.footer-tagline{ font-size:14.5px; line-height:1.6; max-width:34ch; }
+.footer h4{ font-family:var(--font-body); font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--verde-vivo-2); margin-bottom:20px; font-weight:700; }
+.footer-lista{ display:flex; flex-direction:column; gap:12px; }
+.footer-lista a{ font-size:14.5px; transition:color .2s ease; }
+.footer-lista a:hover{ color:var(--texto-claro); }
+.footer-contato{ font-size:14.5px; display:flex; flex-direction:column; gap:12px; }
+.footer-contato .mono{ font-family:var(--font-mono); color:var(--texto-claro); }
+.footer-baixo{
+  padding-top:26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  font-size:12.5px; color:rgba(245,241,228,0.45);
+}
+
+@media (max-width:800px){
+  .footer{ padding:60px 0 24px; }
+  .footer-grid{ grid-template-columns:1fr; gap:36px; }
+}
+
+/* ============ WhatsApp flutuante (desktop) ============ */
+.wa-float{
+  position:fixed; right:26px; bottom:26px; z-index:90;
+  width:60px; height:60px; border-radius:50%;
+  background:var(--verde-vivo); color:#0B1A10;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.28);
+  transition:transform .25s ease, background .25s ease;
+}
+.wa-float:hover{ transform:scale(1.07); background:var(--verde-vivo-2); }
+.wa-float svg{ width:28px; height:28px; }
+
+/* ============ Barra fixa mobile ============ */
+.barra-mobile{
+  display:none; position:fixed; left:0; right:0; bottom:0; z-index:95;
+  background:var(--verde-vivo); color:#0B1A10;
+  padding:15px 20px; align-items:center; justify-content:center; gap:10px;
+  font-weight:800; font-size:14.5px; letter-spacing:0.02em;
+  box-shadow:0 -8px 24px rgba(0,0,0,0.18);
+}
+.barra-mobile svg{ width:19px; height:19px; }
+
+@media (max-width:768px){
+  .wa-float{ display:none; }
+  .barra-mobile{ display:flex; }
+  body{ padding-bottom:64px; }
+}
+
+/* ============ Reveal on scroll ============ */
+.reveal{ opacity:0; transform:translateY(26px); transition:opacity .8s ease, transform .8s ease; }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="wrap">
+    <a href="#inicio" class="marca">
+      <img src="imagens/marca-icone.png" alt="RD Agro Drones" width="60" height="29">
+      <span class="marca-texto">
+        <strong>RD Agro Drones</strong>
+        <span>Soluções agrícolas</span>
+      </span>
+    </a>
+
+    <nav class="nav-desktop">
+      <a href="#inicio">Início</a>
+      <a href="#solucoes">Soluções</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#" class="btn btn-primary" data-wa data-wa-ctx="geral">Solicitar orçamento</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav-mobile" id="navMobile">
+  <ul>
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#solucoes">Soluções</a></li>
+    <li><a href="#como-funciona">Como funciona</a></li>
+    <li><a href="#beneficios">Benefícios</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <div class="nav-mobile-foot">
+    <a href="#" class="btn btn-primary btn-block" data-wa data-wa-ctx="geral">Solicitar orçamento</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <img class="hero-bg" id="heroBg" src="https://images.pexels.com/photos/997134/pexels-photo-997134.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1920" alt="Drone agrícola sobrevoando lavoura ao entardecer">
+  <div class="hero-conteudo">
+    <div class="wrap">
+      <span class="hero-eyebrow"><span class="ponto"></span>Rio Negro — Paraná</span>
+      <h1>Tecnologia que voa.<br>Resultados que <em>ficam no campo.</em></h1>
+      <p class="hero-sub">Soluções agrícolas com drones para aplicações mais precisas, rápidas e eficientes.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-primary btn-lg" data-wa data-wa-ctx="geral">Solicitar orçamento</a>
+        <a href="#solucoes" class="btn btn-outline-light btn-lg">Conhecer as soluções</a>
+      </div>
+      <div class="hero-info">
+        <div class="hero-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          Rio Negro – PR
+        </div>
+        <div class="hero-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="3.4"/><path d="M7.5 7.5l1.6 1.6M14.9 14.9l1.6 1.6M16.5 7.5l-1.6 1.6M9.1 14.9l-1.6 1.6"/></svg>
+          Tecnologia aplicada ao campo
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BARRA DE CONFIANÇA ============ -->
+<section class="confianca">
+  <div class="wrap">
+    <div class="confianca-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.2 4.6 5 .7-3.6 3.6.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.6 5-.7L12 3Z"/></svg>
+      <span>Tecnologia de drones</span>
+    </div>
+    <div class="confianca-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="0.8" fill="currentColor"/></svg>
+      <span>Aplicação de precisão</span>
+    </div>
+    <div class="confianca-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
+      <span>Mais agilidade</span>
+    </div>
+    <div class="confianca-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2C8 6 5 9.5 5 13.5A7 7 0 0 0 19 13.5C19 9.5 16 6 12 2Z"/></svg>
+      <span>Soluções para o campo</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEMA ============ -->
+<section class="problema" id="problema">
+  <div class="wrap">
+    <div class="problema-topo reveal">
+      <div>
+        <span class="rotulo">O desafio no campo</span>
+        <h2>No campo, cada<br>aplicação conta.</h2>
+      </div>
+      <p class="problema-texto">Operações agrícolas exigem precisão, agilidade e eficiência. Com a tecnologia de drones, é possível executar aplicações de forma estratégica, reduzindo desperdícios e aumentando o controle sobre a operação.</p>
+    </div>
+
+    <div class="problema-lista reveal">
+      <div class="problema-linha">
+        <h3>Desperdício</h3>
+        <p>Aplicações pouco precisas podem aumentar custos e reduzir a eficiência da operação.</p>
+      </div>
+      <div class="problema-linha">
+        <h3>Amassamento da lavoura</h3>
+        <p>Operações convencionais podem causar danos desnecessários à cultura.</p>
+      </div>
+      <div class="problema-linha">
+        <h3>Falta de agilidade</h3>
+        <p>Condições do campo podem exigir uma resposta rápida — nem sempre possível com métodos tradicionais.</p>
+      </div>
+    </div>
+
+    <div class="problema-fecho reveal">
+      <span class="linha-verde"></span>
+      <p>É aqui que a RD Agro Drones entra.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLUÇÕES ============ -->
+<section class="solucoes" id="solucoes">
+  <div class="wrap">
+    <div class="solucoes-topo reveal">
+      <span class="rotulo">O que fazemos</span>
+      <h2>Tecnologia aplicada à sua lavoura.</h2>
+    </div>
+
+    <div class="solucoes-grid reveal">
+      <div class="sol-card" style="min-height:420px;">
+        <img src="https://images.pexels.com/photos/1087183/pexels-photo-1087183.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1400" alt="Drone realizando pulverização agrícola sobre a lavoura">
+        <div class="sol-card-conteudo">
+          <span class="sol-card-num">01</span>
+          <h3>Pulverização agrícola</h3>
+          <p>Aplicações realizadas com drones, proporcionando maior precisão e agilidade na operação.</p>
+          <a href="#" class="sol-card-link" data-wa data-wa-ctx="pulverizacao">Saiba mais
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="solucoes-col">
+        <div class="sol-card">
+          <img src="https://images.pexels.com/photos/20286975/pexels-photo-20286975/free-photo-of-birds-eye-view-of-fields.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" alt="Vista aérea de talhões agrícolas">
+          <div class="sol-card-conteudo">
+            <span class="sol-card-num">02</span>
+            <h3>Controle de pragas</h3>
+            <p>Soluções direcionadas para auxiliar no manejo e controle de pragas agrícolas.</p>
+            <a href="#" class="sol-card-link" data-wa data-wa-ctx="pragas">Saiba mais
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="sol-card">
+          <img src="https://images.pexels.com/photos/35750836/pexels-photo-35750836/free-photo-of-aerial-view-of-vibrant-agricultural-fields-with-tractor.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" alt="Operação agrícola em campo">
+          <div class="sol-card-conteudo">
+            <span class="sol-card-num">03</span>
+            <h3>Aplicações no campo</h3>
+            <p>Operações mais flexíveis para diferentes necessidades e condições da lavoura.</p>
+            <a href="#" class="sol-card-link" data-wa data-wa-ctx="aplicacoes">Saiba mais
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFÍCIOS ============ -->
+<section class="beneficios" id="beneficios">
+  <div class="wrap beneficios-grid">
+    <div class="beneficios-img reveal">
+      <img src="https://images.pexels.com/photos/1087184/pexels-photo-1087184.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1400" alt="Drone agrícola sobrevoando plantação">
+      <div class="beneficios-img-tag">RD AGRO DRONES / OPERAÇÃO EM CAMPO</div>
+    </div>
+    <div class="reveal">
+      <span class="rotulo">Vantagens da tecnologia</span>
+      <h2>Por que usar drones na operação agrícola?</h2>
+      <div class="beneficios-lista">
+        <div class="beneficio-item">
+          <h3>Precisão</h3>
+          <p>Aplicações mais direcionadas, ponto a ponto da lavoura.</p>
+        </div>
+        <div class="beneficio-item">
+          <h3>Agilidade</h3>
+          <p>Maior velocidade operacional em diferentes cenários.</p>
+        </div>
+        <div class="beneficio-item">
+          <h3>Menos amassamento</h3>
+          <p>Sem a necessidade de máquinas pesadas circulando pela lavoura durante a aplicação.</p>
+        </div>
+        <div class="beneficio-item">
+          <h3>Eficiência</h3>
+          <p>Tecnologia aplicada para otimizar a operação do início ao fim.</p>
+        </div>
+        <div class="beneficio-item">
+          <h3>Flexibilidade</h3>
+          <p>Operação em locais e condições onde outras soluções podem ser menos práticas.</p>
+        </div>
+        <div class="beneficio-item">
+          <h3>Segurança operacional</h3>
+          <p>Possibilidade de realizar determinadas operações remotamente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section class="como" id="como-funciona">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="rotulo">Do planejamento à aplicação</span>
+      <h2>Como funciona a operação.</h2>
+    </div>
+    <div class="como-passos reveal">
+      <div class="passo">
+        <div class="passo-num">01</div>
+        <h3>Avaliação</h3>
+        <p>Entendemos a necessidade da sua operação.</p>
+      </div>
+      <div class="passo">
+        <div class="passo-num">02</div>
+        <h3>Planejamento</h3>
+        <p>Definimos a melhor estratégia para a aplicação.</p>
+      </div>
+      <div class="passo">
+        <div class="passo-num">03</div>
+        <h3>Operação</h3>
+        <p>Realizamos o serviço utilizando tecnologia de drones.</p>
+      </div>
+      <div class="passo">
+        <div class="passo-num">04</div>
+        <h3>Acompanhamento</h3>
+        <p>Entregamos uma operação organizada e orientada ao resultado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPLIT VISUAL ============ -->
+<section class="split">
+  <div class="split-img">
+    <img src="https://images.pexels.com/photos/997125/pexels-photo-997125.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1400" alt="Drone agrícola sobre lavoura verde">
+  </div>
+  <div class="split-texto">
+    <h2>Precisão que<br>você consegue ver.</h2>
+    <p>Leve tecnologia para dentro da sua operação agrícola.</p>
+    <a href="#" class="btn btn-primary" data-wa data-wa-ctx="geral">Quero um orçamento</a>
+  </div>
+</section>
+
+<!-- ============ PARA QUEM ============ -->
+<section class="para-quem">
+  <div class="wrap">
+    <h2 class="reveal">Uma nova forma de operar no campo.</h2>
+    <div class="pq-grid reveal">
+      <div class="pq-card">
+        <img src="https://images.pexels.com/photos/30895880/pexels-photo-30895880/free-photo-of-aerial-view-of-tractor-plowing-green-field.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" alt="Lavoura vista de cima">
+        <div class="pq-card-conteudo">
+          <h3>Lavouras</h3>
+          <p>Aplicações agrícolas com maior precisão operacional.</p>
+        </div>
+      </div>
+      <div class="pq-card">
+        <img src="https://images.pexels.com/photos/11891907/pexels-photo-11891907.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" alt="Área rural de difícil acesso">
+        <div class="pq-card-conteudo">
+          <h3>Áreas de difícil acesso</h3>
+          <p>Tecnologia que amplia as possibilidades de operação.</p>
+        </div>
+      </div>
+      <div class="pq-card">
+        <img src="https://images.pexels.com/photos/9492251/pexels-photo-9492251.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" alt="Manejo agrícola em campo">
+        <div class="pq-card-conteudo">
+          <h3>Manejo agrícola</h3>
+          <p>Mais controle e flexibilidade nas operações.</p>
+        </div>
+      </div>
+      <div class="pq-card">
+        <img src="https://images.pexels.com/photos/16674456/pexels-photo-16674456/free-photo-of-birds-high-view.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" alt="Propriedade rural vista do alto">
+        <div class="pq-card-conteudo">
+          <h3>Propriedades rurais</h3>
+          <p>Soluções adaptadas às necessidades de cada operação.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section class="sobre" id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="reveal">
+      <span class="rotulo">Quem somos</span>
+      <h2>Tecnologia a serviço do produtor.</h2>
+      <div class="sobre-texto">
+        <p>A RD Agro Drones nasceu para aproximar a tecnologia das necessidades reais do campo.</p>
+        <p>Utilizamos drones como ferramenta para tornar operações agrícolas mais precisas, ágeis e eficientes.</p>
+        <p>Nosso foco é simples: ajudar o produtor a executar melhor sua operação.</p>
+      </div>
+    </div>
+    <div class="sobre-img reveal">
+      <img src="https://images.pexels.com/photos/17892635/pexels-photo-17892635/free-photo-of-drone-shot-of-combine-harvester-in-field.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" alt="Drone e campo agrícola">
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFERENCIAL ============ -->
+<section class="diferencial">
+  <div class="wrap diferencial-conteudo reveal">
+    <h2>Você não está contratando um drone.</h2>
+    <h2>Está contratando uma operação mais inteligente.</h2>
+    <p class="diferencial-lema">Drone é tecnologia. Resultado é o que importa.</p>
+    <a href="#" class="btn btn-primary btn-lg" data-wa data-wa-ctx="geral">Falar com a RD Agro Drones</a>
+  </div>
+</section>
+
+<!-- ============ GALERIA ============ -->
+<section class="galeria">
+  <div class="wrap">
+    <div class="galeria-topo reveal">
+      <h2>Operação em campo.</h2>
+      <p>Registros reais de tecnologia, precisão e produtividade aplicadas à lavoura.</p>
+    </div>
+    <div class="galeria-grid reveal">
+      <div class="g-item g1"><img src="https://images.pexels.com/photos/9492251/pexels-photo-9492251.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1200" alt="Operação agrícola em campo aberto" loading="lazy"></div>
+      <div class="g-item g2"><img src="https://images.pexels.com/photos/1087183/pexels-photo-1087183.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt="Drone em voo sobre vegetação" loading="lazy"></div>
+      <div class="g-item g3"><img src="https://images.pexels.com/photos/30895880/pexels-photo-30895880/free-photo-of-aerial-view-of-tractor-plowing-green-field.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt="Vista aérea de trator em lavoura" loading="lazy"></div>
+      <div class="g-item g4"><img src="https://images.pexels.com/photos/4255804/pexels-photo-4255804.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt="Trator arando terra em campo aberto" loading="lazy"></div>
+      <div class="g-item g5"><img src="https://images.pexels.com/photos/35750836/pexels-photo-35750836/free-photo-of-aerial-view-of-vibrant-agricultural-fields-with-tractor.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000" alt="Talhões agrícolas vistos do alto" loading="lazy"></div>
+      <div class="g-item g6"><img src="https://images.pexels.com/photos/11891907/pexels-photo-11891907.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1000" alt="Textura de lavoura vista de drone" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final" id="contato">
+  <img src="https://images.pexels.com/photos/37954184/pexels-photo-37954184/free-photo-of-scenic-sunset-over-wheat-fields-in-austria.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1920" alt="Lavoura ao pôr do sol">
+  <div class="cta-final-conteudo reveal">
+    <span class="rotulo">Fale com a gente</span>
+    <h2>Sua lavoura pode operar com mais precisão.</h2>
+    <p>Fale com a RD Agro Drones e descubra como a tecnologia pode fazer parte da sua operação.</p>
+    <a href="#" class="btn btn-primary btn-lg" data-wa data-wa-ctx="geral">Solicitar orçamento</a>
+    <div class="cta-final-whats">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.1-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm5.2 14.2c-.22.62-1.28 1.2-1.77 1.24-.45.05-1.02.07-1.65-.1-.38-.11-.87-.28-1.5-.55-2.63-1.14-4.35-3.8-4.48-3.98-.13-.18-1.07-1.43-1.07-2.73 0-1.3.68-1.94.92-2.2.24-.27.53-.33.7-.33h.5c.16 0 .38-.03.58.44.22.53.75 1.83.81 1.96.06.13.1.29.02.47-.08.18-.13.29-.25.44-.13.16-.27.36-.38.48-.13.13-.26.27-.11.53.15.27.66 1.09 1.42 1.77.98.87 1.8 1.14 2.07 1.27.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.56.74 1.83.87.27.13.45.2.51.31.07.13.07.71-.15 1.33Z"/></svg>
+      <span data-wa-text>(47) 99140-3328</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-marca">
+          <img src="imagens/marca-icone.png" alt="RD Agro Drones" width="70" height="34">
+          <strong>RD Agro Drones</strong>
+        </div>
+        <p class="footer-tagline">Soluções agrícolas com tecnologia de drones.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <div class="footer-lista">
+          <a href="#inicio">Início</a>
+          <a href="#solucoes">Soluções</a>
+          <a href="#beneficios">Benefícios</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <div class="footer-contato">
+          <span>Rio Negro – PR</span>
+          <a href="#" class="mono" data-wa data-wa-ctx="geral">(47) 99140-3328</a>
+          <a href="https://www.instagram.com/rdagrodrones" target="_blank" rel="noopener">@rdagrodrones</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-baixo">
+      <span>RD Agro Drones — Rio Negro, Paraná</span>
+      <span>Site demonstrativo — RD Agro Drones</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLUTUANTE ============ -->
+<a href="#" class="wa-float" data-wa data-wa-ctx="geral" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.1-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm5.2 14.2c-.22.62-1.28 1.2-1.77 1.24-.45.05-1.02.07-1.65-.1-.38-.11-.87-.28-1.5-.55-2.63-1.14-4.35-3.8-4.48-3.98-.13-.18-1.07-1.43-1.07-2.73 0-1.3.68-1.94.92-2.2.24-.27.53-.33.7-.33h.5c.16 0 .38-.03.58.44.22.53.75 1.83.81 1.96.06.13.1.29.02.47-.08.18-.13.29-.25.44-.13.16-.27.36-.38.48-.13.13-.26.27-.11.53.15.27.66 1.09 1.42 1.77.98.87 1.8 1.14 2.07 1.27.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.56.74 1.83.87.27.13.45.2.51.31.07.13.07.71-.15 1.33Z"/></svg>
+</a>
+
+<!-- ============ BARRA FIXA MOBILE ============ -->
+<a href="#" class="barra-mobile" data-wa data-wa-ctx="geral">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 6 5 9.5 5 13.5A7 7 0 0 0 19 13.5C19 9.5 16 6 12 2Z"/></svg>
+  Solicitar orçamento
+</a>
+
+<noscript>
+  <p style="position:fixed;bottom:0;left:0;right:0;background:#0E2A1C;color:#F5F1E4;text-align:center;padding:14px;font-family:sans-serif;">
+    Fale com a RD Agro Drones pelo WhatsApp: <a href="https://wa.me/5547991403328" style="color:#4FC470;">(47) 99140-3328</a>
+  </p>
+</noscript>
+
+<script>
+/* ===================== CONFIG ===================== */
+const CONFIG = {
+  nome: "RD Agro Drones",
+  whatsapp: "5547991403328",
+  mensagens: {
+    geral: "Olá! Conheci a RD Agro Drones e gostaria de saber mais sobre os serviços de aplicação agrícola com drones.",
+    pulverizacao: "Olá! Vi o site da RD Agro Drones e quero saber mais sobre pulverização agrícola com drone.",
+    pragas: "Olá! Vi o site da RD Agro Drones e quero saber mais sobre controle de pragas com drone.",
+    aplicacoes: "Olá! Vi o site da RD Agro Drones e quero saber mais sobre as aplicações no campo com drone."
+  }
+};
+
+function linkWhats(ctx){
+  const msg = CONFIG.mensagens[ctx] || CONFIG.mensagens.geral;
+  return `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+}
+
+document.querySelectorAll('[data-wa]').forEach(el => {
+  const ctx = el.getAttribute('data-wa-ctx') || 'geral';
+  el.setAttribute('href', linkWhats(ctx));
+  el.setAttribute('target', '_blank');
+  el.setAttribute('rel', 'noopener');
+});
+
+/* ===================== Header on scroll ===================== */
+const header = document.getElementById('header');
+function onScroll(){
+  if(window.scrollY > 40){ header.classList.add('is-scrolled'); }
+  else{ header.classList.remove('is-scrolled'); }
+}
+document.addEventListener('scroll', onScroll, { passive:true });
+onScroll();
+
+/* ===================== Menu mobile ===================== */
+const hamburger = document.getElementById('hamburger');
+const navMobile = document.getElementById('navMobile');
+hamburger.addEventListener('click', () => {
+  const open = navMobile.classList.toggle('is-open');
+  hamburger.classList.toggle('is-open', open);
+  hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navMobile.classList.remove('is-open');
+  hamburger.classList.remove('is-open');
+  document.body.style.overflow = '';
+}));
+
+/* ===================== Reveal on scroll ===================== */
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduceMotion && 'IntersectionObserver' in window){
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold:0.12, rootMargin:'0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+}
+
+/* ===================== Parallax sutil no hero ===================== */
+const heroBg = document.getElementById('heroBg');
+if(!reduceMotion && heroBg){
+  document.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if(y < window.innerHeight){
+      heroBg.style.transform = `translateY(${y * 0.12}px)`;
+    }
+  }, { passive:true });
+}
+</script>
+
+</body>
+</html>
