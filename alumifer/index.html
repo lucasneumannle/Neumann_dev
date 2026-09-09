@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alumifer Distribuidora — Alumínio, Aço e Chapas em Jaraguá do Sul/SC</title>
+<meta name="description" content="Distribuidora de alumínio, ferro, chapas, ACM, telhas metálicas, perfis dobrados, telas e ferragens em Jaraguá do Sul/SC. Atendimento a serralherias, construtoras e indústrias. Solicite orçamento.">
+<meta name="keywords" content="distribuidora de alumínio, distribuidora de ferro, chapas de alumínio, chapas de aço, ACM, policarbonato, telhas metálicas, perfis dobrados, materiais para serralheiro, fornecedor de aço e alumínio Jaraguá do Sul">
+
+<!-- Open Graph -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Alumifer Distribuidora — Alumínio, Aço e Chapas em Jaraguá do Sul/SC">
+<meta property="og:description" content="Uma distribuidora, o mix inteiro: alumínio, aço, chapas, ACM, telhas e ferragens. Atendimento a serralherias, construtoras e indústrias.">
+<meta property="og:image" content="imagens/og-image.png">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="icon" type="image/png" href="imagens/favicon.png">
+
+<!-- Fonts: Big Shoulders (perfis de aço -> letras desenhadas com a mesma lógica de vigas laminadas) + Public Sans (leitura de trabalho) + IBM Plex Mono (reservada para dados reais) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.462.0/umd/lucide.min.js"></script>
+
+<style>
+  :root{
+    --af-blue:      #283890;
+    --af-blue-2:    #1c2a6e;
+    --af-blue-deep: #10173f;
+    --af-red:       #bf1e2d;
+    --af-red-dark:  #8f1622;
+    --af-ink:       #14171c;
+    --af-steel-50:  #f6f6f4;
+    --af-steel-100: #efeeea;
+    --af-steel-200: #e2e1db;
+    --af-steel-300: #c6c5bd;
+    --af-steel-400: #9a9a92;
+    --af-steel-600: #5b5c57;
+    --af-steel-700: #3c3d3a;
+  }
+
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Public Sans', ui-sans-serif, system-ui, sans-serif;
+    background:var(--af-steel-50);
+    color:var(--af-ink);
+  }
+  .font-display{ font-family:'Big Shoulders Display', ui-sans-serif, sans-serif; }
+  .font-mono{ font-family:'IBM Plex Mono', ui-monospace, monospace; }
+
+  ::selection{ background:var(--af-red); color:#fff; }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--af-red); outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  .hairline{ border-color:var(--af-steel-300); }
+
+  /* Hero backdrop: layered diagonal steel-plate texture, not a stock photo */
+  .steel-field{
+    background-color:var(--af-blue-deep);
+    background-image:
+      repeating-linear-gradient(115deg, rgba(255,255,255,0.035) 0px, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 68px),
+      repeating-linear-gradient(25deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 46px),
+      radial-gradient(1100px 620px at 82% -10%, rgba(191,30,45,0.20), transparent 60%),
+      radial-gradient(900px 700px at -10% 110%, rgba(40,56,144,0.55), transparent 55%);
+  }
+
+  .rivet{
+    width:6px; height:6px; border-radius:9999px;
+    background:rgba(255,255,255,0.18);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.4);
+  }
+
+  .catalog-num{
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cta-primary{
+    background:var(--af-red);
+    color:#fff;
+  }
+  .cta-primary:hover{ background:var(--af-red-dark); }
+
+  .link-underline{
+    background-image: linear-gradient(var(--af-red), var(--af-red));
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size .25s ease;
+  }
+  .link-underline:hover{ background-size: 100% 2px; }
+
+  /* Category row hover reveal */
+  .cat-row .cat-arrow{ transform:translateX(-6px); opacity:0; transition:transform .2s ease, opacity .2s ease; }
+  .cat-row:hover .cat-arrow{ transform:translateX(0); opacity:1; }
+  .cat-row:hover .cat-name{ color:var(--af-blue); }
+
+  /* Reveal-on-load hero sequence only (single orchestrated moment) */
+  @keyframes riseIn{
+    from{ opacity:0; transform:translateY(14px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  .rise-1{ animation:riseIn .6s ease-out .05s both; }
+  .rise-2{ animation:riseIn .6s ease-out .18s both; }
+  .rise-3{ animation:riseIn .6s ease-out .30s both; }
+  .rise-4{ animation:riseIn .6s ease-out .42s both; }
+
+  .mobile-bar-safe{ padding-bottom: env(safe-area-inset-bottom); }
+
+  .scan-line{
+    background: linear-gradient(180deg, transparent, rgba(40,56,144,0.06) 50%, transparent);
+  }
+
+  input, textarea{
+    background:#fff;
+    border:1px solid var(--af-steel-300);
+  }
+  input:hover, textarea:hover{ border-color:var(--af-steel-400); }
+
+  .segment-btn{ cursor:pointer; background:transparent; }
+  .segment-btn[aria-selected="true"]{
+    color:var(--af-blue);
+    border-color:var(--af-blue) !important;
+  }
+  .segment-btn[aria-selected="true"] .seg-idx{ color:var(--af-red) !important; }
+
+  .panel{ display:none; }
+  .panel.active{ display:block; }
+
+  @media (min-width:768px){
+    .mobile-only-cta{ display:none; }
+  }
+</style>
+</head>
+
+<body class="antialiased">
+
+<!-- ============================================================
+     CONFIG — fonte única de verdade. Editar aqui reskina o site.
+     ============================================================ -->
+<script>
+  const CONFIG = {
+    empresa: "Alumifer Distribuidora",
+    cidade: "Jaraguá do Sul/SC",
+    fundacao: 2007,
+    telefoneExibicao: "(47) 8434-0119",
+    whatsappNumero: "554784340119", // TROCAR: confirmar se este número tem WhatsApp Business ativo
+    email: "TROCAR@alumiferdistribuidora.com.br", // TROCAR
+    endereco: "TROCAR — endereço completo (rua, número, bairro, CEP)", // TROCAR
+    horario: "TROCAR — horário de atendimento (seg–sex / sáb)", // TROCAR
+    instagram: "https://instagram.com/TROCAR", // TROCAR
+    mensagens: {
+      generico: "Olá! Vim pelo site da Alumifer e quero solicitar um orçamento.",
+      categoria: (nome) => `Olá! Vim pelo site da Alumifer e preciso de um orçamento de ${nome}.`,
+    }
+  };
+
+  function waLink(mensagem){
+    return `https://wa.me/${CONFIG.whatsappNumero}?text=${encodeURIComponent(mensagem)}`;
+  }
+</script>
+
+<!-- ============================================================
+     TOPO / HEADER
+     ============================================================ -->
+<div class="hidden md:block bg-[var(--af-blue-deep)] text-[var(--af-steel-200)] text-xs">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-9 flex items-center justify-between">
+    <p class="font-mono tracking-tight opacity-80">Distribuidora de alumínio, ferro e chapas · <span data-fill="cidade">Jaraguá do Sul/SC</span></p>
+    <div class="flex items-center gap-5">
+      <a href="#" data-tel-link class="font-mono hover:text-white transition-colors flex items-center gap-1.5">
+        <i data-lucide="phone" class="w-3.5 h-3.5"></i><span data-fill="telefoneExibicao">(47) 8434-0119</span>
+      </a>
+      <a data-wa href="#" target="_blank" rel="noopener" class="font-mono hover:text-white transition-colors flex items-center gap-1.5">
+        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<header id="topo" class="sticky top-0 z-50 bg-[var(--af-steel-50)]/95 backdrop-blur border-b hairline">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-[76px] flex items-center justify-between">
+    <a href="#topo" class="flex items-center gap-3 shrink-0">
+      <img src="imagens/logo.png" alt="Alumifer Distribuidora" class="w-11 h-11 rounded-full">
+      <span class="leading-none">
+        <span class="block font-display font-extrabold text-[22px] tracking-tight text-[var(--af-blue)]">ALUMIFER</span>
+        <span class="block font-mono text-[10px] tracking-[0.18em] text-[var(--af-steel-600)] -mt-0.5">DISTRIBUIDORA</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-[var(--af-ink)]">
+      <a href="#topo" class="link-underline pb-1">Início</a>
+      <a href="#produtos" class="link-underline pb-1">Produtos</a>
+      <a href="#solucoes" class="link-underline pb-1">Soluções</a>
+      <a href="#empresa" class="link-underline pb-1">A Alumifer</a>
+      <a href="#contato" class="link-underline pb-1">Contato</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a data-wa href="#" target="_blank" rel="noopener"
+         class="hidden sm:inline-flex cta-primary font-semibold text-sm px-5 py-3 items-center gap-2 transition-colors">
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        Solicitar orçamento
+      </a>
+      <button id="menuBtn" aria-label="Abrir menu" aria-expanded="false" class="lg:hidden p-2 -mr-2 text-[var(--af-ink)]">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu mobile -->
+  <div id="menuMobile" class="hidden lg:hidden border-t hairline bg-[var(--af-steel-50)]">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1 text-[17px] font-medium">
+      <a href="#topo" class="py-2.5 border-b hairline">Início</a>
+      <a href="#produtos" class="py-2.5 border-b hairline">Produtos</a>
+      <a href="#solucoes" class="py-2.5 border-b hairline">Soluções</a>
+      <a href="#empresa" class="py-2.5 border-b hairline">A Alumifer</a>
+      <a href="#contato" class="py-2.5">Contato</a>
+      <a data-wa href="#" target="_blank" rel="noopener" class="mt-3 cta-primary font-semibold text-sm px-5 py-3.5 flex items-center justify-center gap-2">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> Solicitar orçamento
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="steel-field relative overflow-hidden text-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-14 pb-20 lg:pt-20 lg:pb-24 grid lg:grid-cols-[1.05fr,0.95fr] gap-14 items-center relative">
+
+    <div>
+      <div class="rise-1 inline-flex items-center gap-2 font-mono text-[11px] tracking-wide text-[var(--af-steel-200)] border border-white/15 px-3 py-1.5 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-[var(--af-red)]"></span>
+        Distribuidora ativa desde <span data-fill="fundacao">2007</span> · <span data-fill="cidade">Jaraguá do Sul/SC</span>
+      </div>
+
+      <h1 class="rise-2 font-display font-extrabold leading-[0.94] tracking-tight mt-6 text-[46px] sm:text-[58px] lg:text-[64px]">
+        Alumínio, aço e chapas.<br>
+        <span class="text-[var(--af-steel-200)]">Tudo num único</span><br>
+        fornecedor.
+      </h1>
+
+      <p class="rise-3 mt-6 text-[17px] sm:text-[19px] text-[var(--af-steel-200)] max-w-xl leading-relaxed">
+        Perfis, chapas, telhas, ACM, telas e ferragens para serralherias, construtoras e indústrias que não têm tempo de rodar atrás de fornecedor.
+      </p>
+
+      <div class="rise-4 mt-9 flex flex-col sm:flex-row gap-3.5">
+        <a data-wa href="#" target="_blank" rel="noopener"
+           class="cta-primary font-semibold px-7 py-4 flex items-center justify-center gap-2 transition-colors">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Solicitar orçamento
+        </a>
+        <a href="#produtos"
+           class="font-semibold px-7 py-4 flex items-center justify-center gap-2 border border-white/25 hover:border-white/60 transition-colors">
+          Ver produtos
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <div class="rise-4 mt-10 flex items-center gap-3 font-mono text-[13px] text-[var(--af-steel-200)]">
+        <i data-lucide="phone-call" class="w-4 h-4 text-[var(--af-red)]"></i>
+        <span data-fill="telefoneExibicao">(47) 8434-0119</span>
+        <span class="opacity-40">·</span>
+        <span>Atendimento comercial direto</span>
+      </div>
+    </div>
+
+    <!-- Painel técnico: substitui foto de banco de imagens genérica -->
+    <div class="rise-3 relative">
+      <div class="border border-white/12 bg-white/[0.03] backdrop-blur-sm p-5 sm:p-6">
+        <div class="flex items-center justify-between border-b border-white/12 pb-3 mb-3">
+          <span class="font-mono text-[11px] tracking-wide text-[var(--af-steel-200)]">ÍNDICE DE LINHA · ALUMIFER</span>
+          <span id="heroIndexCount" class="font-mono text-[11px] text-[var(--af-red)]"></span>
+        </div>
+        <div id="heroIndex" class="divide-y divide-white/10 font-mono text-[13px] sm:text-[14px]">
+          <!-- preenchido via JS a partir de CONFIG.categorias -->
+        </div>
+        <div class="mt-4 pt-4 border-t border-white/12 flex items-center justify-between font-mono text-[11px] text-[var(--af-steel-200)]">
+          <span>ATUALIZADO · <span data-fill="anoAtual">2026</span></span>
+          <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> DISPONIBILIDADE SOB CONSULTA</span>
+        </div>
+      </div>
+      <div class="hidden sm:flex absolute -bottom-5 -left-5 bg-[var(--af-red)] text-white px-5 py-3.5 items-center gap-3 shadow-xl">
+        <i data-lucide="layers" class="w-5 h-5"></i>
+        <span class="font-display font-bold text-lg leading-none">Estoque para<br>pronta entrega</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- rebite decorativo sutil, alinhado à grade -->
+  <div class="hidden lg:flex absolute top-8 left-8 gap-2">
+    <span class="rivet"></span><span class="rivet"></span>
+  </div>
+</section>
+
+<!-- ============================================================
+     CATEGORIAS — índice de catálogo (numeração cabe: é uma linha de produtos)
+     ============================================================ -->
+<section id="produtos" class="py-20 sm:py-28 border-b hairline">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-[0.8fr,1.2fr] gap-8 lg:gap-16 mb-12 lg:mb-16">
+      <div>
+        <span class="font-mono text-[12px] tracking-wide text-[var(--af-red)]">01 — LINHA DE PRODUTOS</span>
+        <h2 class="font-display font-extrabold text-[38px] sm:text-[46px] leading-[0.98] tracking-tight mt-3">
+          Uma linha completa<br>para sua operação.
+        </h2>
+      </div>
+      <p class="text-[17px] text-[var(--af-steel-600)] leading-relaxed lg:pt-2 lg:pl-4 lg:border-l hairline">
+        Oito categorias de material sob o mesmo fornecedor — de perfis de alumínio a ferragens de acabamento. Menos fornecedor para gerenciar, mais tempo para tocar a obra ou a produção.
+      </p>
+    </div>
+
+    <div id="listaCategorias" class="border-t hairline">
+      <!-- linhas geradas via JS a partir de CONFIG.categorias -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     POR QUE ALUMIFER — tipografia grande, sem cards de ícone
+     ============================================================ -->
+<section id="empresa" class="py-20 sm:py-28 bg-[var(--af-steel-100)] border-b hairline">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <span class="font-mono text-[12px] tracking-wide text-[var(--af-red)]">02 — POR QUE ALUMIFER</span>
+
+    <div class="grid lg:grid-cols-2 gap-x-16 gap-y-14 mt-6">
+
+      <div class="border-t-2 border-[var(--af-blue)] pt-6">
+        <span class="font-display font-extrabold text-[64px] sm:text-[76px] leading-none text-[var(--af-blue)]" data-fill="fundacao">2007</span>
+        <p class="font-display font-bold text-[22px] mt-2">Fornecendo material desde <span data-fill="fundacao">2007</span>.</p>
+        <p class="text-[var(--af-steel-600)] mt-2 leading-relaxed max-w-md">Operação consolidada em <span data-fill="cidade">Jaraguá do Sul/SC</span>, sem precisar reconstruir relação de confiança a cada compra.</p>
+      </div>
+
+      <div class="border-t-2 border-[var(--af-blue)] pt-6">
+        <span id="statCategorias" class="font-display font-extrabold text-[64px] sm:text-[76px] leading-none text-[var(--af-blue)]"></span>
+        <p class="font-display font-bold text-[22px] mt-2">Categorias sob um único fornecedor.</p>
+        <p class="text-[var(--af-steel-600)] mt-2 leading-relaxed max-w-md">Alumínio, ferro, chapas, ACM, telas, telhas, perfis dobrados e ferragens — sem precisar somar cotações de fornecedores diferentes.</p>
+      </div>
+
+      <div class="border-t-2 border-[var(--af-blue)] pt-6">
+        <span class="font-display font-extrabold text-[64px] sm:text-[76px] leading-none text-[var(--af-blue)]">1×1</span>
+        <p class="font-display font-bold text-[22px] mt-2">Atendimento comercial direto.</p>
+        <p class="text-[var(--af-steel-600)] mt-2 leading-relaxed max-w-md">Orçamento por WhatsApp, respondido por quem entende de material — sem formulário genérico caindo numa fila de e-mail.</p>
+      </div>
+
+      <div class="border-t-2 border-[var(--af-blue)] pt-6">
+        <span class="font-display font-extrabold text-[64px] sm:text-[76px] leading-none text-[var(--af-blue)]">4</span>
+        <p class="font-display font-bold text-[22px] mt-2">Perfis de cliente atendidos.</p>
+        <p class="text-[var(--af-steel-600)] mt-2 leading-relaxed max-w-md">Serralherias, construção civil e indústria compram na Alumifer — cada um com um jeito diferente de comprar, e a gente acompanha.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CATÁLOGO — linhas editoriais alternadas, com CTA por categoria
+     ============================================================ -->
+<section class="py-20 sm:py-28 border-b hairline">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <span class="font-mono text-[12px] tracking-wide text-[var(--af-red)]">03 — CATÁLOGO</span>
+    <h2 class="font-display font-extrabold text-[38px] sm:text-[46px] leading-[0.98] tracking-tight mt-3 max-w-2xl">
+      Material por categoria, orçamento em um clique.
+    </h2>
+
+    <div id="catalogoDetalhado" class="mt-14 divide-y hairline border-t hairline">
+      <!-- gerado via JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     B2B — jornada (sequência real: aqui numeração faz sentido)
+     ============================================================ -->
+<section id="solucoes" class="py-20 sm:py-28 steel-field text-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-[0.9fr,1.1fr] gap-10 lg:gap-16 items-start">
+      <div>
+        <span class="font-mono text-[12px] tracking-wide text-[var(--af-steel-200)]">04 — COMO FUNCIONA</span>
+        <h2 class="font-display font-extrabold text-[36px] sm:text-[44px] leading-[0.98] tracking-tight mt-3">
+          Seu fornecedor de materiais em um só lugar.
+        </h2>
+        <p class="text-[var(--af-steel-200)] text-[17px] leading-relaxed mt-5 max-w-md">
+          A variedade da Alumifer existe para tirar da sua rotina a tarefa de procurar fornecedor diferente para cada material.
+        </p>
+      </div>
+
+      <ol class="grid sm:grid-cols-2 gap-x-10 gap-y-10">
+        <li class="border-l-2 border-[var(--af-red)] pl-5">
+          <span class="font-mono text-[13px] text-[var(--af-red)]">01</span>
+          <p class="font-display font-bold text-[20px] mt-1">Você precisa do material</p>
+          <p class="text-[var(--af-steel-200)] text-[15px] mt-1.5 leading-relaxed">Perfil, chapa, telha ou ferragem — para obra, produção ou revenda.</p>
+        </li>
+        <li class="border-l-2 border-[var(--af-red)] pl-5">
+          <span class="font-mono text-[13px] text-[var(--af-red)]">02</span>
+          <p class="font-display font-bold text-[20px] mt-1">Encontra a categoria</p>
+          <p class="text-[var(--af-steel-200)] text-[15px] mt-1.5 leading-relaxed">Oito categorias organizadas, sem precisar adivinhar onde procurar.</p>
+        </li>
+        <li class="border-l-2 border-[var(--af-red)] pl-5">
+          <span class="font-mono text-[13px] text-[var(--af-red)]">03</span>
+          <p class="font-display font-bold text-[20px] mt-1">Solicita a cotação</p>
+          <p class="text-[var(--af-steel-200)] text-[15px] mt-1.5 leading-relaxed">Um clique no WhatsApp, com a categoria já identificada na mensagem.</p>
+        </li>
+        <li class="border-l-2 border-[var(--af-red)] pl-5">
+          <span class="font-mono text-[13px] text-[var(--af-red)]">04</span>
+          <p class="font-display font-bold text-[20px] mt-1">Equipe comercial atende</p>
+          <p class="text-[var(--af-steel-200)] text-[15px] mt-1.5 leading-relaxed">Disponibilidade, condições e prazo — direto com quem resolve.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PERFIS DE CLIENTE — seletor editorial (não 4 cards idênticos)
+     ============================================================ -->
+<section class="py-20 sm:py-28 border-b hairline">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <span class="font-mono text-[12px] tracking-wide text-[var(--af-red)]">05 — QUEM COMPRA DA ALUMIFER</span>
+    <h2 class="font-display font-extrabold text-[38px] sm:text-[46px] leading-[0.98] tracking-tight mt-3 max-w-2xl">
+      Cada operação compra material de um jeito.
+    </h2>
+
+    <div class="mt-10 grid lg:grid-cols-[0.55fr,1.45fr] gap-0 border-t hairline">
+
+      <div role="tablist" aria-label="Perfis de cliente" class="flex lg:flex-col overflow-x-auto lg:overflow-visible">
+        <button class="segment-btn flex items-center gap-4 py-5 px-1 lg:px-0 border-b-2 lg:border-b-0 lg:border-r-2 border-[var(--af-steel-300)] whitespace-nowrap lg:whitespace-normal text-left w-full shrink-0 lg:shrink transition-colors" role="tab" aria-selected="true" data-panel="serralheiros">
+          <span class="seg-idx font-mono text-[13px] text-[var(--af-steel-400)]">01</span>
+          <span class="font-display font-bold text-[19px]">Serralheiros</span>
+        </button>
+        <button class="segment-btn flex items-center gap-4 py-5 px-1 lg:px-0 border-b-2 lg:border-b-0 lg:border-r-2 border-[var(--af-steel-300)] whitespace-nowrap lg:whitespace-normal text-left w-full shrink-0 lg:shrink transition-colors" role="tab" aria-selected="false" data-panel="construcao">
+          <span class="seg-idx font-mono text-[13px] text-[var(--af-steel-400)]">02</span>
+          <span class="font-display font-bold text-[19px]">Construção civil</span>
+        </button>
+        <button class="segment-btn flex items-center gap-4 py-5 px-1 lg:px-0 border-b-2 lg:border-b-0 lg:border-r-2 border-[var(--af-steel-300)] whitespace-nowrap lg:whitespace-normal text-left w-full shrink-0 lg:shrink transition-colors" role="tab" aria-selected="false" data-panel="industrias">
+          <span class="seg-idx font-mono text-[13px] text-[var(--af-steel-400)]">03</span>
+          <span class="font-display font-bold text-[19px]">Indústrias</span>
+        </button>
+        <button class="segment-btn flex items-center gap-4 py-5 px-1 lg:px-0 border-b-2 lg:border-b-0 lg:border-r-2 border-[var(--af-steel-300)] whitespace-nowrap lg:whitespace-normal text-left w-full shrink-0 lg:shrink transition-colors" role="tab" aria-selected="false" data-panel="empresas">
+          <span class="seg-idx font-mono text-[13px] text-[var(--af-steel-400)]">04</span>
+          <span class="font-display font-bold text-[19px]">Empresas e profissionais</span>
+        </button>
+      </div>
+
+      <div class="lg:pl-14 py-8 lg:py-4">
+        <div id="panel-serralheiros" class="panel active">
+          <p class="font-display font-bold text-[26px] sm:text-[30px] leading-tight max-w-lg">Materiais e acessórios para fabricação e montagem.</p>
+          <p class="text-[var(--af-steel-600)] text-[16px] leading-relaxed mt-4 max-w-lg">Perfis, chapas e ferragens para quem fabrica portões, esquadrias e estruturas metálicas sob medida.</p>
+          <a data-wa-cat="Serralheria" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-6 font-semibold text-[var(--af-blue)] link-underline pb-1">
+            Solicitar orçamento <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <div id="panel-construcao" class="panel">
+          <p class="font-display font-bold text-[26px] sm:text-[30px] leading-tight max-w-lg">Materiais para diferentes etapas da obra.</p>
+          <p class="text-[var(--af-steel-600)] text-[16px] leading-relaxed mt-4 max-w-lg">De estrutura a acabamento — telhas, chapas e perfis para construtoras e empreiteiras.</p>
+          <a data-wa-cat="Construção civil" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-6 font-semibold text-[var(--af-blue)] link-underline pb-1">
+            Solicitar orçamento <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <div id="panel-industrias" class="panel">
+          <p class="font-display font-bold text-[26px] sm:text-[30px] leading-tight max-w-lg">Fornecimento de materiais e componentes.</p>
+          <p class="text-[var(--af-steel-600)] text-[16px] leading-relaxed mt-4 max-w-lg">Alumínio, ferro e chapas para linha de produção e manutenção industrial.</p>
+          <a data-wa-cat="Indústria" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-6 font-semibold text-[var(--af-blue)] link-underline pb-1">
+            Solicitar orçamento <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <div id="panel-empresas" class="panel">
+          <p class="font-display font-bold text-[26px] sm:text-[30px] leading-tight max-w-lg">Compra recorrente e atendimento comercial.</p>
+          <p class="text-[var(--af-steel-600)] text-[16px] leading-relaxed mt-4 max-w-lg">Para empresas e profissionais com necessidade contínua de material, com um ponto de contato fixo.</p>
+          <a data-wa-cat="Empresas e profissionais" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-6 font-semibold text-[var(--af-blue)] link-underline pb-1">
+            Solicitar orçamento <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA DE ORÇAMENTO
+     ============================================================ -->
+<section id="contato" class="py-20 sm:py-28 bg-[var(--af-ink)] text-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-[1fr,0.9fr] gap-14">
+    <div>
+      <span class="font-mono text-[12px] tracking-wide text-[var(--af-red)]">06 — ORÇAMENTO</span>
+      <h2 class="font-display font-extrabold text-[38px] sm:text-[48px] leading-[0.98] tracking-tight mt-3">
+        Precisa de material?<br>Fale com a Alumifer.
+      </h2>
+      <p class="text-[var(--af-steel-300)] text-[17px] leading-relaxed mt-5 max-w-md">
+        Envie o que você precisa e nossa equipe comercial orienta sobre disponibilidade e orçamento.
+      </p>
+
+      <a data-wa href="#" target="_blank" rel="noopener"
+         class="cta-primary font-semibold px-7 py-4 inline-flex items-center gap-2 mt-8 transition-colors">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        Solicitar orçamento pelo WhatsApp
+      </a>
+
+      <div class="mt-10 pt-8 border-t border-white/10 space-y-3 font-mono text-[14px] text-[var(--af-steel-300)]">
+        <p class="flex items-center gap-3"><i data-lucide="phone" class="w-4 h-4 text-[var(--af-red)]"></i><span data-fill="telefoneExibicao">(47) 8434-0119</span></p>
+        <p class="flex items-center gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-[var(--af-red)]"></i><span data-fill="endereco">TROCAR — endereço completo</span></p>
+        <p class="flex items-center gap-3"><i data-lucide="clock" class="w-4 h-4 text-[var(--af-red)]"></i><span data-fill="horario">TROCAR — horário de atendimento</span></p>
+      </div>
+    </div>
+
+    <form id="formOrcamento" class="bg-white text-[var(--af-ink)] p-6 sm:p-8">
+      <div class="grid gap-4">
+        <div>
+          <label for="fNome" class="block text-[13px] font-semibold mb-1.5">Nome</label>
+          <input id="fNome" name="nome" type="text" required placeholder="Seu nome" class="w-full px-3.5 py-3 text-[15px]">
+        </div>
+        <div>
+          <label for="fEmpresa" class="block text-[13px] font-semibold mb-1.5">Empresa</label>
+          <input id="fEmpresa" name="empresa" type="text" placeholder="Nome da empresa (opcional)" class="w-full px-3.5 py-3 text-[15px]">
+        </div>
+        <div>
+          <label for="fWhats" class="block text-[13px] font-semibold mb-1.5">WhatsApp</label>
+          <input id="fWhats" name="whatsapp" type="tel" required placeholder="(47) 9 9999-9999" class="w-full px-3.5 py-3 text-[15px]">
+        </div>
+        <div>
+          <label for="fMaterial" class="block text-[13px] font-semibold mb-1.5">O que você precisa?</label>
+          <textarea id="fMaterial" name="material" rows="3" required placeholder="Ex: chapa de alumínio, perfil dobrado, telha metálica..." class="w-full px-3.5 py-3 text-[15px] resize-none"></textarea>
+        </div>
+        <button type="submit" class="cta-primary font-semibold py-3.5 mt-1 flex items-center justify-center gap-2 transition-colors">
+          Solicitar orçamento <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+        <p class="text-[12px] text-[var(--af-steel-600)] leading-relaxed">Ao enviar, você será direcionado ao WhatsApp da Alumifer com sua solicitação preenchida.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="bg-[var(--af-blue-deep)] text-[var(--af-steel-300)] pt-16 pb-28 md:pb-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid md:grid-cols-[1.2fr,1fr,1fr,1fr] gap-10 pb-12 border-b border-white/10">
+      <div>
+        <a href="#topo" class="flex items-center gap-3">
+          <img src="imagens/logo.png" alt="Alumifer Distribuidora" class="w-10 h-10 rounded-full">
+          <span class="font-display font-extrabold text-[19px] text-white">ALUMIFER</span>
+        </a>
+        <p class="text-[14px] leading-relaxed mt-4 max-w-xs">Distribuidora de alumínio, ferro, chapas e acessórios em <span data-fill="cidade">Jaraguá do Sul/SC</span>, atendendo serralherias, construtoras e indústrias desde <span data-fill="fundacao">2007</span>.</p>
+        <a href="TROCAR" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-5 text-[14px] hover:text-white transition-colors">
+          <i data-lucide="instagram" class="w-4 h-4"></i> Instagram <span class="font-mono text-[11px] opacity-60">(TROCAR)</span>
+        </a>
+      </div>
+
+      <div>
+        <p class="font-mono text-[11px] tracking-wide text-white/50 mb-4">CATEGORIAS</p>
+        <ul id="footerCategorias" class="space-y-2.5 text-[14px]"></ul>
+      </div>
+
+      <div>
+        <p class="font-mono text-[11px] tracking-wide text-white/50 mb-4">CONTATO</p>
+        <ul class="space-y-2.5 text-[14px]">
+          <li class="flex items-start gap-2"><i data-lucide="phone" class="w-4 h-4 mt-0.5 shrink-0"></i><span data-fill="telefoneExibicao">(47) 8434-0119</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="mail" class="w-4 h-4 mt-0.5 shrink-0"></i><span data-fill="email">TROCAR@alumiferdistribuidora.com.br</span></li>
+          <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 shrink-0"></i><span data-fill="endereco">TROCAR — endereço completo</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-mono text-[11px] tracking-wide text-white/50 mb-4">EMPRESA</p>
+        <ul class="space-y-2.5 text-[14px]">
+          <li><a href="#empresa" class="hover:text-white transition-colors">A Alumifer</a></li>
+          <li><a href="#produtos" class="hover:text-white transition-colors">Produtos</a></li>
+          <li><a href="#solucoes" class="hover:text-white transition-colors">Como funciona</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Política de privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-6 flex flex-col sm:flex-row gap-3 justify-between text-[12px] text-white/40">
+      <p>© <span data-fill="anoAtual">2026</span> Alumifer Distribuidora. Demonstração de proposta de site — dados de contato a confirmar antes da publicação.</p>
+      <p class="font-mono">Jaraguá do Sul · SC · Brasil</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     CTA FIXO MOBILE
+     ============================================================ -->
+<div class="mobile-only-cta fixed bottom-0 inset-x-0 z-50 mobile-bar-safe">
+  <a data-wa href="#" target="_blank" rel="noopener"
+     class="cta-primary font-semibold text-[15px] w-full py-4 flex items-center justify-center gap-2 shadow-[0_-4px_16px_rgba(0,0,0,0.25)]">
+    <i data-lucide="message-circle" class="w-4 h-4"></i>
+    Solicitar orçamento
+  </a>
+</div>
+<noscript>
+  <div style="position:fixed;bottom:0;left:0;right:0;background:#bf1e2d;color:#fff;text-align:center;padding:14px;font-family:sans-serif;">
+    Fale com a Alumifer pelo telefone (47) 8434-0119
+  </div>
+</noscript>
+
+<!-- ============================================================
+     DADOS + LÓGICA
+     ============================================================ -->
+<script>
+  CONFIG.categorias = [
+    { nome: "Alumínio",              desc: "Perfis, chapas e soluções em alumínio para fabricação, esquadrias e estrutura.",       waNome: "Alumínio" },
+    { nome: "Ferro & Aço",           desc: "Materiais para construção, indústria e estruturas metálicas.",                          waNome: "Ferro e Aço" },
+    { nome: "Chapas",                desc: "Chapas de aço, alumínio, policarbonato e ACM para diferentes aplicações.",              waNome: "Chapas (aço, alumínio, policarbonato, ACM)" },
+    { nome: "ACM",                   desc: "Compósito de alumínio para fachadas e revestimento.",                                   waNome: "ACM" },
+    { nome: "Telhas Metálicas",      desc: "Soluções para coberturas e estruturas.",                                                waNome: "Telhas metálicas" },
+    { nome: "Perfis Dobrados",       desc: "Perfis produzidos sob demanda para diferentes aplicações.",                             waNome: "Perfis dobrados" },
+    { nome: "Telas & Acessórios",    desc: "Complementos para fechamento, proteção e acabamento da sua operação.",                  waNome: "Telas e acessórios" },
+    { nome: "Ferragens & Ferramentas", desc: "Itens de fixação e ferramental para fabricação e montagem.",                          waNome: "Ferragens e ferramentas" },
+  ];
+
+  // preenche placeholders textuais a partir do CONFIG
+  document.querySelectorAll('[data-fill]').forEach(el=>{
+    const key = el.getAttribute('data-fill');
+    if(key === 'anoAtual'){ el.textContent = new Date().getFullYear(); return; }
+    if(CONFIG[key] !== undefined) el.textContent = CONFIG[key];
+  });
+
+  // link telefônico
+  document.querySelectorAll('[data-tel-link]').forEach(el=>{
+    el.setAttribute('href', `tel:+55${CONFIG.whatsappNumero.slice(2)}`);
+  });
+
+  // wire de todos os botões genéricos de WhatsApp
+  document.querySelectorAll('[data-wa]').forEach(el=>{
+    el.setAttribute('href', waLink(CONFIG.mensagens.generico));
+  });
+  document.querySelectorAll('[data-wa-cat]').forEach(el=>{
+    const nome = el.getAttribute('data-wa-cat');
+    el.setAttribute('href', waLink(CONFIG.mensagens.categoria(nome)));
+  });
+
+  // contadores derivados do próprio array — nunca hardcoded, para não dessincronizar
+  document.getElementById('heroIndexCount').textContent = `${CONFIG.categorias.length} CATEGORIAS`;
+  document.getElementById('statCategorias').textContent = CONFIG.categorias.length;
+
+  // índice técnico do hero
+  const heroIndex = document.getElementById('heroIndex');
+  CONFIG.categorias.forEach((c, i)=>{
+    const row = document.createElement('div');
+    row.className = 'flex items-center justify-between py-2.5';
+    row.innerHTML = `
+      <span class="flex items-center gap-3">
+        <span class="text-[var(--af-red)] catalog-num">${String(i+1).padStart(2,'0')}</span>
+        <span class="text-[var(--af-steel-200)]">${c.nome}</span>
+      </span>
+      <span class="text-white/30">·····</span>
+    `;
+    heroIndex.appendChild(row);
+  });
+
+  // lista de categorias — índice de catálogo
+  const listaCategorias = document.getElementById('listaCategorias');
+  CONFIG.categorias.forEach((c, i)=>{
+    const row = document.createElement('a');
+    row.href = waLink(CONFIG.mensagens.categoria(c.waNome));
+    row.target = '_blank'; row.rel = 'noopener';
+    row.className = 'cat-row group flex items-center justify-between gap-6 py-6 sm:py-7 border-b hairline';
+    row.innerHTML = `
+      <span class="flex items-center gap-5 sm:gap-8 min-w-0">
+        <span class="font-mono text-[13px] sm:text-[14px] text-[var(--af-steel-400)] catalog-num shrink-0">${String(i+1).padStart(2,'0')}</span>
+        <span class="min-w-0">
+          <span class="cat-name font-display font-bold text-[24px] sm:text-[32px] leading-none tracking-tight block transition-colors">${c.nome}</span>
+          <span class="text-[var(--af-steel-600)] text-[14px] sm:text-[15px] mt-1.5 block max-w-xl">${c.desc}</span>
+        </span>
+      </span>
+      <span class="flex items-center gap-2 shrink-0 text-[var(--af-blue)] font-semibold text-[14px] sm:text-[15px]">
+        <span class="hidden sm:inline">Orçamento</span>
+        <span class="cat-arrow"><i data-lucide="arrow-right" class="w-5 h-5"></i></span>
+      </span>
+    `;
+    listaCategorias.appendChild(row);
+  });
+
+  // catálogo detalhado alternado
+  const catalogo = document.getElementById('catalogoDetalhado');
+  CONFIG.categorias.forEach((c, i)=>{
+    const par = i % 2 === 0;
+    const row = document.createElement('div');
+    row.className = `grid lg:grid-cols-2 gap-6 lg:gap-16 py-10 sm:py-12 items-center ${par ? '' : ''}`;
+    row.innerHTML = `
+      <div class="${par ? 'lg:order-1' : 'lg:order-2'} aspect-[16/10] bg-[var(--af-steel-100)] border hairline flex items-center justify-center relative overflow-hidden">
+        <span class="absolute top-3 left-3 font-mono text-[11px] text-[var(--af-steel-400)]">FOTO ${String(i+1).padStart(2,'0')} · TROCAR</span>
+        <i data-lucide="layers" class="w-14 h-14 text-[var(--af-steel-300)]"></i>
+      </div>
+      <div class="${par ? 'lg:order-2' : 'lg:order-1'}">
+        <span class="font-mono text-[12px] text-[var(--af-steel-400)]">${String(i+1).padStart(2,'0')} / ${String(CONFIG.categorias.length).padStart(2,'0')}</span>
+        <h3 class="font-display font-extrabold text-[28px] sm:text-[34px] leading-tight tracking-tight mt-2">${c.nome}</h3>
+        <p class="text-[var(--af-steel-600)] text-[16px] leading-relaxed mt-3 max-w-md">${c.desc}</p>
+        <a href="${waLink(CONFIG.mensagens.categoria(c.waNome))}" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 mt-6 font-semibold text-[15px] border border-[var(--af-ink)] px-5 py-3 hover:bg-[var(--af-ink)] hover:text-white transition-colors">
+          Solicitar orçamento <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    `;
+    catalogo.appendChild(row);
+  });
+
+  // footer categorias
+  const footerCat = document.getElementById('footerCategorias');
+  CONFIG.categorias.forEach(c=>{
+    const li = document.createElement('li');
+    li.innerHTML = `<a href="#produtos" class="hover:text-white transition-colors">${c.nome}</a>`;
+    footerCat.appendChild(li);
+  });
+
+  // menu mobile
+  const menuBtn = document.getElementById('menuBtn');
+  const menuMobile = document.getElementById('menuMobile');
+  menuBtn.addEventListener('click', ()=>{
+    const open = menuMobile.classList.toggle('hidden') === false;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.innerHTML = open ? '<i data-lucide="x" class="w-6 h-6"></i>' : '<i data-lucide="menu" class="w-6 h-6"></i>';
+    lucide.createIcons();
+  });
+  document.querySelectorAll('#menuMobile a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      menuMobile.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded','false');
+      menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+      lucide.createIcons();
+    });
+  });
+
+  // seletor de perfis de cliente
+  document.querySelectorAll('.segment-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.segment-btn').forEach(b=>b.setAttribute('aria-selected','false'));
+      btn.setAttribute('aria-selected','true');
+      document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+      document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+    });
+  });
+
+  // formulário -> WhatsApp
+  document.getElementById('formOrcamento').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const nome = document.getElementById('fNome').value.trim();
+    const empresa = document.getElementById('fEmpresa').value.trim();
+    const whats = document.getElementById('fWhats').value.trim();
+    const material = document.getElementById('fMaterial').value.trim();
+    let msg = `Olá! Meu nome é ${nome}`;
+    if(empresa) msg += ` (${empresa})`;
+    msg += `. Meu WhatsApp para contato: ${whats}. Preciso de orçamento de: ${material}.`;
+    window.open(waLink(msg), '_blank', 'noopener');
+  });
+
+  lucide.createIcons();
+</script>
+
+</body>
+</html>
