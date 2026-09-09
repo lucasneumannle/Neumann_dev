@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bom Ferro — Ferragens, Ferramentas e Materiais em Itajaí/SC</title>
+<meta name="description" content="Ferragens, ferramentas, chapas, tubos, perfis e soluções para construção e metalurgia. Atendimento em Itajaí e região. Peça seu orçamento pelo WhatsApp.">
+<meta property="og:title" content="Bom Ferro — Ferragens, Ferramentas e Materiais">
+<meta property="og:description" content="Tudo para sua obra, oficina e projeto em um só lugar. Itajaí • Santa Catarina.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     TOKENS
+     Palette derived from the client's own logo (sampled navy +
+     silver metallic F). Rust/ember accent is the deliberate
+     contrast note — oxidized iron against machined steel.
+     ============================================================ */
+  :root{
+    --navy-950:#0c1c29;
+    --navy-900:#12283a;
+    --navy-800:#17334a;
+    --navy-700:#1b3e5a;
+    --navy-600:#2c5578;
+    --steel-300:#a9b8c4;
+    --steel-200:#c9d3da;
+    --silver-100:#e9edf0;
+    --paper:#f3efe8;
+    --paper-dim:#e9e3d8;
+    --ink:#1a1e22;
+    --ink-soft:#4a5158;
+    --ember-600:#b8552a;
+    --ember-700:#8f3f1c;
+    --ember-100:#f6e2d4;
+    --line-dark: rgba(201,211,218,0.18);
+    --line-light: rgba(26,30,34,0.12);
+
+    --font-display:'Big Shoulders Display', sans-serif;
+    --font-body:'Public Sans', -apple-system, Segoe UI, Roboto, sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+
+    --radius-s: 2px;
+    --radius-m: 4px;
+    --container: 1220px;
+    --edge: 1.5rem;
+  }
+
+  @media (min-width: 900px){ :root{ --edge: 3rem; } }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+  }
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  button{ font-family:inherit; cursor:pointer; }
+  h1,h2,h3{ font-family:var(--font-display); font-weight:800; line-height:1.02; margin:0; letter-spacing:0.005em; }
+  p{ margin:0; }
+  .wrap{ max-width:var(--container); margin:0 auto; padding:0 var(--edge); }
+  .mono{ font-family:var(--font-mono); }
+  :focus-visible{ outline:2px solid var(--ember-600); outline-offset:3px; }
+
+  /* ============================================================
+     BUTTONS
+     ============================================================ */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+    padding:0.95rem 1.7rem;
+    font-family:var(--font-body); font-weight:700; font-size:0.86rem;
+    letter-spacing:0.06em; text-transform:uppercase;
+    border:1px solid transparent; border-radius:var(--radius-s);
+    transition:background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+    white-space:nowrap;
+  }
+  .btn:active{ transform:translateY(1px); }
+  .btn--ember{ background:var(--ember-600); color:#fff; }
+  .btn--ember:hover{ background:var(--ember-700); }
+  .btn--ghost-dark{ background:transparent; border-color:rgba(233,237,240,0.45); color:var(--silver-100); }
+  .btn--ghost-dark:hover{ border-color:#fff; background:rgba(255,255,255,0.06); }
+  .btn--ghost-light{ background:transparent; border-color:var(--navy-700); color:var(--navy-800); }
+  .btn--ghost-light:hover{ background:var(--navy-800); color:#fff; }
+  .btn--block{ width:100%; }
+
+  /* ============================================================
+     HEADER
+     ============================================================ */
+  .site-header{
+    position:sticky; top:0; z-index:50;
+    background:var(--navy-950);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .site-header .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px; transition:height .25s ease;
+  }
+  .site-header.is-scrolled .wrap{ height:60px; }
+  .brand{ display:flex; align-items:center; gap:.6rem; }
+  .brand img{ height:46px; width:auto; transition:height .25s ease; border-radius:3px; }
+  .site-header.is-scrolled .brand img{ height:36px; }
+  .brand-text{ display:none; }
+  .main-nav{ display:none; align-items:center; gap:2.1rem; }
+  .main-nav a{
+    font-size:0.92rem; font-weight:500; color:var(--steel-200);
+    transition:color .15s ease; position:relative; padding:.25rem 0;
+  }
+  .main-nav a:hover{ color:#fff; }
+  .header-actions{ display:flex; align-items:center; gap:.7rem; }
+  .wa-icon-btn{
+    display:flex; align-items:center; justify-content:center;
+    width:42px; height:42px; border-radius:50%;
+    background:#25D366; color:#fff; flex-shrink:0;
+  }
+  .wa-icon-btn svg{ width:21px; height:21px; }
+  .hamburger{
+    display:flex; flex-direction:column; justify-content:center; gap:5px;
+    width:42px; height:42px; background:transparent; border:1px solid rgba(233,237,240,0.3);
+    border-radius:var(--radius-s);
+  }
+  .hamburger span{ display:block; width:18px; height:2px; background:#fff; margin:0 auto; }
+
+  .mobile-nav{
+    display:none; flex-direction:column;
+    background:var(--navy-900); border-bottom:1px solid var(--line-dark);
+  }
+  .mobile-nav.is-open{ display:flex; }
+  .mobile-nav a{
+    padding:1rem var(--edge); color:var(--steel-200); font-weight:500;
+    border-top:1px solid var(--line-dark);
+  }
+  .mobile-nav .btn{ margin:1rem var(--edge) 1.2rem; }
+
+  @media (min-width: 900px){
+    .main-nav{ display:flex; }
+    .hamburger{ display:none; }
+    .brand-text{ display:block; font-family:var(--font-display); font-weight:800; font-size:1.3rem; color:#fff; letter-spacing:0.01em; }
+  }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero{
+    position:relative; overflow:hidden;
+    background:var(--navy-950);
+    min-height:640px;
+    display:flex; align-items:center;
+    padding:6.5rem 0 4.5rem;
+  }
+  .hero__bg{
+    position:absolute; inset:0; z-index:0;
+    background-image:
+      linear-gradient(100deg, rgba(12,28,41,0.97) 0%, rgba(12,28,41,0.90) 32%, rgba(12,28,41,0.55) 62%, rgba(12,28,41,0.30) 100%),
+      url('https://images.unsplash.com/photo-1709244596178-4c2656d02d1e?w=2000&q=80&auto=format&fit=crop');
+    background-size:cover; background-position:center;
+  }
+  .hero__content{ position:relative; z-index:1; max-width:660px; }
+  .hero__tag{
+    display:inline-flex; align-items:center; gap:.55rem;
+    font-family:var(--font-mono); font-size:0.78rem; color:var(--steel-300);
+    letter-spacing:0.03em; margin-bottom:1.6rem;
+  }
+  .hero__tag::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--ember-600); display:inline-block; }
+  .hero__title{
+    font-size:clamp(2.35rem, 6.4vw, 4.3rem);
+    color:#fff;
+    max-width:15ch;
+  }
+  .hero__sub{
+    margin-top:1.5rem; max-width:38ch;
+    font-size:clamp(1rem, 1.6vw, 1.15rem);
+    color:var(--steel-200);
+    font-weight:400;
+  }
+  .hero__ctas{ display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.4rem; }
+
+  .hero__reveal{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
+  .hero__reveal.is-visible{ opacity:1; transform:none; }
+  .hero__reveal:nth-child(2){ transition-delay:.08s; }
+  .hero__reveal:nth-child(3){ transition-delay:.16s; }
+  .hero__reveal:nth-child(4){ transition-delay:.24s; }
+
+  /* ============================================================
+     SECTION SCAFFOLDING
+     ============================================================ */
+  section{ padding:5.5rem 0; }
+  .section-head{ max-width:640px; margin-bottom:3rem; }
+  .section-head h2{ font-size:clamp(1.9rem, 3.6vw, 2.7rem); color:var(--ink); }
+  .section-head--dark h2{ color:#fff; }
+  .section-head p{ margin-top:1rem; font-size:1.05rem; color:var(--ink-soft); max-width:52ch; }
+  .section-head--dark p{ color:var(--steel-300); }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.is-visible{ opacity:1; transform:none; }
+
+  /* ============================================================
+     CATEGORIES — asymmetric bento grid
+     ============================================================ */
+  .cat-section{ background:var(--paper); }
+  .cat-grid{
+    display:grid; grid-template-columns:1fr; gap:1rem;
+  }
+  .cat-card{
+    position:relative; overflow:hidden; border-radius:var(--radius-m);
+    min-height:280px; display:flex; align-items:flex-end;
+    border:1px solid var(--line-light);
+  }
+  .cat-card__bg{
+    position:absolute; inset:0; background-size:cover; background-position:center;
+    transition:transform .6s ease;
+  }
+  .cat-card:hover .cat-card__bg{ transform:scale(1.045); }
+  .cat-card__overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(190deg, rgba(12,28,41,0) 35%, rgba(12,28,41,0.86) 100%);
+  }
+  .cat-card__body{ position:relative; z-index:1; padding:1.6rem; color:#fff; }
+  .cat-card__body h3{ font-size:1.5rem; margin-bottom:.4rem; }
+  .cat-card__body p{ font-size:0.92rem; color:var(--steel-200); max-width:30ch; }
+
+  @media (min-width:640px){
+    .cat-grid{ grid-template-columns:repeat(2, 1fr); }
+    .cat-card--wide{ grid-column:span 2; min-height:340px; }
+  }
+  @media (min-width:980px){
+    .cat-grid{ grid-template-columns:repeat(4, 1fr); grid-auto-rows:220px; }
+    .cat-card--wide{ grid-column:span 2; grid-row:span 2; min-height:0; }
+    .cat-card--tall{ grid-row:span 2; }
+  }
+
+  /* ============================================================
+     PARA QUEM É — dark editorial strip
+     ============================================================ */
+  .who-section{ background:var(--navy-900); }
+  .who-list{
+    display:grid; grid-template-columns:1fr; border-top:1px solid var(--line-dark);
+  }
+  .who-item{
+    padding:1.5rem 0; border-bottom:1px solid var(--line-dark);
+    display:flex; align-items:baseline; justify-content:space-between; gap:1rem;
+  }
+  .who-item span:first-child{
+    font-family:var(--font-display); font-weight:700; font-size:clamp(1.5rem,3.4vw,2.1rem);
+    color:#fff;
+  }
+  .who-item span:last-child{ font-family:var(--font-mono); font-size:0.78rem; color:var(--steel-300); }
+  @media (min-width:760px){
+    .who-list{ grid-template-columns:repeat(2, 1fr); }
+    .who-item:nth-child(odd){ border-right:1px solid var(--line-dark); padding-right:2rem; }
+    .who-item:nth-child(even){ padding-left:2rem; }
+  }
+
+  /* ============================================================
+     PRODUTOS — inventory board
+     ============================================================ */
+  .stock-section{ background:var(--paper); }
+  .stock-layout{ display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:start; }
+  @media (min-width:900px){ .stock-layout{ grid-template-columns: 1.4fr 1fr; } }
+
+  .tag-board{
+    display:flex; flex-wrap:wrap; gap:0.6rem;
+    padding:1.6rem 0;
+    border-top:1px solid var(--line-light); border-bottom:1px solid var(--line-light);
+  }
+  .tag-chip{
+    font-family:var(--font-mono); font-size:0.82rem; color:var(--navy-800);
+    border:1px solid var(--line-light); border-radius:100px;
+    padding:0.5rem 1rem; background:#fff;
+  }
+  .stock-cta{ margin-top:1.8rem; }
+
+  .stock-visual{ display:flex; flex-direction:column; gap:0.9rem; }
+  .stock-visual img{ border-radius:var(--radius-m); object-fit:cover; height:160px; width:100%; border:1px solid var(--line-light); }
+  .stock-visual-row{ display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; }
+
+  /* ============================================================
+     DIFERENCIAIS — spec-sheet rows
+     ============================================================ */
+  .spec-section{ background:var(--navy-950); }
+  .spec-list{ border-top:1px solid var(--line-dark); }
+  .spec-row{
+    display:grid; grid-template-columns:1fr; gap:0.6rem;
+    padding:1.9rem 0; border-bottom:1px solid var(--line-dark);
+  }
+  @media (min-width:760px){
+    .spec-row{ grid-template-columns: 260px 1fr; gap:2.5rem; align-items:baseline; }
+  }
+  .spec-row h3{ font-family:var(--font-display); font-weight:700; font-size:1.5rem; color:#fff; }
+  .spec-row p{ color:var(--steel-300); font-size:1rem; max-width:52ch; }
+
+  /* ============================================================
+     ORÇAMENTO
+     ============================================================ */
+  .quote-section{ background:var(--navy-900); }
+  .quote-layout{ display:grid; grid-template-columns:1fr; gap:2.5rem; }
+  @media (min-width:900px){ .quote-layout{ grid-template-columns: 1.1fr 0.9fr; } }
+
+  .quote-form{ background:var(--paper); border-radius:var(--radius-m); padding:2rem; }
+  .field{ margin-bottom:1.1rem; }
+  .field label{ display:block; font-size:0.82rem; font-weight:600; color:var(--ink-soft); margin-bottom:0.4rem; }
+  .field input, .field textarea{
+    width:100%; padding:0.85rem 1rem; font-family:var(--font-body); font-size:0.98rem;
+    border:1px solid var(--line-light); border-radius:var(--radius-s); background:#fff; color:var(--ink);
+  }
+  .field textarea{ min-height:100px; resize:vertical; }
+  .field input:focus, .field textarea:focus{ border-color:var(--navy-700); }
+
+  .quote-side{
+    background:var(--navy-800); border-radius:var(--radius-m); padding:2rem;
+    display:flex; flex-direction:column; justify-content:center;
+    border:1px solid var(--line-dark);
+  }
+  .quote-side h3{ color:#fff; font-size:1.7rem; margin-bottom:0.8rem; }
+  .quote-side p{ color:var(--steel-300); margin-bottom:1.6rem; }
+
+  /* ============================================================
+     CTA FINAL
+     ============================================================ */
+  .final-cta{
+    background:var(--navy-950);
+    text-align:left;
+    position:relative;
+    border-top:1px solid var(--line-dark);
+  }
+  .final-cta__rule{
+    width:64px; height:3px; margin-bottom:1.8rem;
+    background:linear-gradient(90deg, #6b7680, #d8dee3, #6b7680);
+  }
+  .final-cta h2{ font-size:clamp(2.1rem, 5.4vw, 3.6rem); color:#fff; max-width:18ch; }
+  .final-cta p{ margin-top:1.2rem; color:var(--steel-300); max-width:46ch; font-size:1.08rem; }
+  .final-cta .btn{ margin-top:2.2rem; }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  footer{ background:var(--navy-950); border-top:1px solid var(--line-dark); padding:3.5rem 0 2rem; color:var(--steel-300); }
+  .footer-grid{ display:grid; grid-template-columns:1fr; gap:2.2rem; }
+  @media (min-width:760px){ .footer-grid{ grid-template-columns: 1.3fr 1fr 1fr; } }
+  .footer-brand img{ height:44px; margin-bottom:1rem; border-radius:3px; }
+  .footer-brand p{ color:var(--steel-300); font-size:0.92rem; max-width:32ch; }
+  footer h4{ color:#fff; font-size:0.85rem; letter-spacing:0.04em; margin-bottom:1rem; font-weight:700; }
+  footer ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0.65rem; }
+  footer a{ color:var(--steel-300); font-size:0.92rem; }
+  footer a:hover{ color:#fff; }
+  .footer-legal{
+    margin-top:2.8rem; padding-top:1.6rem; border-top:1px solid var(--line-dark);
+    color:var(--steel-300); font-size:0.78rem; font-family:var(--font-mono);
+    display:flex; flex-wrap:wrap; gap:0.5rem 1.2rem; justify-content:space-between;
+  }
+
+  /* ============================================================
+     FLOATING WHATSAPP
+     ============================================================ */
+  .wa-float{
+    position:fixed; bottom:1.4rem; right:1.4rem; z-index:60;
+    width:58px; height:58px; border-radius:50%;
+    background:#25D366; color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,0.28);
+    transition:transform .15s ease;
+  }
+  .wa-float:hover{ transform:scale(1.06); }
+  .wa-float svg{ width:28px; height:28px; }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <a href="#topo" class="brand">
+      <img src="imagens/logo.png" alt="Bom Ferro — Distribuidora de Ferro e Aço">
+      <span class="brand-text">BOM FERRO</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#produtos">Produtos</a>
+      <a href="#solucoes">Soluções</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#orcamento">Contato</a>
+    </nav>
+    <div class="header-actions">
+      <a class="wa-icon-btn" data-wa data-wa-msg="Olá! Vim pelo site da Bom Ferro e gostaria de falar com a equipe." aria-label="Falar no WhatsApp" href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.2-.7.9-.9 1.1-.2.2-.3.2-.6.1-.9-.4-1.7-1-2.4-1.7-.6-.6-1.1-1.3-1.5-2.1-.1-.2 0-.4.1-.6.2-.2.4-.5.6-.7.1-.2.1-.4 0-.6-.1-.2-.6-1.5-.8-2-.1-.4-.3-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.6.6-1 1.4-1 2.3.1 1.1.5 2.1 1.2 3 1.1 1.6 2.5 2.9 4.2 3.7.5.2 1 .4 1.5.5.6.2 1.1.2 1.6.1.7-.1 1.4-.6 1.8-1.2.2-.3.2-.7.1-1 0-.1-.2-.2-.4-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.1 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.2-8.4 8.2z"/></svg>
+      </a>
+      <button class="hamburger" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="#orcamento" class="btn btn--ember" style="display:none" id="headerCta">PEDIR ORÇAMENTO</a>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Navegação mobile">
+    <a href="#produtos">Produtos</a>
+    <a href="#solucoes">Soluções</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#orcamento">Contato</a>
+    <a href="#orcamento" class="btn btn--ember">PEDIR ORÇAMENTO</a>
+  </nav>
+</header>
+
+<main id="topo">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" aria-label="Abertura">
+    <div class="hero__bg" role="img" aria-label="Estoque de tubos de aço em galpão industrial"></div>
+    <div class="wrap hero__content">
+      <p class="hero__tag hero__reveal mono">ITAJAÍ • SANTA CATARINA</p>
+      <h1 class="hero__title hero__reveal">Tudo para sua obra, oficina e projeto em um só lugar.</h1>
+      <p class="hero__sub hero__reveal">Ferragens, ferramentas, chapas, tubos, perfis e soluções para construção e metalurgia.</p>
+      <div class="hero__ctas hero__reveal">
+        <a href="#orcamento" class="btn btn--ember">PEDIR ORÇAMENTO</a>
+        <a href="#" class="btn btn--ghost-dark" data-wa data-wa-msg="Olá! Vim pelo site da Bom Ferro e gostaria de um orçamento.">FALAR PELO WHATSAPP</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CATEGORIAS ================= -->
+  <section class="cat-section" id="produtos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Tudo o que você precisa para fazer acontecer.</h2>
+        <p>Uma linha completa de produtos para construção, manutenção, serralheria e indústria.</p>
+      </div>
+      <div class="cat-grid">
+
+        <div class="cat-card cat-card--wide reveal">
+          <div class="cat-card__bg" style="background-image:url('https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?w=1200&q=80&auto=format&fit=crop')"></div>
+          <div class="cat-card__overlay"></div>
+          <div class="cat-card__body">
+            <h3>Construção Civil</h3>
+            <p>Ferragens e materiais para diferentes etapas da obra.</p>
+          </div>
+        </div>
+
+        <div class="cat-card cat-card--tall reveal">
+          <div class="cat-card__bg" style="background-image:url('https://images.unsplash.com/photo-1709244596176-0e14b3b8a517?w=1200&q=80&auto=format&fit=crop')"></div>
+          <div class="cat-card__overlay"></div>
+          <div class="cat-card__body">
+            <h3>Chapas, Tubos e Perfis</h3>
+            <p>Soluções metálicas para estruturas, fabricação e projetos.</p>
+          </div>
+        </div>
+
+        <div class="cat-card reveal">
+          <div class="cat-card__bg" style="background-image:url('https://images.unsplash.com/photo-1426927308491-6380b6a9936f?w=1200&q=80&auto=format&fit=crop')"></div>
+          <div class="cat-card__overlay"></div>
+          <div class="cat-card__body">
+            <h3>Ferramentas</h3>
+            <p>Manuais, elétricas e equipamentos profissionais.</p>
+          </div>
+        </div>
+
+        <div class="cat-card reveal">
+          <div class="cat-card__bg" style="background-image:url('https://images.unsplash.com/photo-1764245546004-e6b743242a80?w=1200&q=80&auto=format&fit=crop')"></div>
+          <div class="cat-card__overlay"></div>
+          <div class="cat-card__body">
+            <h3>Soldas e Abrasivos</h3>
+            <p>Materiais para corte, desbaste, soldagem e acabamento.</p>
+          </div>
+        </div>
+
+        <div class="cat-card reveal">
+          <div class="cat-card__bg" style="background-image:url('https://images.unsplash.com/photo-1552879890-3a06dd3a06c2?w=1200&q=80&auto=format&fit=crop')"></div>
+          <div class="cat-card__overlay"></div>
+          <div class="cat-card__body">
+            <h3>EPIs e Segurança</h3>
+            <p>Equipamentos para proteção e segurança no trabalho.</p>
+          </div>
+        </div>
+
+        <div class="cat-card cat-card--tall reveal">
+          <div class="cat-card__bg" style="background-image:url('https://images.unsplash.com/photo-1613945831677-383c19ad7721?w=1200&q=80&auto=format&fit=crop')"></div>
+          <div class="cat-card__overlay"></div>
+          <div class="cat-card__body">
+            <h3>Acessórios e Ferragens</h3>
+            <p>Parafusos, porcas, rebites, fechaduras, dobradiças e muito mais.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PARA QUEM É ================= -->
+  <section class="who-section" id="solucoes">
+    <div class="wrap">
+      <div class="section-head section-head--dark reveal">
+        <h2>Para quem trabalha e constrói.</h2>
+        <p>A Bom Ferro atende quem precisa de material com agilidade — do profissional autônomo à empresa com obra em andamento.</p>
+      </div>
+      <div class="who-list reveal">
+        <div class="who-item"><span>Construção Civil</span><span class="mono">01</span></div>
+        <div class="who-item"><span>Serralherias</span><span class="mono">02</span></div>
+        <div class="who-item"><span>Profissionais</span><span class="mono">03</span></div>
+        <div class="who-item"><span>Empresas</span><span class="mono">04</span></div>
+        <div class="who-item"><span>Manutenção</span><span class="mono">05</span></div>
+        <div class="who-item"><span>Projetos e Fabricação</span><span class="mono">06</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRODUTOS / ESTOQUE ================= -->
+  <section class="stock-section" id="sobre">
+    <div class="wrap">
+      <div class="stock-layout">
+        <div>
+          <div class="section-head reveal" style="margin-bottom:1.6rem;">
+            <h2>Um estoque preparado para o seu projeto.</h2>
+            <p>Trabalhamos com uma linha ampla de produtos para construção, serralheria, manutenção e fabricação. Consulte a disponibilidade do que você precisa.</p>
+          </div>
+          <div class="tag-board reveal">
+            <span class="tag-chip">Tubos de aço</span>
+            <span class="tag-chip">Chapas</span>
+            <span class="tag-chip">Metalons</span>
+            <span class="tag-chip">Barras</span>
+            <span class="tag-chip">Ferramentas</span>
+            <span class="tag-chip">Máquinas</span>
+            <span class="tag-chip">Soldas</span>
+            <span class="tag-chip">Abrasivos</span>
+            <span class="tag-chip">Parafusos</span>
+            <span class="tag-chip">EPIs</span>
+            <span class="tag-chip">Tintas</span>
+            <span class="tag-chip">Acessórios</span>
+          </div>
+          <div class="stock-cta reveal">
+            <a href="#" class="btn btn--ghost-light" data-wa data-wa-msg="Olá! Gostaria de consultar a disponibilidade de um produto na Bom Ferro.">CONSULTAR DISPONIBILIDADE</a>
+          </div>
+        </div>
+        <div class="stock-visual reveal">
+          <img src="https://images.unsplash.com/photo-1727413430950-ea623d4b2a42?w=900&q=80&auto=format&fit=crop" alt="Desbaste de metal com esmerilhadeira, faíscas em ambiente industrial">
+          <div class="stock-visual-row">
+            <img src="https://images.unsplash.com/photo-1613945831677-383c19ad7721?w=500&q=80&auto=format&fit=crop" alt="Parafusos sobre superfície de madeira">
+            <img src="https://images.unsplash.com/photo-1426927308491-6380b6a9936f?w=500&q=80&auto=format&fit=crop" alt="Ferramentas manuais organizadas em painel">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DIFERENCIAIS ================= -->
+  <section class="spec-section">
+    <div class="wrap">
+      <div class="section-head section-head--dark reveal">
+        <h2>Por que fechar com a Bom Ferro.</h2>
+      </div>
+      <div class="spec-list reveal">
+        <div class="spec-row">
+          <h3>Variedade</h3>
+          <p>Diversas categorias para construção, manutenção e fabricação — de ferragens do dia a dia a materiais para projetos maiores.</p>
+        </div>
+        <div class="spec-row">
+          <h3>Atendimento</h3>
+          <p>Atendimento para quem precisa encontrar a solução certa, sem enrolação, direto pelo WhatsApp.</p>
+        </div>
+        <div class="spec-row">
+          <h3>Soluções para profissionais</h3>
+          <p>Produtos pensados para construção, serralheria, manutenção e projetos de fabricação.</p>
+        </div>
+        <div class="spec-row">
+          <h3>Localização</h3>
+          <p>Atendimento em Itajaí e região, com facilidade para retirada e negociação de pedidos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ORÇAMENTO ================= -->
+  <section class="quote-section" id="orcamento">
+    <div class="wrap">
+      <div class="section-head section-head--dark reveal">
+        <h2>Precisa de material para o seu projeto?</h2>
+        <p>Envie o que você precisa e fale com a equipe da Bom Ferro.</p>
+      </div>
+      <div class="quote-layout reveal">
+        <form class="quote-form" id="quoteForm">
+          <div class="field">
+            <label for="qNome">Nome</label>
+            <input type="text" id="qNome" name="nome" required>
+          </div>
+          <div class="field">
+            <label for="qWhats">WhatsApp</label>
+            <input type="tel" id="qWhats" name="whatsapp" placeholder="(47) 9XXXX-XXXX" required>
+          </div>
+          <div class="field">
+            <label for="qEmpresa">Empresa (opcional)</label>
+            <input type="text" id="qEmpresa" name="empresa">
+          </div>
+          <div class="field">
+            <label for="qNecessidade">O que você precisa?</label>
+            <textarea id="qNecessidade" name="necessidade" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--ember btn--block">SOLICITAR ORÇAMENTO</button>
+        </form>
+        <div class="quote-side">
+          <h3>Prefere falar direto?</h3>
+          <p>Fale agora com a equipe da Bom Ferro pelo WhatsApp e receba retorno rápido sobre disponibilidade e preços.</p>
+          <a href="#" class="btn btn--ember" data-wa data-wa-msg="Olá! Preciso de material para o meu projeto e gostaria de um orçamento.">FALAR PELO WHATSAPP</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA FINAL ================= -->
+  <section class="final-cta">
+    <div class="wrap reveal">
+      <div class="final-cta__rule"></div>
+      <h2>Seu projeto começa com o material certo.</h2>
+      <p>Fale com a Bom Ferro e encontre as ferragens, ferramentas e materiais que você precisa.</p>
+      <a href="#" class="btn btn--ember" data-wa data-wa-msg="Olá! Vim pelo site da Bom Ferro e quero falar sobre o meu projeto.">FALAR COM A BOM FERRO</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="imagens/logo.png" alt="Bom Ferro">
+        <p>Ferragens • Ferramentas • Materiais<br>Itajaí — Santa Catarina</p>
+      </div>
+      <div>
+        <h4>NAVEGAÇÃO</h4>
+        <ul>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#solucoes">Soluções</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#orcamento">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>CONTATO</h4>
+        <ul>
+          <li><a href="#" data-wa data-wa-msg="Olá! Vim pelo site da Bom Ferro.">WhatsApp: (47) TROCAR</a></li>
+          <li><a href="tel:+554700000000">Telefone: (47) TROCAR</a></li>
+          <li>Endereço: TROCAR — Itajaí/SC</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>Bom Ferro Fabricação e Comércio de Artigos de Ferro Ltda.</span>
+      <span>CNPJ: TROCAR</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= WHATSAPP FLUTUANTE ================= -->
+<a href="#" class="wa-float" id="waFloat" data-wa data-wa-msg="Olá! Vim pelo site da Bom Ferro e gostaria de falar com a equipe." aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.2-.7.9-.9 1.1-.2.2-.3.2-.6.1-.9-.4-1.7-1-2.4-1.7-.6-.6-1.1-1.3-1.5-2.1-.1-.2 0-.4.1-.6.2-.2.4-.5.6-.7.1-.2.1-.4 0-.6-.1-.2-.6-1.5-.8-2-.1-.4-.3-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.6.6-1 1.4-1 2.3.1 1.1.5 2.1 1.2 3 1.1 1.6 2.5 2.9 4.2 3.7.5.2 1 .4 1.5.5.6.2 1.1.2 1.6.1.7-.1 1.4-.6 1.8-1.2.2-.3.2-.7.1-1 0-.1-.2-.2-.4-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.1 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.2-8.4 8.2z"/></svg>
+</a>
+
+<noscript>
+  <p style="text-align:center;padding:1rem;background:#fff3cd;">
+    Para falar direto pelo WhatsApp, acesse: https://wa.me/5547000000000
+  </p>
+</noscript>
+
+<script>
+  // ============================================================
+  // CONFIG — fonte única de verdade para WhatsApp
+  // TROCAR: número real da Bom Ferro antes de publicar
+  // ============================================================
+  const BOMFERRO = {
+    whatsappNumber: '5547000000000', // TROCAR
+    defaultMessage: 'Olá! Vim pelo site da Bom Ferro e gostaria de um orçamento.'
+  };
+
+  function waLink(message){
+    const text = encodeURIComponent(message || BOMFERRO.defaultMessage);
+    return `https://wa.me/${BOMFERRO.whatsappNumber}?text=${text}`;
+  }
+
+  document.querySelectorAll('[data-wa]').forEach(el => {
+    el.href = waLink(el.dataset.waMsg);
+    el.target = '_blank';
+    el.rel = 'noopener';
+  });
+
+  // Header: shrink on scroll + reveal CTA button
+  const header = document.getElementById('siteHeader');
+  const headerCta = document.getElementById('headerCta');
+  function onScroll(){
+    const scrolled = window.scrollY > 40;
+    header.classList.toggle('is-scrolled', scrolled);
+    if (headerCta) headerCta.style.display = window.innerWidth >= 900 ? 'inline-flex' : 'none';
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  menuToggle.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileNav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal, .hero__reveal');
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+
+  // Formulário de orçamento -> abre WhatsApp com os dados preenchidos
+  const quoteForm = document.getElementById('quoteForm');
+  quoteForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nome = document.getElementById('qNome').value.trim();
+    const whats = document.getElementById('qWhats').value.trim();
+    const empresa = document.getElementById('qEmpresa').value.trim();
+    const necessidade = document.getElementById('qNecessidade').value.trim();
+
+    let msg = `Olá! Meu nome é ${nome} e gostaria de um orçamento na Bom Ferro.\n`;
+    msg += `Preciso de: ${necessidade}\n`;
+    if (empresa) msg += `Empresa: ${empresa}\n`;
+    msg += `Meu WhatsApp: ${whats}`;
+
+    window.open(waLink(msg), '_blank', 'noopener');
+  });
+</script>
+
+</body>
+</html>
