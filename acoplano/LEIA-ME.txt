@@ -1,0 +1,37 @@
+AÇO-PLANO METAIS — SITE (página única)
+======================================
+
+COMO PUBLICAR
+- É um site estático de arquivo único. Basta subir a pasta inteira
+  (index.html + pasta imagens/) na Cloudflare Pages, GitHub Pages,
+  Netlify, ou abrir o index.html direto no navegador.
+
+FOTOS
+- Todas as fotos ficam em /imagens/. Para trocar qualquer uma,
+  substitua o arquivo mantendo o MESMO nome.
+- Já incluídas: hero, adegas, estantes, mobiliario-industrial,
+  pecas-aereas, portoes, suportes, og-preview.
+- FALTAM 2 (hoje aparecem como tile com marca d'água):
+    imagens/molduras.jpg
+    imagens/coberturas.jpg
+  Basta soltar os arquivos com esses nomes que as fotos entram sozinhas.
+- Dica: as fotos do hero e og-preview ficam melhores em alta resolução
+  (1600px+ de largura). As atuais vieram do Instagram, resolução baixa.
+
+DEPOIMENTOS (prova social)
+- Nota 4,9 / 5 e 32 avaliações já estão na página (dado real do Google).
+- Os depoimentos estão vazios de propósito (não invento texto).
+  Para publicar avaliações reais, edite no final do index.html o bloco:
+      empresa.depoimentos = [
+        { texto: "avaliação real...", autor: "Nome C." },
+        ...
+      ]
+  Com a lista vazia [], aparecem 3 espaços marcados para preencher.
+
+AJUSTES RÁPIDOS (bloco CONFIG no fim do index.html)
+- whatsappBase ....... número do WhatsApp
+- mensagemPadrao ..... texto pré-preenchido dos botões
+- mostrarBotaoFlutuante = false  → remove o botão flutuante de WhatsApp
+- instagram / telefone / local
+
+Contato configurado: WhatsApp (47) 99689-3439 · Instagram @aco_plano · Itapema-SC
