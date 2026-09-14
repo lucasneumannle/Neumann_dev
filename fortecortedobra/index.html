@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Forte Corte e Dobra — Corte a laser e dobra CNC em Concórdia/SC</title>
+<meta name="description" content="Corte a laser e dobra CNC de chapas de aço, inox e alumínio em Concórdia/SC. Envie seu arquivo (DXF, DWG, PDF) e receba a peça pronta — do protótipo à produção em série." />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Forte Corte e Dobra — Corte a laser e dobra CNC" />
+<meta property="og:description" content="Chapas de aço, inox e alumínio cortadas com precisão de laser e dobradas em CNC. Concórdia/SC." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1738162837451-2041c1418f54?auto=format&fit=crop&w=1200&q=70" />
+<meta property="og:locale" content="pt_BR" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2316181c'/%3E%3Crect x='24' y='24' width='52' height='52' fill='%23fff'/%3E%3Ctext x='50' y='67' font-family='Arial Black,Arial' font-size='48' font-weight='900' text-anchor='middle' fill='%2316181c'%3EF%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper:'#ffffff', paper2:'#f5f5f3', paper3:'#ececea',
+          ink:'#16181c', ink2:'#2a2d33',
+          steel:'#65696f', muted:'#9a9ea5', line:'#e4e4e0',
+          coal:'#101216',
+          accent:'#ff5a1f', ember:'#d23f00'
+        },
+        fontFamily: {
+          display:['Archivo','sans-serif'],
+          sans:['Barlow','sans-serif'],
+          mono:['"JetBrains Mono"','monospace']
+        }
+      }
+    }
+  }
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+  :root{ --accent:#ff5a1f; }
+  html{ scroll-behavior:smooth; }
+  body{ background:#ffffff; color:#16181c; font-family:'Barlow',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  ::selection{ background:var(--accent); color:#fff; }
+  h1,h2,h3,.font-display{ font-family:'Archivo',sans-serif; }
+
+  /* canto cortado — remete a chapa cortada, discreto */
+  .chamfer{ clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px)); }
+  .chamfer-sm{ clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 9px 100%, 0 calc(100% - 9px)); }
+
+  .btn-accent{ background:var(--accent); color:#fff; transition:.18s; }
+  .btn-accent:hover{ background:#e8480f; box-shadow:0 10px 26px -12px rgba(255,90,31,.7); }
+  .btn-ghost{ border:1px solid rgba(22,24,28,.22); color:#16181c; transition:.18s; }
+  .btn-ghost:hover{ background:#16181c; color:#fff; border-color:#16181c; }
+
+  .link-u{ position:relative; }
+  .link-u::after{ content:''; position:absolute; left:0; bottom:-3px; height:2px; width:0; background:var(--accent); transition:.25s; }
+  .link-u:hover::after{ width:100%; }
+
+  @keyframes rise { from{ opacity:0; transform:translateY(18px) } to{ opacity:1; transform:none } }
+  .rise{ animation: rise .75s cubic-bezier(.2,.7,.2,1) both; }
+
+  @media (prefers-reduced-motion: reduce){ .rise{ animation:none } }
+  [x-cloak]{ display:none !important; }
+</style>
+<noscript><style>[x-cloak]{display:block !important}</style></noscript>
+</head>
+
+<body class="bg-paper text-ink">
+
+<!-- ============ NAV ============ -->
+<header x-data="{open:false, scrolled:false}" @scroll.window="scrolled = window.scrollY > 24"
+        class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
+        :class="scrolled ? 'bg-paper/92 backdrop-blur border-b border-line' : 'bg-paper/0 border-b border-transparent'">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between">
+    <a href="#topo" class="flex items-center gap-3">
+      <span class="w-9 h-9 bg-ink text-paper flex items-center justify-center font-display font-black text-xl leading-none chamfer-sm">F</span>
+      <span class="leading-none">
+        <span class="block font-display font-extrabold text-[15px] tracking-tight">FORTE</span>
+        <span class="block font-mono text-[9px] text-steel tracking-[.22em] mt-0.5">CORTE&nbsp;E&nbsp;DOBRA</span>
+      </span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-ink/75">
+      <a href="#servicos"   class="link-u hover:text-ink">Serviços</a>
+      <a href="#materiais"  class="link-u hover:text-ink">Materiais</a>
+      <a href="#processo"   class="link-u hover:text-ink">Como funciona</a>
+      <a href="#aplicacoes" class="link-u hover:text-ink">Aplicações</a>
+      <a href="#contato"    class="link-u hover:text-ink">Contato</a>
+    </nav>
+
+    <a href="https://wa.me/5549988972509?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20corte%20a%20laser%20%2F%20dobra."
+       target="_blank" rel="noopener"
+       class="hidden md:inline-flex items-center gap-2 btn-accent chamfer-sm px-5 py-2.5 font-semibold text-sm">
+      <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.8 1 7.94 7.94 0 0 0 5.6-13.58ZM12.05 18.5a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.59 6.59 0 1 1 5.59 3.09Zm3.62-4.94c-.2-.1-1.17-.58-1.35-.64s-.31-.1-.44.1-.51.64-.62.77-.23.15-.43.05a5.4 5.4 0 0 1-1.59-.98 6 6 0 0 1-1.1-1.37c-.11-.2 0-.3.09-.4s.2-.23.3-.35a1.3 1.3 0 0 0 .2-.34.37.37 0 0 0 0-.35c0-.1-.44-1.06-.6-1.45s-.32-.33-.44-.34h-.38a.72.72 0 0 0-.52.24 2.2 2.2 0 0 0-.68 1.63 3.82 3.82 0 0 0 .8 2.03 8.75 8.75 0 0 0 3.35 2.96c.47.2.83.32 1.11.41a2.68 2.68 0 0 0 1.23.08c.38-.06 1.17-.48 1.33-.94s.17-.86.12-.94-.18-.14-.38-.24Z"/></svg>
+      Orçamento
+    </a>
+
+    <button @click="open=!open" class="md:hidden p-2 -mr-2" aria-label="Menu">
+      <i data-lucide="menu" x-show="!open" class="w-7 h-7"></i>
+      <i data-lucide="x" x-show="open" x-cloak class="w-7 h-7"></i>
+    </button>
+  </div>
+
+  <div x-show="open" x-cloak x-transition class="md:hidden bg-paper border-t border-line">
+    <nav class="px-5 py-5 flex flex-col text-lg font-medium">
+      <a @click="open=false" href="#servicos"   class="py-3 border-b border-line">Serviços</a>
+      <a @click="open=false" href="#materiais"  class="py-3 border-b border-line">Materiais</a>
+      <a @click="open=false" href="#processo"   class="py-3 border-b border-line">Como funciona</a>
+      <a @click="open=false" href="#aplicacoes" class="py-3 border-b border-line">Aplicações</a>
+      <a @click="open=false" href="#contato"    class="py-3">Contato</a>
+      <a href="https://wa.me/5549988972509?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener"
+         class="mt-4 btn-accent chamfer-sm px-5 py-3 font-semibold text-center">Solicitar orçamento</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="topo" class="relative pt-28 md:pt-36 pb-16 md:pb-24 bg-paper">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+    <div class="lg:col-span-6">
+      <p class="rise flex items-center gap-2 text-steel text-sm mb-6">
+        <span class="w-2.5 h-2.5 bg-accent inline-block"></span>
+        Metalurgia de precisão em Concórdia/SC
+      </p>
+      <h1 class="rise font-display font-black text-ink leading-[.94] tracking-tight text-5xl sm:text-6xl lg:text-[5.2rem]" style="animation-delay:.08s">
+        Sua chapa vira<br>peça pronta.
+      </h1>
+      <p class="rise mt-6 text-lg md:text-xl text-steel max-w-xl leading-relaxed" style="animation-delay:.18s">
+        Corte a laser e dobra CNC de aço, inox e alumínio. Você envia o arquivo, a gente entrega a peça no ponto — do protótipo à produção em série.
+      </p>
+
+      <div class="rise mt-9 flex flex-col sm:flex-row gap-3" style="animation-delay:.28s">
+        <a href="https://wa.me/5549988972509?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20corte%20a%20laser%20%2F%20dobra."
+           target="_blank" rel="noopener"
+           class="btn-accent chamfer-sm px-7 py-4 font-semibold text-base inline-flex items-center justify-center gap-2.5">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.8 1 7.94 7.94 0 0 0 5.6-13.58ZM12.05 18.5a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.59 6.59 0 1 1 5.59 3.09Zm3.62-4.94c-.2-.1-1.17-.58-1.35-.64s-.31-.1-.44.1-.51.64-.62.77-.23.15-.43.05a5.4 5.4 0 0 1-1.59-.98 6 6 0 0 1-1.1-1.37c-.11-.2 0-.3.09-.4s.2-.23.3-.35a1.3 1.3 0 0 0 .2-.34.37.37 0 0 0 0-.35c0-.1-.44-1.06-.6-1.45s-.32-.33-.44-.34h-.38a.72.72 0 0 0-.52.24 2.2 2.2 0 0 0-.68 1.63 3.82 3.82 0 0 0 .8 2.03 8.75 8.75 0 0 0 3.35 2.96c.47.2.83.32 1.11.41a2.68 2.68 0 0 0 1.23.08c.38-.06 1.17-.48 1.33-.94s.17-.86.12-.94-.18-.14-.38-.24Z"/></svg>
+          Solicitar orçamento
+        </a>
+        <a href="#servicos" class="btn-ghost chamfer-sm px-7 py-4 font-semibold text-base inline-flex items-center justify-center">
+          Ver serviços
+        </a>
+      </div>
+
+      <p class="rise mt-7 font-mono text-xs text-muted" style="animation-delay:.36s">
+        Aceitamos DXF · DWG · PDF — ou uma foto do seu desenho.
+      </p>
+    </div>
+
+    <div class="rise lg:col-span-6" style="animation-delay:.2s">
+      <div class="relative chamfer overflow-hidden aspect-[4/3] lg:aspect-[5/4] bg-paper2">
+        <img src="https://images.unsplash.com/photo-1738162837451-2041c1418f54?auto=format&fit=crop&w=1400&q=75"
+             alt="Máquina de corte a laser cortando uma chapa de metal com faíscas" loading="eager"
+             class="w-full h-full object-cover" />
+      </div>
+      <div class="mt-3 flex items-center justify-between font-mono text-[11px] text-muted">
+        <span>CORTE A LASER · CNC</span>
+        <span>FORTE / SC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="bg-paper2 border-y border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-4 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-3 text-sm">
+    <div class="flex items-center gap-2.5"><i data-lucide="scan-line" class="w-4 h-4 text-accent"></i><span>Corte a laser & dobra CNC</span></div>
+    <div class="flex items-center gap-2.5"><i data-lucide="layers" class="w-4 h-4 text-accent"></i><span>Aço, inox, alumínio, galvanizado</span></div>
+    <div class="flex items-center gap-2.5"><i data-lucide="repeat" class="w-4 h-4 text-accent"></i><span>Do protótipo à série</span></div>
+    <div class="flex items-center gap-2.5"><i data-lucide="map-pin" class="w-4 h-4 text-accent"></i><span>Concórdia / SC</span></div>
+  </div>
+</div>
+
+<!-- ============ SERVIÇOS ============ -->
+<section id="servicos" class="py-20 md:py-28 bg-paper">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-14 md:mb-20">
+      <h2 class="font-display font-extrabold text-4xl md:text-5xl tracking-tight leading-none">O que a Forte faz</h2>
+      <p class="mt-4 text-steel text-lg">Duas operações, um resultado: chapa que entra plana, sai como peça pronta.</p>
+    </div>
+
+    <!-- Corte a laser -->
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center mb-16 md:mb-24">
+      <div class="chamfer overflow-hidden aspect-[4/3] bg-paper2 order-1">
+        <img src="https://images.unsplash.com/photo-1738162837619-5d0b158abcec?auto=format&fit=crop&w=1100&q=75"
+             alt="Cabeçote de laser cortando chapa metálica em detalhe" loading="lazy"
+             class="w-full h-full object-cover" />
+      </div>
+      <div class="order-2">
+        <span class="font-mono text-sm text-accent">Corte a laser</span>
+        <h3 class="font-display font-extrabold text-3xl md:text-4xl tracking-tight mt-2 mb-4">Cortes limpos, sem rebarba</h3>
+        <p class="text-steel text-lg leading-relaxed">
+          Geometrias complexas, furos e detalhes finos que a guilhotina não alcança — com repetibilidade de peça pra peça. O que você desenha é o que sai da máquina.
+        </p>
+      </div>
+    </div>
+
+    <!-- Dobra CNC (gráfico técnico, não foto) -->
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="font-mono text-sm text-accent">Dobra CNC</span>
+        <h3 class="font-display font-extrabold text-3xl md:text-4xl tracking-tight mt-2 mb-4">Dobras exatas e repetíveis</h3>
+        <p class="text-steel text-lg leading-relaxed">
+          A chapa plana vira peça 3D com ângulos consistentes do primeiro ao último item do lote. Perfis, caixas, suportes e gabinetes com o mesmo padrão.
+        </p>
+      </div>
+      <div class="order-1 lg:order-2 chamfer bg-paper2 border border-line aspect-[4/3] flex items-center justify-center p-10">
+        <svg viewBox="0 0 400 240" class="w-full h-full max-w-md" role="img" aria-label="Esquema de perfil de chapa dobrada">
+          <path d="M50 60 L50 180 L200 180 L200 110 L350 110"
+                fill="none" stroke="#16181c" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="50"  cy="180" r="7" fill="#ff5a1f"/>
+          <circle cx="200" cy="180" r="7" fill="#ff5a1f"/>
+          <circle cx="200" cy="110" r="7" fill="#ff5a1f"/>
+          <text x="214" y="150" font-family="JetBrains Mono, monospace" font-size="15" fill="#65696f">90°</text>
+          <text x="120" y="210" font-family="JetBrains Mono, monospace" font-size="13" fill="#9a9ea5">dobra</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Sob medida -->
+    <div class="mt-16 md:mt-20 chamfer bg-ink text-paper px-7 md:px-10 py-8 flex flex-col md:flex-row md:items-center gap-6 justify-between">
+      <div class="flex items-start gap-4">
+        <i data-lucide="ruler" class="w-7 h-7 text-accent shrink-0 mt-1"></i>
+        <div>
+          <h3 class="font-display font-bold text-xl md:text-2xl">Projeto sob medida</h3>
+          <p class="text-paper/70 mt-1">Peça única, protótipo ou série. Traga o desenho pronto, o esboço ou só a ideia.</p>
+        </div>
+      </div>
+      <a href="https://wa.me/5549988972509?text=Ol%C3%A1!%20Tenho%20um%20projeto%20sob%20medida."
+         target="_blank" rel="noopener"
+         class="btn-accent chamfer-sm px-6 py-3 font-semibold shrink-0 inline-flex items-center justify-center gap-2">
+        Enviar meu projeto <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATERIAIS ============ -->
+<section id="materiais" class="py-20 md:py-28 bg-paper2 border-y border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+    <div class="lg:col-span-7">
+      <h2 class="font-display font-extrabold text-4xl md:text-5xl tracking-tight leading-none">Materiais & capacidade</h2>
+      <p class="mt-4 text-steel text-lg max-w-lg">
+        Trabalhamos os metais que a indústria mais usa. Manda material e espessura no WhatsApp que confirmamos a viabilidade na hora.
+      </p>
+
+      <dl class="mt-8 border-t border-line">
+        <div class="py-4 border-b border-line flex flex-wrap items-baseline justify-between gap-2">
+          <dt class="font-semibold">Materiais</dt>
+          <dd class="font-mono text-sm text-steel text-right">Aço carbono · Inox · Alumínio · Galvanizado</dd>
+        </div>
+        <!-- EDITAR: espessura conforme sua máquina -->
+        <div class="py-4 border-b border-line flex flex-wrap items-baseline justify-between gap-2">
+          <dt class="font-semibold">Espessura</dt>
+          <dd class="font-mono text-lg font-bold text-ink">até 20&nbsp;mm</dd>
+        </div>
+        <!-- EDITAR: área útil da mesa de corte -->
+        <div class="py-4 border-b border-line flex flex-wrap items-baseline justify-between gap-2">
+          <dt class="font-semibold">Área de corte</dt>
+          <dd class="font-mono text-lg font-bold text-ink">3000 × 1500&nbsp;mm</dd>
+        </div>
+        <div class="py-4 border-b border-line flex flex-wrap items-baseline justify-between gap-2">
+          <dt class="font-semibold">Formatos aceitos</dt>
+          <dd class="font-mono text-sm text-steel">DXF · DWG · PDF</dd>
+        </div>
+        <div class="py-4 border-b border-line flex flex-wrap items-baseline justify-between gap-2">
+          <dt class="font-semibold">Lote</dt>
+          <dd class="font-mono text-sm text-steel">peça única → produção em série</dd>
+        </div>
+      </dl>
+      <p class="mt-4 font-mono text-[11px] text-muted">Valores de referência — a viabilidade é confirmada no orçamento.</p>
+    </div>
+
+    <div class="lg:col-span-5">
+      <div class="chamfer overflow-hidden aspect-[4/5]">
+        <img src="https://images.unsplash.com/photo-1655034581711-632b328d8267?auto=format&fit=crop&w=1000&q=75"
+             alt="Estrutura e corrimão em metal com acabamento" loading="lazy"
+             class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESSO ============ -->
+<section id="processo" class="py-20 md:py-28 bg-paper">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-14">
+      <h2 class="font-display font-extrabold text-4xl md:text-5xl tracking-tight leading-none">Do arquivo à peça, sem enrolação</h2>
+    </div>
+
+    <ol class="grid md:grid-cols-4 gap-8">
+      <li>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="font-mono text-sm text-accent">01</span>
+          <span class="h-px flex-1 bg-line"></span>
+          <i data-lucide="upload" class="w-5 h-5 text-ink"></i>
+        </div>
+        <h3 class="font-display font-bold text-xl mb-2">Envie o arquivo</h3>
+        <p class="text-steel leading-relaxed">Manda o DXF, DWG, PDF ou uma foto do desenho pelo WhatsApp.</p>
+      </li>
+      <li>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="font-mono text-sm text-accent">02</span>
+          <span class="h-px flex-1 bg-line"></span>
+          <i data-lucide="file-text" class="w-5 h-5 text-ink"></i>
+        </div>
+        <h3 class="font-display font-bold text-xl mb-2">Receba o orçamento</h3>
+        <p class="text-steel leading-relaxed">A gente analisa e retorna com preço e prazo do projeto.</p>
+      </li>
+      <li>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="font-mono text-sm text-accent">03</span>
+          <span class="h-px flex-1 bg-line"></span>
+          <i data-lucide="cog" class="w-5 h-5 text-ink"></i>
+        </div>
+        <h3 class="font-display font-bold text-xl mb-2">Corte + dobra</h3>
+        <p class="text-steel leading-relaxed">Produção com precisão de laser e dobra CNC.</p>
+      </li>
+      <li>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="font-mono text-sm text-accent">04</span>
+          <span class="h-px flex-1 bg-line"></span>
+          <i data-lucide="package-check" class="w-5 h-5 text-ink"></i>
+        </div>
+        <h3 class="font-display font-bold text-xl mb-2">Retire ou receba</h3>
+        <p class="text-steel leading-relaxed">Peça pronta para retirada em Concórdia/SC.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ APLICAÇÕES ============ -->
+<section id="aplicacoes" class="py-20 md:py-28 bg-paper2 border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-12">
+      <h2 class="font-display font-extrabold text-4xl md:text-5xl tracking-tight leading-none max-w-xl">Metal que a gente resolve</h2>
+      <a href="https://www.instagram.com/fortecorteedobra/" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 font-semibold text-ink/80 hover:text-ink link-u">
+        <i data-lucide="instagram" class="w-5 h-5"></i> @fortecorteedobra
+      </a>
+    </div>
+
+    <!-- mosaico editorial de fotos reais, com legendas honestas -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+      <figure class="relative chamfer overflow-hidden aspect-[3/4] col-span-2 lg:col-span-2 lg:row-span-2 lg:aspect-auto lg:min-h-[420px]">
+        <img src="https://images.unsplash.com/photo-1647586028042-1de4d4a935e6?auto=format&fit=crop&w=1100&q=75"
+             alt="Acabamento de peça metálica com faíscas" loading="lazy" class="w-full h-full object-cover" />
+        <figcaption class="absolute bottom-3 left-3 font-mono text-[11px] text-white/90 bg-ink/55 px-2.5 py-1 chamfer-sm">Acabamento</figcaption>
+      </figure>
+      <figure class="relative chamfer overflow-hidden aspect-square">
+        <img src="https://images.unsplash.com/photo-1738162837619-5d0b158abcec?auto=format&fit=crop&w=800&q=75"
+             alt="Corte a laser em chapa" loading="lazy" class="w-full h-full object-cover" />
+        <figcaption class="absolute bottom-3 left-3 font-mono text-[11px] text-white/90 bg-ink/55 px-2.5 py-1 chamfer-sm">Corte a laser</figcaption>
+      </figure>
+      <figure class="relative chamfer overflow-hidden aspect-square">
+        <img src="https://images.unsplash.com/photo-1655034581711-632b328d8267?auto=format&fit=crop&w=800&q=75"
+             alt="Estrutura metálica com corrimão" loading="lazy" class="w-full h-full object-cover" />
+        <figcaption class="absolute bottom-3 left-3 font-mono text-[11px] text-white/90 bg-ink/55 px-2.5 py-1 chamfer-sm">Estruturas</figcaption>
+      </figure>
+      <figure class="relative chamfer overflow-hidden aspect-[2/1] col-span-2">
+        <img src="https://images.unsplash.com/photo-1745448797901-2a4c9d9af1c1?auto=format&fit=crop&w=1200&q=75"
+             alt="Trabalho de metalurgia com faíscas em preto e branco" loading="lazy" class="w-full h-full object-cover" />
+        <figcaption class="absolute bottom-3 left-3 font-mono text-[11px] text-white/90 bg-ink/55 px-2.5 py-1 chamfer-sm">Metalurgia</figcaption>
+      </figure>
+    </div>
+
+    <!-- segmentos atendidos (texto, sem inventar imagens) -->
+    <p class="text-steel mb-4">Fazemos peças para:</p>
+    <div class="flex flex-wrap gap-2.5">
+      <span class="chamfer-sm bg-paper border border-line px-4 py-2 text-sm font-medium">Indústria & metalúrgica</span>
+      <span class="chamfer-sm bg-paper border border-line px-4 py-2 text-sm font-medium">Suportes & estruturas</span>
+      <span class="chamfer-sm bg-paper border border-line px-4 py-2 text-sm font-medium">Fachadas & letreiros</span>
+      <span class="chamfer-sm bg-paper border border-line px-4 py-2 text-sm font-medium">Móveis & decoração</span>
+      <span class="chamfer-sm bg-paper border border-line px-4 py-2 text-sm font-medium">Portões & esquadrias</span>
+      <span class="chamfer-sm bg-paper border border-line px-4 py-2 text-sm font-medium">Protótipos</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ESCURO (único respiro dark) ============ -->
+<section class="relative bg-coal text-paper overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1745448797901-2a4c9d9af1c1?auto=format&fit=crop&w=1800&q=70"
+       alt="" aria-hidden="true"
+       class="absolute inset-0 w-full h-full object-cover opacity-25" />
+  <div class="absolute inset-0" style="background:linear-gradient(90deg,rgba(16,18,22,.94) 40%,rgba(16,18,22,.55));"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="max-w-2xl">
+      <h2 class="font-display font-black text-4xl md:text-6xl tracking-tight leading-[.95]">
+        Manda o arquivo.<br>A gente corta.
+      </h2>
+      <p class="mt-5 text-paper/75 text-lg max-w-lg">
+        Orçamento rápido e sem compromisso pelo WhatsApp. Do desenho à peça pronta.
+      </p>
+      <a href="https://wa.me/5549988972509?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20corte%20a%20laser%20%2F%20dobra."
+         target="_blank" rel="noopener"
+         class="mt-8 btn-accent chamfer-sm px-8 py-4 font-semibold text-lg inline-flex items-center gap-3">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.8 1 7.94 7.94 0 0 0 5.6-13.58ZM12.05 18.5a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.59 6.59 0 1 1 5.59 3.09Zm3.62-4.94c-.2-.1-1.17-.58-1.35-.64s-.31-.1-.44.1-.51.64-.62.77-.23.15-.43.05a5.4 5.4 0 0 1-1.59-.98 6 6 0 0 1-1.1-1.37c-.11-.2 0-.3.09-.4s.2-.23.3-.35a1.3 1.3 0 0 0 .2-.34.37.37 0 0 0 0-.35c0-.1-.44-1.06-.6-1.45s-.32-.33-.44-.34h-.38a.72.72 0 0 0-.52.24 2.2 2.2 0 0 0-.68 1.63 3.82 3.82 0 0 0 .8 2.03 8.75 8.75 0 0 0 3.35 2.96c.47.2.83.32 1.11.41a2.68 2.68 0 0 0 1.23.08c.38-.06 1.17-.48 1.33-.94s.17-.86.12-.94-.18-.14-.38-.24Z"/></svg>
+        Chamar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATO + MAPA ============ -->
+<section id="contato" class="bg-paper">
+  <div class="grid lg:grid-cols-2">
+    <div class="px-5 md:px-8 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-16 py-16 md:py-24">
+      <h2 class="font-display font-extrabold text-3xl md:text-4xl tracking-tight leading-none mb-8">Fale com a Forte</h2>
+      <div class="space-y-5 text-lg">
+        <a href="tel:+5549988972509" class="flex items-center gap-3.5 hover:text-accent transition">
+          <i data-lucide="phone" class="w-5 h-5 text-accent"></i> (49) 98897-2509
+        </a>
+        <div class="flex items-start gap-3.5">
+          <i data-lucide="map-pin" class="w-5 h-5 text-accent mt-1"></i>
+          <span>Rua Rodolfo Benini — Colinas<br><span class="text-steel">Concórdia/SC · 89700-483</span></span>
+        </div>
+        <!-- EDITAR: horário completo -->
+        <div class="flex items-center gap-3.5">
+          <i data-lucide="clock" class="w-5 h-5 text-accent"></i> <span>Seg a sex · fecha às 17h30</span>
+        </div>
+        <a href="https://www.instagram.com/fortecorteedobra/" target="_blank" rel="noopener" class="flex items-center gap-3.5 hover:text-accent transition">
+          <i data-lucide="instagram" class="w-5 h-5 text-accent"></i> @fortecorteedobra
+        </a>
+      </div>
+      <a href="https://wa.me/5549988972509?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento."
+         target="_blank" rel="noopener"
+         class="mt-9 btn-accent chamfer-sm px-7 py-4 font-semibold inline-flex items-center gap-2.5">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.8 1 7.94 7.94 0 0 0 5.6-13.58ZM12.05 18.5a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.59 6.59 0 1 1 5.59 3.09Zm3.62-4.94c-.2-.1-1.17-.58-1.35-.64s-.31-.1-.44.1-.51.64-.62.77-.23.15-.43.05a5.4 5.4 0 0 1-1.59-.98 6 6 0 0 1-1.1-1.37c-.11-.2 0-.3.09-.4s.2-.23.3-.35a1.3 1.3 0 0 0 .2-.34.37.37 0 0 0 0-.35c0-.1-.44-1.06-.6-1.45s-.32-.33-.44-.34h-.38a.72.72 0 0 0-.52.24 2.2 2.2 0 0 0-.68 1.63 3.82 3.82 0 0 0 .8 2.03 8.75 8.75 0 0 0 3.35 2.96c.47.2.83.32 1.11.41a2.68 2.68 0 0 0 1.23.08c.38-.06 1.17-.48 1.33-.94s.17-.86.12-.94-.18-.14-.38-.24Z"/></svg>
+        Pedir orçamento
+      </a>
+    </div>
+
+    <div class="min-h-[320px] lg:min-h-full border-t lg:border-t-0 lg:border-l border-line">
+      <iframe title="Localização da Forte Corte e Dobra em Concórdia/SC"
+        class="w-full h-full min-h-[320px] grayscale"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Rua%20Rodolfo%20Benini%2C%20Colinas%2C%20Conc%C3%B3rdia%20SC%2089700-483&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="py-20 md:py-28 bg-paper2 border-y border-line">
+  <div class="max-w-3xl mx-auto px-5 md:px-8">
+    <h2 class="font-display font-extrabold text-4xl md:text-5xl tracking-tight leading-none mb-12">Perguntas frequentes</h2>
+    <div x-data="{ q:0 }" class="border-t border-line">
+      <template x-for="(item, i) in [
+        {p:'Quais materiais vocês cortam?', r:'Aço carbono, aço inox, alumínio e aço galvanizado. Na dúvida sobre o seu, é só mandar no WhatsApp que confirmamos.'},
+        {p:'Qual arquivo devo enviar?', r:'DXF ou DWG são o ideal para o corte. Também trabalhamos com PDF ou uma foto do desenho — a gente ajusta o que for preciso.'},
+        {p:'Vocês fazem peça única?', r:'Sim. Atendemos desde protótipo e peça única até produção em série, com o mesmo cuidado.'},
+        {p:'Qual a espessura máxima?', r:'Depende do material. Envie material e espessura no orçamento que confirmamos a viabilidade na hora.'},
+        {p:'Vocês entregam?', r:'A retirada é em Concórdia/SC. Consulte a possibilidade de entrega pelo WhatsApp conforme a sua região.'},
+        {p:'Atendem pessoa física?', r:'Sim. Atendemos empresas, marcenarias, prestadores e também pessoas físicas com projetos avulsos.'}
+      ]" :key="i">
+        <div class="border-b border-line">
+          <button @click="q = q===i ? null : i" class="w-full flex items-center justify-between gap-4 py-5 text-left">
+            <span class="font-semibold text-lg" x-text="item.p"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                 class="w-5 h-5 text-accent shrink-0 transition-transform duration-300" :class="q===i && 'rotate-45'">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+          </button>
+          <div x-show="q===i" x-cloak
+               x-transition:enter="transition ease-out duration-300"
+               x-transition:enter-start="opacity-0 -translate-y-1"
+               x-transition:enter-end="opacity-100 translate-y-0">
+            <p class="pb-5 -mt-1 text-steel leading-relaxed" x-text="item.r"></p>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-coal text-paper pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 pb-10 border-b border-white/10">
+      <a href="#topo" class="flex items-center gap-3">
+        <span class="w-11 h-11 bg-paper text-coal flex items-center justify-center font-display font-black text-2xl chamfer-sm">F</span>
+        <span class="leading-none">
+          <span class="block font-display font-extrabold text-lg tracking-tight">FORTE CORTE E DOBRA</span>
+          <span class="block font-mono text-[10px] text-white/50 tracking-[.2em] mt-1">CORTE A LASER · DOBRA CNC · CONCÓRDIA/SC</span>
+        </span>
+      </a>
+      <a href="https://wa.me/5549988972509?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento."
+         target="_blank" rel="noopener"
+         class="btn-accent chamfer-sm px-6 py-3 font-semibold inline-flex items-center gap-2 self-start md:self-auto">
+        (49) 98897-2509
+      </a>
+    </div>
+    <div class="pt-8 flex flex-col md:flex-row md:items-center justify-between gap-3 text-sm text-white/55">
+      <p>Rua Rodolfo Benini, Colinas — Concórdia/SC · 89700-483</p>
+      <p>© 2026 Forte Corte e Dobra · Feito por Neumann Dev</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5549988972509?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento."
+   target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
+   class="fixed bottom-5 right-5 z-40 w-14 h-14 btn-accent chamfer-sm flex items-center justify-center shadow-lg hover:scale-105 transition">
+  <svg viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.8 1 7.94 7.94 0 0 0 5.6-13.58ZM12.05 18.5a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.59 6.59 0 1 1 5.59 3.09Zm3.62-4.94c-.2-.1-1.17-.58-1.35-.64s-.31-.1-.44.1-.51.64-.62.77-.23.15-.43.05a5.4 5.4 0 0 1-1.59-.98 6 6 0 0 1-1.1-1.37c-.11-.2 0-.3.09-.4s.2-.23.3-.35a1.3 1.3 0 0 0 .2-.34.37.37 0 0 0 0-.35c0-.1-.44-1.06-.6-1.45s-.32-.33-.44-.34h-.38a.72.72 0 0 0-.52.24 2.2 2.2 0 0 0-.68 1.63 3.82 3.82 0 0 0 .8 2.03 8.75 8.75 0 0 0 3.35 2.96c.47.2.83.32 1.11.41a2.68 2.68 0 0 0 1.23.08c.38-.06 1.17-.48 1.33-.94s.17-.86.12-.94-.18-.14-.38-.24Z"/></svg>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"LocalBusiness",
+  "name":"Forte Corte e Dobra",
+  "description":"Corte a laser e dobra CNC de chapas de aço, inox e alumínio.",
+  "telephone":"+5549988972509",
+  "address":{"@type":"PostalAddress","streetAddress":"Rua Rodolfo Benini, Colinas","addressLocality":"Concórdia","addressRegion":"SC","postalCode":"89700-483","addressCountry":"BR"},
+  "sameAs":["https://www.instagram.com/fortecorteedobra/"],
+  "openingHours":"Mo-Fr 08:00-17:30"
+}
+</script>
+
+<script>
+  function renderIcons(){ if(window.lucide) lucide.createIcons(); }
+  document.addEventListener('DOMContentLoaded', renderIcons);
+  document.addEventListener('alpine:initialized', () => setTimeout(renderIcons, 50));
+</script>
+</body>
+</html>
