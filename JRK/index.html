@@ -393,6 +393,66 @@ h1,h2,h3{ font-family:var(--font-head); margin:0; font-weight:900; letter-spacin
 }
 
 /* ============================================================
+   PRODUTOS (materiais)
+   ============================================================ */
+.products{ background:var(--graphite-2); }
+.prod-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:38px;
+}
+.prod-tile{
+  position:relative;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--graphite);
+  overflow:hidden;
+  transition:border-color .25s ease, transform .25s ease;
+}
+.prod-tile:hover{ border-color:rgba(242,217,73,0.45); transform:translateY(-2px); }
+.prod-media{
+  position:relative;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  background:var(--graphite-2);
+}
+.prod-media img{
+  width:100%; height:100%; object-fit:cover;
+  transition:transform .5s ease;
+}
+.prod-tile:hover .prod-media img{ transform:scale(1.05); }
+/* placeholder até as imagens chegarem */
+.prod-ph{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  background:
+    repeating-linear-gradient(115deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 6px),
+    var(--graphite-2);
+}
+.prod-ph span{
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.12em;
+  color:var(--steel-dark); text-transform:uppercase;
+}
+.prod-cap{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding:16px 18px;
+  border-top:1px solid var(--line-soft);
+}
+.prod-name{
+  font-family:var(--font-head); font-weight:800; font-size:13.5px;
+  letter-spacing:0.04em; text-transform:uppercase; color:var(--off-white);
+  line-height:1.15;
+}
+.prod-idx{ font-family:var(--font-mono); font-size:11px; color:var(--yellow); flex-shrink:0; }
+
+@media (min-width:560px){ .prod-grid{ grid-template-columns:repeat(3,1fr); } }
+@media (min-width:960px){
+  .prod-grid{ grid-template-columns:repeat(4,1fr); gap:16px; }
+  .prod-name{ font-size:15px; }
+}
+
+/* ============================================================
    ORÇAMENTO (quote section)
    ============================================================ */
 .quote-section{ background:var(--black); position:relative; }
@@ -547,7 +607,7 @@ noscript .wa-float-ns{
     <nav class="nav-desktop" aria-label="Navegação principal">
       <ul>
         <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#produtos">Produtos</a></li>
         <li><a href="#orcamento">Orçamento</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -565,7 +625,7 @@ noscript .wa-float-ns{
   <nav>
     <ul>
       <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#produtos">Produtos</a></li>
       <li><a href="#orcamento">Orçamento</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -655,35 +715,71 @@ noscript .wa-float-ns{
 </section>
 
 <!-- ============================================================
-     COMO FUNCIONA
+     PRODUTOS (materiais)
      ============================================================ -->
-<section class="section-pad steps-wrap" id="como-funciona">
+<section class="section-pad products" id="produtos">
   <div class="wrap">
     <div class="head-block reveal" style="margin-bottom:0;">
-      <p class="eyebrow">PROCESSO</p>
-      <h2>DO PROJETO AO CORTE.</h2>
+      <p class="eyebrow">PRODUTOS</p>
+      <h2>MATERIAIS QUE TRABALHAMOS.</h2>
     </div>
 
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-node">01</div>
-        <h3>Envie seu projeto</h3>
-        <p>Envie seu desenho, medidas ou informações da peça.</p>
+    <!-- Para adicionar a imagem de cada material, substitua a <div class="prod-ph"> pela linha <img> comentada logo acima dela e coloque o arquivo em imagens/produtos/ -->
+    <div class="prod-grid reveal">
+      <div class="prod-tile">
+        <div class="prod-media">
+          <!-- <img src="imagens/produtos/aluminio.jpg" alt="Alumínio" loading="lazy"> -->
+          <div class="prod-ph"><span>imagem em breve</span></div>
+        </div>
+        <div class="prod-cap"><span class="prod-name">Alumínio</span><span class="prod-idx">01</span></div>
       </div>
-      <div class="step reveal">
-        <div class="step-node">02</div>
-        <h3>Analisamos</h3>
-        <p>A equipe avalia a necessidade e prepara o orçamento.</p>
+
+      <div class="prod-tile">
+        <div class="prod-media">
+          <!-- <img src="imagens/produtos/bronze.jpg" alt="Bronze" loading="lazy"> -->
+          <div class="prod-ph"><span>imagem em breve</span></div>
+        </div>
+        <div class="prod-cap"><span class="prod-name">Bronze</span><span class="prod-idx">02</span></div>
       </div>
-      <div class="step reveal">
-        <div class="step-node">03</div>
-        <h3>Corte</h3>
-        <p>O material segue para o processo de corte adequado.</p>
+
+      <div class="prod-tile">
+        <div class="prod-media">
+          <!-- <img src="imagens/produtos/latao.jpg" alt="Latão" loading="lazy"> -->
+          <div class="prod-ph"><span>imagem em breve</span></div>
+        </div>
+        <div class="prod-cap"><span class="prod-name">Latão</span><span class="prod-idx">03</span></div>
       </div>
-      <div class="step reveal">
-        <div class="step-node">04</div>
-        <h3>Receba suas peças</h3>
-        <p>Peças prontas para seguir para sua aplicação.</p>
+
+      <div class="prod-tile">
+        <div class="prod-media">
+          <!-- <img src="imagens/produtos/nylon.jpg" alt="Nylon" loading="lazy"> -->
+          <div class="prod-ph"><span>imagem em breve</span></div>
+        </div>
+        <div class="prod-cap"><span class="prod-name">Nylon</span><span class="prod-idx">04</span></div>
+      </div>
+
+      <div class="prod-tile">
+        <div class="prod-media">
+          <!-- <img src="imagens/produtos/poliacetal.jpg" alt="Poliacetal" loading="lazy"> -->
+          <div class="prod-ph"><span>imagem em breve</span></div>
+        </div>
+        <div class="prod-cap"><span class="prod-name">Poliacetal</span><span class="prod-idx">05</span></div>
+      </div>
+
+      <div class="prod-tile">
+        <div class="prod-media">
+          <!-- <img src="imagens/produtos/aco-carbono.jpg" alt="Aço Carbono" loading="lazy"> -->
+          <div class="prod-ph"><span>imagem em breve</span></div>
+        </div>
+        <div class="prod-cap"><span class="prod-name">Aço Carbono</span><span class="prod-idx">06</span></div>
+      </div>
+
+      <div class="prod-tile">
+        <div class="prod-media">
+          <!-- <img src="imagens/produtos/aco-inox.jpg" alt="Aço Inox" loading="lazy"> -->
+          <div class="prod-ph"><span>imagem em breve</span></div>
+        </div>
+        <div class="prod-cap"><span class="prod-name">Aço Inox</span><span class="prod-idx">07</span></div>
       </div>
     </div>
   </div>
@@ -903,12 +999,11 @@ noscript .wa-float-ns{
 
 <script>
 /* ============================================================
-   CONFIG — TROCAR pelo número real da JRK antes de publicar
+   CONFIG — número da JRK já configurado (+55 47 3338-1288)
    Formato: código do país + DDD + número, apenas dígitos.
-   Exemplo real: "5547999999999"
    ============================================================ */
 const JRK_CONFIG = {
-  whatsapp: "TROCAR_NUMERO_WHATSAPP", // TROCAR: ex. "5547999999999"
+  whatsapp: "554733381288", // +55 47 3338-1288
   messages: {
     geral: "Olá! Vim pelo site da JRK Materiais Metálicos e gostaria de solicitar um orçamento de corte de chapas.",
     projeto: "Olá! Sou projetista/empresa e gostaria de enviar as informações de um projeto para corte de chapas na JRK."
