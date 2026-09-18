@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+<title>Virafer — Corte, dobra e chapas sob medida em Campo Largo/PR</title>
+<meta name="description" content="Metalurgia paranaense desde 1998. Corte e dobra em chapas de várias espessuras, peças sob medida, chapa xadrez, inox 304, galvanizadas e ferragens em Campo Largo/PR e região de Curitiba. Solicite seu orçamento.">
+<meta name="theme-color" content="#14171A">
+<link rel="canonical" href="https://www.virafer.com.br/">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Virafer">
+<meta property="og:title" content="Virafer — Corte, dobra e chapas sob medida">
+<meta property="og:description" content="Metalurgia paranaense desde 1998. Ferro, aço e ferramentas com precisão sob encomenda em Campo Largo/PR.">
+<meta property="og:url" content="https://www.virafer.com.br/">
+<!-- TROCAR: imagem OG própria (1200x630) em imagens/og.jpg quando disponível -->
+<meta property="og:image" content="https://images.pexels.com/photos/1145434/pexels-photo-1145434.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Virafer — Corte, dobra e chapas sob medida">
+<meta name="twitter:description" content="Metalurgia paranaense desde 1998, em Campo Largo/PR.">
+
+<!-- favicon (faísca) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%2314171A'/%3E%3Cpath d='M16 5 L19 14 L28 16 L19 18 L16 27 L13 18 L4 16 L13 14 Z' fill='%23E8620C'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HardwareStore",
+  "name": "Virafer Comércio de Ferro e Aço",
+  "legalName": "Virafer Comércio de Ferro e Aço Ltda - ME",
+  "description": "Metalurgia e distribuição de ferro e aço desde 1998. Corte e dobra em chapas, peças sob medida, chapa xadrez, inox 304, galvanizadas e ferragens.",
+  "taxID": "02.598.240/0001-65",
+  "foundingDate": "1998-05-20",
+  "email": "virafer@virafer.com.br",
+  "url": "https://www.virafer.com.br/",
+  "areaServed": "Campo Largo e Região Metropolitana de Curitiba, PR",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Campo Largo",
+    "addressRegion": "PR",
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:00",
+    "closes": "17:45"
+  }
+}
+</script>
+
+<style>
+/* ============================================================
+   VIRAFER — tokens
+   ============================================================ */
+:root{
+  --base:#14171A;        /* chumbo profundo — dominante */
+  --surface:#1F2429;     /* superfície elevada */
+  --line:#2E353C;        /* linha/metal — hairlines, grid técnico */
+  --muted:#8A929B;       /* aço — texto secundário */
+  --ink:#E9ECEF;         /* off-white frio — texto primário */
+  --accent:#E8620C;      /* laranja fundido — CTA/hover/faísca (parcimônia) */
+  --accent-hot:#FF8A3D;  /* faísca clara — highlights pontuais */
+
+  --font-display:"Archivo",sans-serif;
+  --font-body:"IBM Plex Sans",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+
+  --maxw:1240px;
+  --gutter:clamp(1.25rem,5vw,3.5rem);
+  --section-y:clamp(5rem,11vh,9rem);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--base);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:clamp(1rem,.96rem + .2vw,1.075rem);
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-family:var(--font-display);font-weight:800;line-height:1.02;letter-spacing:-.02em}
+p{margin:0}
+::selection{background:var(--accent);color:#0d0f11}
+
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--accent-hot);
+  outline-offset:3px;border-radius:2px;
+}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+
+/* atmospheric grain */
+.grain{
+  position:fixed;inset:0;z-index:60;pointer-events:none;
+  opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.kicker{
+  font-family:var(--font-mono);font-size:.78rem;letter-spacing:.04em;color:var(--muted);
+  display:inline-flex;align-items:center;gap:.6rem;
+}
+.kicker::before{
+  content:"";width:7px;height:7px;flex:none;background:var(--accent);
+  clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);
+}
+
+/* ---- buttons ---- */
+.btn{
+  display:inline-flex;align-items:center;gap:.7rem;padding:.95rem 1.5rem;
+  font-family:var(--font-mono);font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid transparent;cursor:pointer;
+  transition:transform .4s var(--ease),background .3s,color .3s,border-color .3s;will-change:transform;
+}
+.btn--solid{background:var(--accent);color:#12100d;font-weight:500}
+.btn--solid:hover{background:var(--accent-hot);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn--ghost:hover{border-color:var(--muted);transform:translateY(-2px)}
+.btn__ico{width:1em;height:1em;flex:none;transition:transform .4s var(--ease)}
+.btn--solid:hover .btn__ico{transform:translate(3px,-3px)}
+
+/* ============================================================ NAV */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.05rem var(--gutter);border-bottom:1px solid transparent;
+  transition:background .4s,border-color .4s,padding .4s;
+}
+.nav.is-stuck{
+  background:rgba(20,23,26,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom-color:var(--line);padding-block:.8rem;
+}
+.brand{font-family:var(--font-display);font-weight:900;font-size:1.28rem;letter-spacing:.06em;display:inline-flex;align-items:center;gap:.55rem}
+.brand__dot{width:9px;height:9px;background:var(--accent);clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
+.nav__links{display:none;gap:2.2rem;font-size:.9rem;color:var(--muted);font-weight:500}
+.nav__links a{position:relative;transition:color .25s}
+.nav__links a::after{content:"";position:absolute;left:0;bottom:-5px;height:1px;width:0;background:var(--accent);transition:width .3s var(--ease)}
+.nav__links a:hover{color:var(--ink)}
+.nav__links a:hover::after{width:100%}
+.nav__cta{display:none}
+@media(min-width:900px){.nav__links{display:flex}.nav__cta{display:inline-flex}}
+
+/* ============================================================ HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero__media{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.hero__media img{
+  width:100%;height:100%;object-fit:cover;object-position:65% 50%;
+  transform:scale(1.08);animation:kenburns 26s ease-in-out infinite alternate;will-change:transform;
+}
+@keyframes kenburns{from{transform:scale(1.08) translate3d(0,0,0)}to{transform:scale(1.18) translate3d(-2%,-1.5%,0)}}
+.hero__media::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(100deg,var(--base) 8%,rgba(20,23,26,.82) 34%,rgba(20,23,26,.15) 62%,rgba(20,23,26,.55) 100%),
+    linear-gradient(to top,var(--base) 2%,transparent 30%);
+}
+.hero__inner{position:relative;z-index:1;width:100%;padding-bottom:clamp(3.5rem,8vh,6rem);padding-top:8rem}
+.hero__kicker{opacity:0;transform:translateY(14px);animation:rise .9s var(--ease) .15s forwards}
+.hero h1{font-size:clamp(2.9rem,10.5vw,7.2rem);font-weight:900;margin:1.1rem 0 0;max-width:15ch}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln>span{display:block;transform:translateY(105%);animation:linein 1s var(--ease) forwards}
+.hero h1 .ln:nth-child(1)>span{animation-delay:.28s}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.42s}
+@keyframes linein{to{transform:translateY(0)}}
+.hero__sub{margin-top:1.6rem;max-width:46ch;color:var(--muted);font-size:clamp(1.02rem,1rem + .35vw,1.28rem);line-height:1.5;opacity:0;transform:translateY(14px);animation:rise .9s var(--ease) .7s forwards}
+.hero__cta{margin-top:2.3rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;opacity:0;transform:translateY(14px);animation:rise .9s var(--ease) .85s forwards}
+.hero__scrollto{color:var(--muted);font-family:var(--font-mono);font-size:.78rem;letter-spacing:.05em;display:inline-flex;align-items:center;gap:.55rem;padding:.5rem 0}
+.hero__scrollto:hover{color:var(--ink)}
+.hero__scrollto svg{width:1em;height:1em;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+.hero__strip{position:relative;z-index:1;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:.74rem;letter-spacing:.03em;color:var(--muted)}
+.hero__strip .wrap{display:flex;flex-wrap:wrap;gap:1.3rem 2.4rem;padding-block:1.05rem}
+.hero__strip b{color:var(--ink);font-weight:500}
+
+/* ============================================================ reveal */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+[data-reveal].in{opacity:1;transform:none}
+[data-reveal-d="1"]{transition-delay:.08s}
+[data-reveal-d="2"]{transition-delay:.16s}
+[data-reveal-d="3"]{transition-delay:.24s}
+
+.section{position:relative;padding-block:var(--section-y)}
+.section--surface{background:var(--surface)}
+.eyebrow-num{font-family:var(--font-mono);font-size:.76rem;color:var(--accent);letter-spacing:.08em}
+.h-lead{font-size:clamp(2rem,1.4rem + 3vw,3.5rem);font-weight:800;max-width:18ch;letter-spacing:-.025em}
+.lead-intro{margin-top:1.3rem;color:var(--muted);max-width:52ch;font-size:1.08rem}
+
+/* ============================================================ SERVIÇOS */
+.serv__grid{display:grid;gap:clamp(2.5rem,5vw,4.5rem);align-items:start}
+.serv__media{position:relative;border:1px solid var(--line);overflow:hidden}
+.serv__media img{width:100%;height:clamp(320px,52vh,560px);object-fit:cover;transform:scale(1.02);transition:transform 1.2s var(--ease)}
+.serv:hover .serv__media img{transform:scale(1.08)}
+.serv__media .tag{position:absolute;left:0;bottom:0;background:var(--base);border-top:1px solid var(--line);border-right:1px solid var(--line);font-family:var(--font-mono);font-size:.72rem;color:var(--muted);letter-spacing:.04em;padding:.55rem .9rem}
+.serv__list{display:flex;flex-direction:column}
+.serv__item{padding:2rem 0;border-top:1px solid var(--line);position:relative}
+.serv__item:last-child{border-bottom:1px solid var(--line)}
+.serv__item h3{font-size:clamp(1.4rem,1.1rem + 1.4vw,2.05rem);font-weight:700;letter-spacing:-.02em}
+.serv__item p{margin-top:.7rem;color:var(--muted);max-width:44ch}
+.serv__item .spec{margin-top:1rem;font-family:var(--font-mono);font-size:.76rem;color:var(--accent);letter-spacing:.03em;display:flex;align-items:center;gap:.5rem}
+.serv__item .spec::before{content:"";width:18px;height:1px;background:var(--accent)}
+@media(min-width:880px){.serv__grid{grid-template-columns:0.9fr 1.1fr}.serv__media{position:sticky;top:96px}}
+
+/* ============================================================ SPARK band */
+.spark{position:relative;height:clamp(210px,34vh,340px);overflow:hidden;border-block:1px solid var(--line)}
+.spark img{position:absolute;inset:0;width:100%;height:130%;object-fit:cover;object-position:center 30%;will-change:transform}
+.spark::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--base),rgba(20,23,26,.35) 45%,var(--base))}
+.spark__quote{position:absolute;inset:0;display:flex;align-items:center}
+.spark__quote p{font-family:var(--font-display);font-weight:700;font-size:clamp(1.3rem,1rem + 2.4vw,2.6rem);letter-spacing:-.02em;max-width:20ch;line-height:1.08}
+
+/* ============================================================ MATERIAIS */
+.mat__head{display:grid;gap:clamp(2rem,4vw,3.5rem);grid-template-columns:1fr;align-items:end}
+.mat__photo{border:1px solid var(--line);overflow:hidden;aspect-ratio:4/3}
+.mat__photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.mat__photo:hover img{transform:scale(1.06)}
+@media(min-width:880px){.mat__head{grid-template-columns:1.15fr .85fr}}
+.ledger{margin-top:clamp(2.5rem,5vw,4rem);border-top:1px solid var(--line)}
+.ledger__row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.1rem;padding:1.5rem 0;border-bottom:1px solid var(--line);transition:background .35s,padding-left .4s var(--ease)}
+.ledger__row:hover{background:linear-gradient(90deg,rgba(232,98,12,.06),transparent 60%);padding-left:.9rem}
+.swatch{width:42px;height:42px;flex:none;border:1px solid var(--line)}
+.sw-xadrez{background:repeating-linear-gradient(45deg,#3a4149 0 4px,#20262c 4px 8px),repeating-linear-gradient(-45deg,rgba(255,255,255,.06) 0 4px,transparent 4px 8px);background-blend-mode:screen}
+.sw-alum{background:repeating-linear-gradient(135deg,#5a6169 0 3px,#3d434a 3px 6px),repeating-linear-gradient(-135deg,rgba(255,255,255,.10) 0 3px,transparent 3px 6px)}
+.sw-inox{background:linear-gradient(90deg,#4a525b,#7d858e 20%,#3f464e 42%,#8b939c 60%,#454c54 82%,#767e87)}
+.sw-galv{background:radial-gradient(circle at 20% 30%,rgba(255,255,255,.16) 0 2px,transparent 3px),radial-gradient(circle at 62% 66%,rgba(255,255,255,.13) 0 3px,transparent 4px),radial-gradient(circle at 80% 22%,rgba(255,255,255,.10) 0 2px,transparent 3px),linear-gradient(135deg,#565d64,#3c434a)}
+.sw-ferr{background:linear-gradient(135deg,#3a4149,#20262c);position:relative}
+.sw-ferr::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 46%,var(--accent) 46% 54%,transparent 54%),linear-gradient(0deg,transparent 46%,var(--accent) 46% 54%,transparent 54%);opacity:.7}
+.ledger__name{font-family:var(--font-display);font-weight:700;font-size:clamp(1.25rem,1rem + 1.3vw,1.85rem);letter-spacing:-.02em}
+.ledger__spec{font-family:var(--font-mono);font-size:.76rem;color:var(--muted);letter-spacing:.03em;text-align:right;white-space:nowrap}
+@media(max-width:560px){.ledger__row{grid-template-columns:auto 1fr;gap:.9rem 1.1rem}.ledger__spec{grid-column:2;text-align:left;margin-top:.25rem}}
+
+/* ============================================================ DIFERENCIAIS */
+.dif__grid{display:grid;gap:clamp(2rem,5vw,4rem);grid-template-columns:1fr}
+@media(min-width:900px){.dif__grid{grid-template-columns:.8fr 1.2fr}}
+.stat{display:flex;align-items:baseline;gap:1rem;border-top:2px solid var(--accent);padding-top:1.1rem}
+.stat__num{font-family:var(--font-display);font-weight:900;font-size:clamp(4.5rem,3rem + 9vw,8.5rem);line-height:.85;letter-spacing:-.04em}
+.stat__cap{font-family:var(--font-mono);font-size:.82rem;color:var(--muted);line-height:1.5;max-width:16ch}
+.dif__list{display:grid;gap:0}
+.dif__item{padding:1.7rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:1.3rem;align-items:start}
+.dif__item:last-child{border-bottom:1px solid var(--line)}
+.dif__mk{width:10px;height:10px;margin-top:.5rem;flex:none;background:var(--accent);clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
+.dif__item h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+.dif__item p{margin-top:.45rem;color:var(--muted);max-width:52ch}
+
+/* ============================================================ PROCESSO */
+.flow__track{display:grid;gap:clamp(1.5rem,3vw,2rem);grid-template-columns:1fr}
+@media(min-width:820px){.flow__track{grid-template-columns:repeat(3,1fr)}}
+.step{position:relative;padding-top:2rem;border-top:1px solid var(--line)}
+.step__n{font-family:var(--font-mono);font-size:.85rem;color:var(--accent);letter-spacing:.1em}
+.step h3{margin-top:1.1rem;font-size:clamp(1.35rem,1.1rem + 1vw,1.8rem);font-weight:700;letter-spacing:-.02em}
+.step p{margin-top:.7rem;color:var(--muted);max-width:34ch}
+.flow__line{width:100%;height:26px;margin-bottom:clamp(2.5rem,5vw,3.5rem)}
+.flow__line path{fill:none;stroke:var(--line);stroke-width:1.5}
+.flow__line path.draw{transition:stroke-dashoffset 1.8s var(--ease)}
+.flow__line path.tick{stroke:var(--accent)}
+
+/* ============================================================ FAQ */
+.faq{max-width:820px}
+.faq__item{border-top:1px solid var(--line)}
+.faq__item:last-child{border-bottom:1px solid var(--line)}
+.faq__q{width:100%;background:none;border:0;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.5rem 0;text-align:left;font-family:var(--font-display);font-weight:600;font-size:clamp(1.05rem,.98rem + .6vw,1.3rem);letter-spacing:-.01em}
+.faq__ico{width:20px;height:20px;flex:none;position:relative;transition:transform .4s var(--ease)}
+.faq__ico::before,.faq__ico::after{content:"";position:absolute;background:var(--accent);inset:0;margin:auto}
+.faq__ico::before{width:20px;height:1.5px}
+.faq__ico::after{width:1.5px;height:20px;transition:transform .4s var(--ease)}
+.faq__item[open] .faq__ico::after{transform:scaleY(0)}
+.faq__a{color:var(--muted);max-width:60ch}
+.faq__a p{padding:0 0 1.5rem}
+details>summary{list-style:none}
+details>summary::-webkit-details-marker{display:none}
+
+/* ============================================================ CONTATO */
+.contact__grid{display:grid;gap:clamp(2.5rem,5vw,4rem);grid-template-columns:1fr}
+@media(min-width:920px){.contact__grid{grid-template-columns:1fr 1fr;align-items:stretch}}
+.contact h2{font-size:clamp(2.2rem,1.5rem + 3.5vw,4rem);font-weight:900;letter-spacing:-.03em;max-width:14ch}
+.contact__rows{margin-top:2rem;display:grid;gap:0}
+.crow{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;padding:1.25rem 0;border-top:1px solid var(--line);align-items:baseline}
+.crow:last-of-type{border-bottom:1px solid var(--line)}
+.crow__k{font-family:var(--font-mono);font-size:.74rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.crow__v{font-size:1.08rem}
+.crow__v a:hover{color:var(--accent-hot)}
+.contact__cta{margin-top:2.2rem}
+.map{border:1px solid var(--line);overflow:hidden;min-height:340px;position:relative;background:var(--surface)}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;filter:grayscale(1) invert(.9) contrast(.9) hue-rotate(180deg);transition:filter .5s}
+.map:hover iframe{filter:grayscale(.2) contrast(1)}
+
+/* ============================================================ FOOTER */
+.foot{border-top:1px solid var(--line);padding-block:clamp(3.5rem,7vw,5.5rem) 2.5rem;position:relative}
+.foot__word{font-family:var(--font-display);font-weight:900;letter-spacing:.02em;font-size:clamp(3.5rem,14vw,11rem);line-height:.85;background:linear-gradient(180deg,var(--ink),#5a636c);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.foot__meta{margin-top:2.5rem;display:grid;gap:1.5rem 3rem;grid-template-columns:1fr;font-family:var(--font-mono);font-size:.8rem;color:var(--muted);letter-spacing:.02em;line-height:1.7}
+@media(min-width:700px){.foot__meta{grid-template-columns:repeat(3,1fr)}}
+.foot__meta b{color:var(--ink);font-weight:500;display:block;margin-bottom:.3rem}
+.foot__meta a:hover{color:var(--accent-hot)}
+.foot__base{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.8rem 2rem;justify-content:space-between;font-family:var(--font-mono);font-size:.72rem;color:var(--muted)}
+.foot__base a{color:var(--muted)}
+.foot__base a:hover{color:var(--ink)}
+
+/* ============================================================ FAB */
+.fab{position:fixed;left:var(--gutter);right:var(--gutter);bottom:1rem;z-index:45;display:flex;justify-content:center;transition:opacity .4s,transform .4s var(--ease)}
+.fab.hide{opacity:0;transform:translateY(140%);pointer-events:none}
+.fab .btn{width:100%;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+@media(min-width:900px){.fab{display:none}}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important}
+  [data-reveal]{opacity:1;transform:none}
+  .hero h1 .ln>span,.hero__kicker,.hero__sub,.hero__cta{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ========================= NAV ========================= -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Virafer — início"><span class="brand__dot" aria-hidden="true"></span>VIRAFER</a>
+  <nav class="nav__links" aria-label="Seções">
+    <a href="#servicos">Serviços</a>
+    <a href="#materiais">Materiais</a>
+    <a href="#processo">Como funciona</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <a class="btn btn--solid nav__cta" href="#contato">
+    Solicitar orçamento
+    <svg class="btn__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+  </a>
+</header>
+
+<main id="top">
+
+  <!-- ========================= HERO ========================= -->
+  <section class="hero" aria-label="Virafer — corte, dobra e chapas sob medida">
+    <div class="hero__media" aria-hidden="true">
+      <!-- Placeholder de banco de imagens (Pexels) · TROCAR: imagens/hero-corte.jpg -->
+      <img src="https://images.pexels.com/photos/1145434/pexels-photo-1145434.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero__inner wrap">
+      <span class="kicker hero__kicker">campo largo/pr · metalurgia desde 1998</span>
+      <h1>
+        <span class="ln"><span>Corte, dobra e</span></span>
+        <span class="ln"><span>chapas sob medida.</span></span>
+      </h1>
+      <p class="hero__sub">Metalurgia paranaense há mais de duas décadas — ferro, aço e ferramentas cortados e dobrados com precisão, na espessura e no formato que o seu projeto pede.</p>
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="#contato">
+          Solicitar orçamento
+          <svg class="btn__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+        <a class="hero__scrollto" href="#servicos">
+          Ver serviços
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero__strip" aria-hidden="true">
+      <div class="wrap">
+        <span><b>Corte &amp; dobra</b> em chapas</span>
+        <span><b>Peças</b> sob medida</span>
+        <span><b>Inox · Galvanizada · Xadrez</b></span>
+        <span><b>Seg–Sex</b> 08h–17h45</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= SERVIÇOS ========================= -->
+  <section class="section serv" id="servicos">
+    <div class="wrap">
+      <div data-reveal style="margin-bottom:clamp(2.5rem,5vw,4rem);max-width:60ch">
+        <span class="eyebrow-num">Serviços</span>
+        <h2 class="h-lead" style="margin-top:1rem">Feito sob medida, do corte à dobra.</h2>
+        <p class="lead-intro">Você envia a especificação — desenho, arquivo ou as medidas. A Virafer entrega a peça pronta, sem catálogo fechado e sem tamanho padrão.</p>
+      </div>
+      <div class="serv__grid">
+        <figure class="serv__media" data-reveal>
+          <!-- Placeholder de banco de imagens (Pexels) · TROCAR: imagens/servico-corte.jpg -->
+          <img src="https://images.pexels.com/photos/12303760/pexels-photo-12303760.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Operário cortando chapa de aço com esmerilhadeira, faíscas em ambiente industrial" loading="lazy" decoding="async">
+          <figcaption class="tag">corte · dobra · confecção</figcaption>
+        </figure>
+        <div class="serv__list">
+          <article class="serv__item" data-reveal>
+            <h3>Corte e dobra em chapas</h3>
+            <p>Chapas de várias espessuras cortadas e dobradas no ponto certo, prontas para montagem.</p>
+            <span class="spec">várias espessuras · sob desenho</span>
+          </article>
+          <article class="serv__item" data-reveal data-reveal-d="1">
+            <h3>Peças sob medida</h3>
+            <p>Confecção de peças conforme o seu projeto — unidade ou lote, no formato exato que você precisa.</p>
+            <span class="spec">peça única a lotes</span>
+          </article>
+          <article class="serv__item" data-reveal data-reveal-d="2">
+            <h3>Metalurgia sob encomenda</h3>
+            <p>Fabricação para projeto específico: quando não existe pronto na prateleira, a gente faz.</p>
+            <span class="spec">projeto específico</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SPARK DIVIDER ===================== -->
+  <section class="spark" aria-hidden="true">
+    <!-- Placeholder de banco de imagens (Pexels) · TROCAR: imagens/faisca.jpg -->
+    <img id="sparkImg" src="https://images.pexels.com/photos/9665349/pexels-photo-9665349.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" loading="lazy" decoding="async">
+    <div class="spark__quote wrap"><p>A precisão sai da chapa. O acabamento sai do ofício.</p></div>
+  </section>
+
+  <!-- ========================= MATERIAIS ========================= -->
+  <section class="section section--surface" id="materiais">
+    <div class="wrap">
+      <div class="mat__head">
+        <div data-reveal>
+          <span class="eyebrow-num">Materiais</span>
+          <h2 class="h-lead" style="margin-top:1rem">Linha de materiais.</h2>
+          <p class="lead-intro">Do piso industrial ao acabamento inox — o material certo para cada aplicação, e o corte já no ponto. Ferragens e ferramentas também no balcão.</p>
+        </div>
+        <figure class="mat__photo" data-reveal data-reveal-d="1">
+          <!-- Placeholder de banco de imagens (Unsplash) · TROCAR: imagens/materiais.jpg -->
+          <img src="https://images.unsplash.com/photo-1701788607416-f1b5dd5a09ec?auto=format&fit=crop&w=1100&q=80" alt="Detalhe de chapas e perfis de aço empilhados" loading="lazy" decoding="async">
+        </figure>
+      </div>
+      <div class="ledger">
+        <div class="ledger__row" data-reveal>
+          <span class="swatch sw-xadrez" aria-hidden="true"></span>
+          <span class="ledger__name">Chapa xadrez</span>
+          <span class="ledger__spec">aço carbono · piso / estrutura</span>
+        </div>
+        <div class="ledger__row" data-reveal>
+          <span class="swatch sw-alum" aria-hidden="true"></span>
+          <span class="ledger__name">Alumínio xadrez</span>
+          <span class="ledger__spec">leve · antiderrapante</span>
+        </div>
+        <div class="ledger__row" data-reveal>
+          <span class="swatch sw-inox" aria-hidden="true"></span>
+          <span class="ledger__name">Inox 304</span>
+          <span class="ledger__spec">sanitário · anticorrosivo</span>
+        </div>
+        <div class="ledger__row" data-reveal>
+          <span class="swatch sw-galv" aria-hidden="true"></span>
+          <span class="ledger__name">Chapas galvanizadas</span>
+          <span class="ledger__spec">zincado · uso externo</span>
+        </div>
+        <div class="ledger__row" data-reveal>
+          <span class="swatch sw-ferr" aria-hidden="true"></span>
+          <span class="ledger__name">Ferragens &amp; ferramentas</span>
+          <span class="ledger__spec">varejo · balcão</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= DIFERENCIAIS ========================= -->
+  <section class="section" id="diferenciais">
+    <div class="wrap">
+      <div style="margin-bottom:clamp(2.5rem,5vw,4rem);max-width:56ch" data-reveal>
+        <span class="eyebrow-num">Por que a Virafer</span>
+        <h2 class="h-lead" style="margin-top:1rem">Aço tratado como quem faz isso há décadas.</h2>
+      </div>
+      <div class="dif__grid">
+        <div data-reveal>
+          <div class="stat">
+            <span class="stat__num"><span data-count="28">0</span></span>
+            <span class="stat__cap">anos moldando ferro e aço no Paraná — desde 20/05/1998.</span>
+          </div>
+        </div>
+        <div class="dif__list">
+          <div class="dif__item" data-reveal>
+            <span class="dif__mk" aria-hidden="true"></span>
+            <div><h3>Tudo sob medida</h3><p>Cada peça sai conforme o seu desenho. Sem catálogo travado, sem “só temos nesse tamanho”.</p></div>
+          </div>
+          <div class="dif__item" data-reveal data-reveal-d="1">
+            <span class="dif__mk" aria-hidden="true"></span>
+            <div><h3>No coração do Paraná</h3><p>Em Campo Largo, atendendo serralherias, indústrias e construtoras da região metropolitana de Curitiba.</p></div>
+          </div>
+          <div class="dif__item" data-reveal data-reveal-d="2">
+            <span class="dif__mk" aria-hidden="true"></span>
+            <div><h3>Empresa ativa e regular</h3><p>Constituída em 1998, com situação cadastral ativa. CNPJ 02.598.240/0001-65.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= COMO FUNCIONA ========================= -->
+  <section class="section section--surface flow" id="processo">
+    <div class="wrap">
+      <div style="margin-bottom:clamp(2.2rem,4vw,3rem);max-width:52ch" data-reveal>
+        <span class="eyebrow-num">Como funciona</span>
+        <h2 class="h-lead" style="margin-top:1rem">Do desenho à retirada, em três passos.</h2>
+      </div>
+      <svg class="flow__line" viewBox="0 0 1000 26" preserveAspectRatio="none" aria-hidden="true">
+        <path class="draw" d="M2 13 H998"/>
+        <path class="tick draw" d="M2 4 V22 M500 4 V22 M998 4 V22"/>
+      </svg>
+      <div class="flow__track">
+        <article class="step" data-reveal>
+          <span class="step__n">01</span>
+          <h3>Envie a especificação</h3>
+          <p>Desenho, arquivo (DXF/PDF) ou simplesmente as medidas da peça.</p>
+        </article>
+        <article class="step" data-reveal data-reveal-d="1">
+          <span class="step__n">02</span>
+          <h3>Receba o orçamento</h3>
+          <p>Calculamos material, corte e dobra e retornamos com o preço.</p>
+        </article>
+        <article class="step" data-reveal data-reveal-d="2">
+          <span class="step__n">03</span>
+          <h3>Produção e retirada</h3>
+          <p>Fabricamos a peça e você retira em Campo Largo/PR.</p>
+        </article>
+      </div>
+
+      <div class="faq" style="margin-top:clamp(3.5rem,7vw,5.5rem)" data-reveal>
+        <span class="eyebrow-num">Dúvidas frequentes</span>
+        <div style="margin-top:1.4rem">
+          <details class="faq__item">
+            <summary class="faq__q">Qual a espessura mínima e máxima de corte e dobra?<span class="faq__ico" aria-hidden="true"></span></summary>
+            <div class="faq__a"><p>Trabalhamos com chapas de várias espessuras. Envie a especificação da peça e confirmamos a viabilidade já no orçamento.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">Vocês fazem peça única ou só grande quantidade?<span class="faq__ico" aria-hidden="true"></span></summary>
+            <div class="faq__a"><p>Fazemos sob medida — de uma peça única a lotes. É só mandar o desenho ou as medidas.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">Como envio o meu projeto?<span class="faq__ico" aria-hidden="true"></span></summary>
+            <div class="faq__a"><p>Por e-mail: desenho, arquivo DXF/PDF ou as medidas escritas. Retornamos com o orçamento do material, corte e dobra.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">Além de chapas, vendem ferragens no varejo?<span class="faq__ico" aria-hidden="true"></span></summary>
+            <div class="faq__a"><p>Sim. Ferragens e ferramentas no balcão, além do corte e dobra sob medida.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= CONTATO ========================= -->
+  <section class="section contact" id="contato">
+    <div class="wrap">
+      <div class="contact__grid">
+        <div data-reveal>
+          <span class="eyebrow-num">Orçamento</span>
+          <h2 style="margin-top:1rem">Vamos orçar a sua peça.</h2>
+          <div class="contact__rows">
+            <div class="crow"><span class="crow__k">E-mail</span><span class="crow__v"><a data-cta href="#">virafer@virafer.com.br</a></span></div>
+            <div class="crow"><span class="crow__k">Horário</span><span class="crow__v">Segunda a sexta · 08h às 17h45</span></div>
+            <div class="crow"><span class="crow__k">Onde</span><span class="crow__v">Campo Largo / PR · Região Metropolitana de Curitiba</span></div>
+          </div>
+          <div class="contact__cta">
+            <a class="btn btn--solid" data-cta href="#">
+              Solicitar orçamento por e-mail
+              <svg class="btn__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="map" data-reveal data-reveal-d="1">
+          <!-- TROCAR: substituir por embed do endereço exato quando disponível -->
+          <iframe title="Localização — Campo Largo, PR" src="https://www.google.com/maps?q=Campo+Largo,+Paran%C3%A1,+Brasil&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__word">VIRAFER</div>
+    <div class="foot__meta">
+      <div><b>Virafer Comércio de Ferro e Aço Ltda&nbsp;-&nbsp;ME</b>CNPJ 02.598.240/0001-65<br>Empresa ativa desde 20/05/1998</div>
+      <div><b>Atendimento</b>Segunda a sexta<br>08h às 17h45<br><a data-cta href="#">virafer@virafer.com.br</a></div>
+      <div><b>Onde estamos</b>Campo Largo · Paraná<br>Região Metropolitana de Curitiba<br>Brasil</div>
+    </div>
+    <div class="foot__base">
+      <span>© <span id="yy"></span> Virafer · Ferro, aço e ferramentas sob medida.</span>
+      <span>Site por <a href="#" rel="noopener">Neumann Dev</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab" id="fab"><a class="btn btn--solid" data-cta href="#">Solicitar orçamento</a></div>
+
+<script>
+/* =====================================================================
+   VIRAFER · configuração — handoff em uma variável.
+   Sem número de WhatsApp confirmado: CTAs vão por e-mail (mailto).
+   Assim que houver número, preencha WHATSAPP → todos os CTAs migram
+   automaticamente para wa.me com a mensagem pré-preenchida.
+   ===================================================================== */
+const VIRAFER = {
+  EMAIL: "virafer@virafer.com.br",
+  WHATSAPP: "",                 // TROCAR ex.: "5541999999999" (só dígitos, com 55)
+  ASSUNTO: "Orçamento — corte, dobra e chapa sob medida",
+  MENSAGEM:
+"Olá, Virafer! Gostaria de um orçamento.\n\n" +
+"• Serviço: (corte / dobra / peça sob medida)\n" +
+"• Material: (chapa xadrez / alumínio / inox 304 / galvanizada / outro)\n" +
+"• Espessura:\n" +
+"• Medidas / quantidade:\n" +
+"• Anexo (desenho, DXF ou PDF):\n\n" +
+"Obrigado(a)."
+};
+
+(function wireCTAs(){
+  var wa = (VIRAFER.WHATSAPP || "").replace(/\D/g,"");
+  document.querySelectorAll('[data-cta]').forEach(function(a){
+    if(wa){
+      a.href = "https://wa.me/"+wa+"?text="+encodeURIComponent(VIRAFER.MENSAGEM);
+      a.target = "_blank"; a.rel = "noopener";
+    }else{
+      a.href = "mailto:"+VIRAFER.EMAIL+"?subject="+encodeURIComponent(VIRAFER.ASSUNTO)+"&body="+encodeURIComponent(VIRAFER.MENSAGEM);
+    }
+  });
+})();
+
+/* nav bg on scroll */
+var nav = document.getElementById('nav');
+function onScrollNav(){ nav.classList.toggle('is-stuck', window.scrollY > 40); }
+onScrollNav(); addEventListener('scroll', onScrollNav, {passive:true});
+
+document.getElementById('yy').textContent = new Date().getFullYear();
+
+var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* reveals */
+if(!reduce){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.16, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){io.observe(el);});
+}else{
+  document.querySelectorAll('[data-reveal]').forEach(function(el){el.classList.add('in');});
+}
+
+/* count-up */
+var counters = document.querySelectorAll('[data-count]');
+if(!reduce && counters.length){
+  var cio = new IntersectionObserver(function(ents){
+    ents.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var node=e.target, end=+node.dataset.count, dur=1500, t0=performance.now();
+      (function frame(now){
+        var p=Math.min(1,(now-t0)/dur), eased=1-Math.pow(1-p,3);
+        node.textContent=Math.floor(end*eased);
+        if(p<1) requestAnimationFrame(frame); else node.textContent=end;
+      })(t0);
+      cio.unobserve(node);
+    });
+  },{threshold:.6});
+  counters.forEach(function(n){cio.observe(n);});
+}else{
+  counters.forEach(function(n){n.textContent=n.dataset.count;});
+}
+
+/* self-drawing process line */
+var flowPaths = document.querySelectorAll('.flow__line path.draw');
+if(!reduce && flowPaths.length){
+  flowPaths.forEach(function(p){var L=p.getTotalLength(); p.style.strokeDasharray=L; p.style.strokeDashoffset=L;});
+  var fio = new IntersectionObserver(function(ents){
+    ents.forEach(function(e){ if(e.isIntersecting){ flowPaths.forEach(function(p){p.style.strokeDashoffset=0;}); fio.disconnect(); } });
+  },{threshold:.4});
+  fio.observe(document.querySelector('.flow__line'));
+}
+
+/* hero pointer parallax */
+var heroMedia = document.querySelector('.hero__media img');
+if(!reduce && heroMedia && matchMedia('(pointer:fine)').matches){
+  var tx=0,ty=0,cx=0,cy=0,raf=null;
+  addEventListener('mousemove',function(ev){
+    tx=(ev.clientX/innerWidth-.5)*-14; ty=(ev.clientY/innerHeight-.5)*-10;
+    if(!raf) raf=requestAnimationFrame(loop);
+  },{passive:true});
+  function loop(){
+    cx+=(tx-cx)*.06; cy+=(ty-cy)*.06;
+    heroMedia.style.translate=cx.toFixed(2)+"px "+cy.toFixed(2)+"px";
+    raf = (Math.abs(tx-cx)>.1||Math.abs(ty-cy)>.1)?requestAnimationFrame(loop):null;
+  }
+}
+
+/* spark band parallax */
+var sparkImg = document.getElementById('sparkImg');
+if(!reduce && sparkImg){
+  var band = sparkImg.closest('.spark'), ticking=false;
+  addEventListener('scroll',function(){
+    if(ticking) return; ticking=true;
+    requestAnimationFrame(function(){
+      var r=band.getBoundingClientRect();
+      if(r.bottom>0 && r.top<innerHeight){
+        var prog=(r.top+r.height/2 - innerHeight/2)/innerHeight;
+        sparkImg.style.transform="translateY("+(prog*-40).toFixed(1)+"px)";
+      }
+      ticking=false;
+    });
+  },{passive:true});
+}
+
+/* FAB visibility: some no hero e sobre a seção contato */
+var fab=document.getElementById('fab'), contato=document.getElementById('contato'), heroSec=document.querySelector('.hero');
+function contactVisible(){var r=contato.getBoundingClientRect();return r.top<innerHeight && r.bottom>0;}
+function heroVisible(){var r=heroSec.getBoundingClientRect();return r.bottom>innerHeight*0.5;}
+function syncFab(){ fab.classList.toggle('hide', heroVisible() || contactVisible()); }
+syncFab(); addEventListener('scroll', syncFab, {passive:true}); addEventListener('resize', syncFab);
+</script>
+</body>
+</html>
