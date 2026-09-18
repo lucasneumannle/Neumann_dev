@@ -547,8 +547,26 @@ h1,h2,h3{ font-family:var(--font-head); margin:0; font-weight:900; letter-spacin
 .b2b-text h2{ font-size:clamp(28px,4.8vw,42px); text-transform:uppercase; line-height:1.06; }
 .b2b-text p{ color:var(--steel-light); margin-top:18px; max-width:46ch; font-size:16px; line-height:1.6; }
 .b2b-text .btn{ margin-top:26px; }
-.b2b-cad{ background:var(--black); border:1px solid var(--line); padding:18px; }
+.b2b-cad{ background:var(--black); border:1px solid var(--line); padding:0; overflow:hidden; }
 .b2b-cad svg{ width:100%; height:auto; display:block; }
+
+/* --- slider SOBRE A EMPRESA --- */
+.empresa-slider{ position:relative; overflow:hidden; }
+.es-track{ display:flex; transition:transform .5s cubic-bezier(.4,0,.2,1); }
+.es-slide{ min-width:100%; margin:0; aspect-ratio:4/3; }
+.es-slide img{ width:100%; height:100%; object-fit:cover; object-position:center 62%; display:block; }
+.es-arrow{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:44px; height:44px; display:grid; place-items:center; z-index:2;
+  background:rgba(10,10,10,0.68); color:var(--off-white);
+  border:1px solid var(--line); border-radius:var(--radius); cursor:pointer;
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
+}
+.es-arrow:hover{ background:var(--yellow); color:var(--black); border-color:var(--yellow); }
+.es-prev{ left:12px; } .es-next{ right:12px; }
+.es-dots{ position:absolute; bottom:14px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:2; }
+.es-dot{ width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.4); border:none; padding:0; cursor:pointer; transition:background .25s ease, width .25s ease, border-radius .25s ease; }
+.es-dot.is-active{ background:var(--yellow); width:22px; border-radius:4px; }
 
 @media (min-width:960px){
   .b2b-grid{ grid-template-columns:1fr 1fr; gap:70px; }
@@ -696,7 +714,7 @@ noscript .wa-float-ns{
     <div class="hero-content">
       <p class="eyebrow">JRK MATERIAIS METÁLICOS</p>
       <h1 class="hero-h1">SEU PROJETO.<br><span class="hl">NOSSO CORTE.</span></h1>
-      <p class="hero-sub">Corte de chapas metálicas para transformar seu projeto em peça pronta para produção.</p>
+      <p class="hero-sub">Corte de chapas de aço carbono, aço inox e alumínio.</p>
       <div class="hero-actions">
         <a href="#orcamento" class="btn btn-primary">SOLICITAR ORÇAMENTO →</a>
         <a href="#servicos" class="btn btn-outline">CONHECER SERVIÇOS</a>
@@ -707,7 +725,7 @@ noscript .wa-float-ns{
     </div>
     <div class="hero-media">
       <div class="hero-cut-line"></div>
-      <img src="https://images.unsplash.com/photo-1738162837451-2041c1418f54?auto=format&fit=crop&w=2200&q=80" alt="Máquina de corte a laser cortando chapa metálica com faíscas em ambiente industrial" loading="eager">
+      <img src="imagens/hero-oxipira.jpg" alt="Máquina de corte OXIPIRA e chapas de aço empilhadas no galpão da JRK Materiais Metálicos" loading="eager">
     </div>
   </div>
 </section>
@@ -959,60 +977,35 @@ noscript .wa-float-ns{
 <section class="section-pad texture" style="position:relative;">
   <div class="wrap b2b-grid">
     <div class="b2b-text reveal">
-      <p class="eyebrow">PROJETISTAS E EMPRESAS</p>
-      <h2 style="margin-top:14px;">VOCÊ TEM O PROJETO.<br>A JRK TEM O PROCESSO.</h2>
-      <p>Se você trabalha com projetos, fabricação ou manutenção industrial, envie as informações da peça e consulte a equipe da JRK sobre o corte.</p>
+      <p class="eyebrow">SOBRE A EMPRESA</p>
+      <h2 style="margin-top:14px;">MAIS DE 20 ANOS<br>DE ESTRADA.</h2>
+      <p>Nossa empresa está há mais de 20 anos atendendo Blumenau e região.</p>
       <a href="#" class="btn btn-primary" data-wa="projeto">ENVIAR PROJETO →</a>
     </div>
 
-    <div class="b2b-cad reveal" role="img" aria-label="Ilustração técnica de uma chapa metálica cortada com linhas de cota, no estilo de um desenho CAD">
-      <svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse">
-            <path d="M 26 0 L 0 0 0 26" fill="none" stroke="rgba(245,243,239,0.05)" stroke-width="1"/>
-          </pattern>
-        </defs>
-        <rect width="520" height="420" fill="url(#grid)"/>
+    <div class="b2b-cad reveal">
+      <div class="empresa-slider" id="empresaSlider" aria-roledescription="carrossel" aria-label="Fotos do galpão da JRK">
+        <div class="es-track">
+          <figure class="es-slide is-active">
+            <img src="imagens/empresa-1.jpg" alt="Mesa de corte plasma CNC Hypertherm no galpão da JRK" loading="lazy">
+          </figure>
+          <figure class="es-slide">
+            <img src="imagens/empresa-2.jpg" alt="Galpão da JRK com chapas de aço e estruturas metálicas" loading="lazy">
+          </figure>
+        </div>
 
-        <!-- plate outline -->
-        <path d="M 90 90 L 340 90 L 340 190 L 430 190 L 430 330 L 90 330 Z"
-              fill="rgba(245,243,239,0.03)" stroke="#c7c6c2" stroke-width="1.5"/>
+        <button class="es-arrow es-prev" type="button" aria-label="Foto anterior">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="es-arrow es-next" type="button" aria-label="Próxima foto">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
 
-        <!-- bolt holes -->
-        <circle cx="130" cy="130" r="10" fill="none" stroke="#c7c6c2" stroke-width="1.5"/>
-        <circle cx="130" cy="130" r="1.4" fill="#c7c6c2"/>
-        <circle cx="130" cy="290" r="10" fill="none" stroke="#c7c6c2" stroke-width="1.5"/>
-        <circle cx="130" cy="290" r="1.4" fill="#c7c6c2"/>
-        <circle cx="390" cy="290" r="10" fill="none" stroke="#c7c6c2" stroke-width="1.5"/>
-        <circle cx="390" cy="290" r="1.4" fill="#c7c6c2"/>
-
-        <!-- center mark on main body -->
-        <line x1="200" y1="200" x2="200" y2="220" stroke="#f2d949" stroke-width="1"/>
-        <line x1="190" y1="210" x2="210" y2="210" stroke="#f2d949" stroke-width="1"/>
-
-        <!-- dimension line: top width -->
-        <line x1="90" y1="62" x2="340" y2="62" stroke="#8b8d91" stroke-width="1"/>
-        <line x1="90" y1="56" x2="90" y2="90" stroke="#8b8d91" stroke-width="1"/>
-        <line x1="340" y1="56" x2="340" y2="90" stroke="#8b8d91" stroke-width="1"/>
-        <path d="M90 62 L98 58 L98 66 Z" fill="#8b8d91"/>
-        <path d="M340 62 L332 58 L332 66 Z" fill="#8b8d91"/>
-        <text x="215" y="48" fill="#8b8d91" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">A</text>
-
-        <!-- dimension line: right height -->
-        <line x1="458" y1="190" x2="458" y2="330" stroke="#8b8d91" stroke-width="1"/>
-        <line x1="430" y1="190" x2="458" y2="190" stroke="#8b8d91" stroke-width="1"/>
-        <line x1="430" y1="330" x2="458" y2="330" stroke="#8b8d91" stroke-width="1"/>
-        <path d="M458 190 L454 198 L462 198 Z" fill="#8b8d91"/>
-        <path d="M458 330 L454 322 L462 322 Z" fill="#8b8d91"/>
-        <text x="478" y="264" fill="#8b8d91" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle" transform="rotate(90 478 264)">B</text>
-
-        <!-- callout leader -->
-        <line x1="130" y1="130" x2="70" y2="100" stroke="#f2d949" stroke-width="1"/>
-        <circle cx="70" cy="100" r="1.6" fill="#f2d949"/>
-        <text x="60" y="96" fill="#f2d949" font-family="IBM Plex Mono, monospace" font-size="10" text-anchor="end">⌀ furo</text>
-
-        <text x="90" y="352" fill="#55565a" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">REF. PEÇA CORTADA — ESCALA ILUSTRATIVA</text>
-      </svg>
+        <div class="es-dots" role="tablist" aria-label="Selecionar foto">
+          <button class="es-dot is-active" type="button" aria-label="Foto 1"></button>
+          <button class="es-dot" type="button" aria-label="Foto 2"></button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1049,7 +1042,7 @@ noscript .wa-float-ns{
     <div class="footer-top">
       <div class="footer-brand">
         <img src="imagens/logo-jrk.png" alt="JRK Materiais Metálicos" class="footer-logo">
-        <p class="footer-tag">Corte de chapas metálicas em Blumenau/SC. Laser, plasma e oxicorte para o que o seu projeto precisa.</p>
+        <p class="footer-tag">Corte laser, plasma e oxicorte de chapas e venda de barras metálicas.</p>
         <p class="footer-since">Desde 2006</p>
       </div>
 
@@ -1095,6 +1088,10 @@ noscript .wa-float-ns{
 </noscript>
 
 <script>
+/* sempre abrir no topo (evita o navegador restaurar a rolagem anterior) */
+if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+window.addEventListener('load', function(){ if(!location.hash){ window.scrollTo(0,0); } });
+
 /* ============================================================
    CONFIG — número da JRK já configurado (+55 47 3338-1288)
    Formato: código do país + DDD + número, apenas dígitos.
@@ -1198,6 +1195,38 @@ if(quoteForm){
     formMsg.classList.add('show');
   });
 }
+
+/* slider SOBRE A EMPRESA */
+(function(){
+  const root = document.getElementById('empresaSlider');
+  if(!root) return;
+  const track = root.querySelector('.es-track');
+  const slides = root.querySelectorAll('.es-slide');
+  const dots = root.querySelectorAll('.es-dot');
+  const total = slides.length;
+  let i = 0;
+
+  function go(n){
+    i = (n + total) % total;
+    track.style.transform = 'translateX(' + (-i * 100) + '%)';
+    slides.forEach((s,k)=> s.classList.toggle('is-active', k===i));
+    dots.forEach((d,k)=> d.classList.toggle('is-active', k===i));
+  }
+  root.querySelector('.es-prev').addEventListener('click', ()=> go(i-1));
+  root.querySelector('.es-next').addEventListener('click', ()=> go(i+1));
+  dots.forEach((d,k)=> d.addEventListener('click', ()=> go(k)));
+
+  /* swipe mobile */
+  let x0=null;
+  root.addEventListener('touchstart', e=>{ x0 = e.touches[0].clientX; }, {passive:true});
+  root.addEventListener('touchend', e=>{
+    if(x0===null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if(Math.abs(dx) > 40){ go(dx < 0 ? i+1 : i-1); }
+    x0=null;
+  }, {passive:true});
+})();
+
 </script>
 </body>
 </html>
