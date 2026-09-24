@@ -12,6 +12,12 @@ python -m http.server 4173
 
 Depois acesse `http://localhost:4173`.
 
+## Estrutura para o domínio
+
+O ZIP de entrega contém a pasta `DFmoveis/`. Ao extrair essa pasta na raiz pública de `neumanndev.com`, o endereço previsto é `https://neumanndev.com/DFmoveis/`.
+
+`/DFmoveis/` é um caminho dentro do domínio. Um subdomínio teria formato `dfmoveis.neumanndev.com`. Este pacote não altera DNS ou hospedagem e não publica o site automaticamente.
+
 ## Antes de uma versão final
 
 1. Preencha `WHATSAPP_NUMBER` no início de `script.js`, apenas com DDI + DDD + número.
