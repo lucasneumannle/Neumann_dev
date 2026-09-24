@@ -37,7 +37,7 @@ document.querySelectorAll("[data-whatsapp]").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
     if (!WHATSAPP_NUMBER) {
-      notice.textContent = "Prévia: configure WHATSAPP_NUMBER em script.js para ativar este contato.";
+      notice.textContent = "Prévia: configure WHATSAPP_NUMBER em assets/script.js para ativar este contato.";
       notice.classList.add("show");
       clearTimeout(noticeTimer);
       noticeTimer = setTimeout(() => notice.classList.remove("show"), 4200);
