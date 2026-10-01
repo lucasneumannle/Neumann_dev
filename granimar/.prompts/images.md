@@ -1,0 +1,7 @@
+# Imagens de apresentação
+
+Geradas com a ferramenta ImageGen embutida em 2026-10-01. São visuais ilustrativos, sem representar obras executadas pela Granimar.
+
+- `hero.webp`: "A stunning contemporary Colombian apartment kitchen, photographed as a high-end interior architecture editorial. Wide view, warm walnut lower cabinets, quiet ivory stone island with subtle natural veining, cream upper cabinetry, architectural pendant lights, warm afternoon light from tall left windows, understated lived-in elegance. Composition wide landscape with the central kitchen island spanning frame, rich realistic materials, restrained warm beige and charcoal palette, professionally photographed, no people, no text, no logo, no watermark."
+- `detail.webp`: "Close architectural photograph of a contemporary kitchen's carefully crafted pale stone countertop edge meeting warm walnut cabinetry and a brushed bronze faucet, soft natural side light, shallow but credible depth of field, sumptuous stone texture, minimal styling, luxury interiors magazine, vertical composition, no people, no text, no logo, no watermark."
+- `kitchen.webp`: "Distinct contemporary Colombian home kitchen with a long pale granite island, dark oak cabinets, warm plaster walls and a view through an open doorway, editorial architectural photography, wide landscape composition, natural daylight, tactile materials, restrained styling, no people, no text, no logo, no watermark."
